@@ -1,0 +1,1 @@
+<img src="/layout/images/logo.svg" alt="adidas">

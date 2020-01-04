@@ -1,0 +1,53 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Магазины", 
+		"/retail/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Офис", 
+		"/office/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Центр дистрибуции", 
+		"#", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Обучение и развитие", 
+		"#", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"О компании", 
+		"#", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Бренды", 
+		"#", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"#", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

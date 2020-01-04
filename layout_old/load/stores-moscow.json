@@ -1,0 +1,89 @@
+{
+	"type": "ObjectsCollection",
+	"objects": [
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"55.758118",
+					"37.659037"
+				]
+			},
+			"properties": {
+				"id": 1,
+				"url": "#",
+				"name": "Атриум",
+				"brand": "Adidas",
+				"metro": "Курская",
+				"metroClass": "metro-line-3",
+				"address": "ул. Земляной Вал, 33, ТЦ Атриум",
+				"phones": [
+					{
+						"number": "+7 (495) 362-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 787-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		},
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"55.761978",
+					"37.566439"
+				]
+			},
+			"properties": {
+				"id": 1,
+				"url": "#",
+				"name": "Красная пресня",
+				"brand": "Adidas",
+				"metro": "Улица 1905 года",
+				"metroClass": "metro-line-7",
+				"address": "Улица 1905 года",
+				"phones": [
+					{
+						"number": "+7 (495) 222-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 333-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		},
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"55.774409",
+					"37.655695"
+				]
+			},
+			"properties": {
+				"id": 1,
+				"url": "#",
+				"name": "Adidas & Reebok Outlet",
+				"brand": "Adidas, Reebok",
+				"metro": "Комсомольская",
+				"metroClass": "metro-line-1",
+				"address": "Adidas & Reebok Outlet",
+				"phones": [
+					{
+						"number": "+7 (495) 362-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 787-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		}
+	]
+}

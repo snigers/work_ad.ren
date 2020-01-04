@@ -1,0 +1,1 @@
+<p>прямо сейчас мы&nbsp;предлагаем<br><span class="footer-green">932 вакансии</span> в&nbsp;<span class="footer-blue">42&nbsp;городах</span> страны</p>

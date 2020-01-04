@@ -1,0 +1,1 @@
+<a class="footer-soclink" href="#"><img class="svg-inline" src="/layout/images/ico-footer-vk.svg"></a>

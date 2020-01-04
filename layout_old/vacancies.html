@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Adidas</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="js/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="js/bootstrap-fileinput/css/fileinput.min.css">
+    <link rel="stylesheet" href="js/bootstrap-fileinput/css/fileinput-rtl.min.css">
+    <link rel="stylesheet" href="js/tempusdominus/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="css/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="js/rangeslider/rangeslider.css">
+    <link rel="stylesheet" href="js/datatables/datatables.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+  </head>
+  <body>
+    <div class="over-wrapper">
+      <div id="mobile-indicator"></div>
+      <div id="sm-indicator"></div>
+      <header>
+        <div class="header-content">
+          <div class="row">
+            <div class="header-l">
+              <div class="header-logo"><a href="/"><img src="images/logo.svg" alt="adidas"></a></div>
+            </div>
+            <div class="header-m">
+              <div class="navbar-wrapper">
+                <div class="navbar-wrapper-inner">
+                  <ul class="nav navbar-nav">
+                    <li class="has-submenu"><a href="#"><span>Магазины</span></a></li>
+                    <li class="has-submenu"><a href="#"><span>Офис</span></a>
+                      <div class="submenu">
+                        <div class="submenu-inner">
+                          <div class="row">
+                            <div class="submenu-descr">
+                              <ul class="submenu-list">
+                                <li><a href="#">the base fitness</a></li>
+                                <li><a href="#">Маркетинг adidas</a></li>
+                                <li><a href="#">Маркетинг reebok</a></li>
+                                <li><a href="#">Дизайн и строительство</a></li>
+                                <li><a href="#">Юридический отдел</a></li>
+                                <li><a href="#">финансовый отдел</a></li>
+                                <li><a href="#">логистика</a></li>
+                                <li><a href="#">it-отдел</a></li>
+                                <li><a href="#">управление персоналом</a></li>
+                                <li><a href="#">отдел закупок</a></li>
+                                <li><a href="#">коммерческий отдел</a></li>
+                                <li><a href="#">поддержка фирменных магазинов</a></li>
+                                <li><a href="#">Электронная торговля</a></li>
+                              </ul>
+                            </div>
+                            <div class="submenu-pic" style="background-image: url(files/submenu-office-bg.jpg)"><img src="files/submenu-office-pic.jpg"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li><a href="#"><span>Центр дистрибуции</span></a></li>
+                    <li class="has-submenu"><a href="#"><span>Обучение и&nbsp;развитие</span></a></li>
+                    <li><a href="#"><span>О&nbsp;компании</span></a></li>
+                    <li class="has-submenu"><a href="#"><span>Бренды</span></a></li>
+                    <li><a href="#"><span>Контакты</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="header-r">
+              <div class="header-fav"><a class="btn-header-fav" href="#">
+                  <div class="ico"><img class="svg-inline" src="images/ico-btn-header-fav.svg"></div></a></div>
+              <div class="header-button"><a class="btn btn-1 btn-1-small" href="#"><span>Все вакансии</span></a></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="page-header">
+          <div class="row">
+            <div class="col-6">
+              <div class="page-header-bg" style="background-image: url(files/page-header-bg-vacancies-l.jpg)"></div>
+            </div>
+            <div class="col-6">
+              <div class="page-header-bg" style="background-image: url(files/page-header-bg-vacancies-r.jpg)"></div>
+            </div>
+          </div>
+        </div>
+        <div class="page-body page-body-grey">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-3">
+                <div class="page-sidebar">
+                  <div class="filter">
+                    <div class="filter-search-form form-alt">
+                      <form>
+                        <div class="form-group">
+                          <div class="form-field">
+                            <input type="text" name="vac_search" id="vac_search" placeholder="Найти вакансию" required>
+                          </div>
+                          <div class="form-button">
+                            <button type="submit"></button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="filter-form form-alt">
+                      <form>
+                        <div class="form-group">
+                          <label for="vac_city">Город</label>
+                          <select class="select-alt" name="vac_city" id="vac_city">
+                            <option value="1">Все города</option>
+                            <option value="2">Москва</option>
+                            <option value="3">Санкт-Петербург</option>
+                            <option value="4">Екатеринбург</option>
+                            <option value="5">Казань</option>
+                            <option value="6">Новосибирск</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label>Направление</label>
+                          <div class="form-radios">
+                            <div class="form-radio">
+                              <input type="radio" name="vac_direction" id="vac_direction_1" value="1" checked>
+                              <label for="vac_direction_1">Все направления</label>
+                            </div>
+                            <div class="form-radio">
+                              <input type="radio" name="vac_direction" id="vac_direction_2" value="2">
+                              <label for="vac_direction_2">Фирменные магазины</label>
+                            </div>
+                            <div class="form-radio">
+                              <input type="radio" name="vac_direction" id="vac_direction_3" value="3">
+                              <label for="vac_direction_3">Офис</label>
+                            </div>
+                            <div class="form-radio">
+                              <input type="radio" name="vac_direction" id="vac_direction_4" value="4">
+                              <label for="vac_direction_4">Центр дистрибуции</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Тип занаятости</label>
+                          <div class="form-radios">
+                            <div class="form-radio">
+                              <input type="radio" name="vac_type" id="vac_type_1" value="1" checked>
+                              <label for="vac_type_1">Все типы занятости</label>
+                            </div>
+                            <div class="form-radio">
+                              <input type="radio" name="vac_type" id="vac_type_2" value="2">
+                              <label for="vac_type_2">Полная занятость</label>
+                            </div>
+                            <div class="form-radio">
+                              <input type="radio" name="vac_type" id="vac_type_3" value="3">
+                              <label for="vac_type_3">Частичная  занятость</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Бренд</label>
+                          <div class="form-radios">
+                            <div class="form-radio">
+                              <input type="radio" name="vac_brand" id="vac_brand_1" value="1" checked>
+                              <label for="vac_brand_1">Все бренды</label>
+                            </div>
+                            <div class="form-radio">
+                              <input type="radio" name="vac_brand" id="vac_brand_2" value="2">
+                              <label for="vac_brand_2">Adidas</label>
+                            </div>
+                            <div class="form-radio">
+                              <input type="radio" name="vac_brand" id="vac_brand_3" value="3">
+                              <label for="vac_brand_3">Reebok</label>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-8 offset-md-1">
+                <div class="page-content-wrapper page-content-wrapper-grey">
+                  <ul class="breadcrumb">
+                    <li><a href="#">Adidas</a></li>
+                    <li><span>Все вакансии</span></li>
+                  </ul>
+                  <div class="page-title page-title-alt page-title-grey">
+                    <h1>Все вакансии</h1>
+                  </div>
+                  <div class="vac-wrapper">
+                    <div class="vac-l">
+                      <div class="list-controls form-alt">
+                        <div class="list-controls-l">
+                          <div class="form-group">
+                            <div class="form-item-sort">
+                              <div class="select-sort-name">Сортировка:</div>
+                              <select class="select-sort" name="controls_sort" id="controls_sort">
+                                <option value="1">По умолчанию</option>
+                                <option value="2">Сначала новые</option>
+                                <option value="3">Сначала старые</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-controls-r">
+                          <div class="show-num">
+                            <div class="show-num-ttl">Показать по</div>
+                            <div class="show-num-buttons">
+                              <div class="show-num-buttons-item">
+                                <button class="active">12</button>
+                              </div>
+                              <div class="show-num-buttons-item">
+                                <button>24</button>
+                              </div>
+                              <div class="show-num-buttons-item">
+                                <button>36</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vac-list"><a class="vac-tmb" href="#">
+                          <div class="vac-tmb-header">
+                            <div class="h3">специалист по сервису (продавец-консультант) в дисконт-центр</div>
+                            <div class="vac-tmb-fav"><img class="svg-inline" src="images/ico-fav.svg"></div>
+                          </div>
+                          <div class="vac-tmb-footer">
+                            <div class="vac-tmb-place">
+                              <p>Фирменный магазин, Москва</p>
+                            </div>
+                            <div class="vac-tmb-logo"><img src="images/logo-adidas.svg"></div>
+                          </div></a><a class="vac-tmb" href="#">
+                          <div class="vac-tmb-header">
+                            <div class="h3">инструктор по бегу</div>
+                            <div class="vac-tmb-fav"><img class="svg-inline" src="images/ico-fav.svg"></div>
+                          </div>
+                          <div class="vac-tmb-footer">
+                            <div class="vac-tmb-place">
+                              <p>Фирменный магазин, Москва</p>
+                            </div>
+                            <div class="vac-tmb-logo"><img src="images/logo-reebok.svg"></div>
+                          </div></a><a class="vac-tmb" href="#">
+                          <div class="vac-tmb-header">
+                            <div class="h3">специалист по фитнесу (продавец-консультант)</div>
+                            <div class="vac-tmb-fav"><img class="svg-inline" src="images/ico-fav.svg"></div>
+                          </div>
+                          <div class="vac-tmb-footer">
+                            <div class="vac-tmb-place">
+                              <p>Фирменный магазин, Москва</p>
+                            </div>
+                            <div class="vac-tmb-logo"><img src="images/logo-adidas.svg"></div>
+                          </div></a><a class="vac-tmb" href="#">
+                          <div class="vac-tmb-header">
+                            <div class="h3">специалист по сервису (продавец-консультант) в дисконт-центр</div>
+                            <div class="vac-tmb-fav"><img class="svg-inline" src="images/ico-fav.svg"></div>
+                          </div>
+                          <div class="vac-tmb-footer">
+                            <div class="vac-tmb-place">
+                              <p>Фирменный магазин, Москва</p>
+                            </div>
+                            <div class="vac-tmb-logo"><img src="images/logo-adidas.svg"></div>
+                          </div></a><a class="vac-tmb" href="#">
+                          <div class="vac-tmb-header">
+                            <div class="h3">инструктор по бегу</div>
+                            <div class="vac-tmb-fav"><img class="svg-inline" src="images/ico-fav.svg"></div>
+                          </div>
+                          <div class="vac-tmb-footer">
+                            <div class="vac-tmb-place">
+                              <p>Фирменный магазин, Москва</p>
+                            </div>
+                            <div class="vac-tmb-logo"><img src="images/logo-reebok.svg"></div>
+                          </div></a><a class="vac-tmb" href="#">
+                          <div class="vac-tmb-header">
+                            <div class="h3">специалист по фитнесу (продавец-консультант)</div>
+                            <div class="vac-tmb-fav"><img class="svg-inline" src="images/ico-fav.svg"></div>
+                          </div>
+                          <div class="vac-tmb-footer">
+                            <div class="vac-tmb-place">
+                              <p>Фирменный магазин, Москва</p>
+                            </div>
+                            <div class="vac-tmb-logo"><img src="images/logo-adidas.svg"></div>
+                          </div></a><a class="vac-tmb" href="#">
+                          <div class="vac-tmb-header">
+                            <div class="h3">специалист по сервису (продавец-консультант) в дисконт-центр</div>
+                            <div class="vac-tmb-fav"><img class="svg-inline" src="images/ico-fav.svg"></div>
+                          </div>
+                          <div class="vac-tmb-footer">
+                            <div class="vac-tmb-place">
+                              <p>Фирменный магазин, Москва</p>
+                            </div>
+                            <div class="vac-tmb-logo"><img src="images/logo-adidas.svg"></div>
+                          </div></a><a class="vac-tmb" href="#">
+                          <div class="vac-tmb-header">
+                            <div class="h3">инструктор по бегу</div>
+                            <div class="vac-tmb-fav"><img class="svg-inline" src="images/ico-fav.svg"></div>
+                          </div>
+                          <div class="vac-tmb-footer">
+                            <div class="vac-tmb-place">
+                              <p>Фирменный магазин, Москва</p>
+                            </div>
+                            <div class="vac-tmb-logo"><img src="images/logo-reebok.svg"></div>
+                          </div></a><a class="vac-tmb" href="#">
+                          <div class="vac-tmb-header">
+                            <div class="h3">специалист по фитнесу (продавец-консультант)</div>
+                            <div class="vac-tmb-fav"><img class="svg-inline" src="images/ico-fav.svg"></div>
+                          </div>
+                          <div class="vac-tmb-footer">
+                            <div class="vac-tmb-place">
+                              <p>Фирменный магазин, Москва</p>
+                            </div>
+                            <div class="vac-tmb-logo"><img src="images/logo-adidas.svg"></div>
+                          </div></a></div>
+                      <div class="list-controls list-controls-bottom">
+                        <div class="list-controls-l">
+                          <div class="page-nav">
+                            <div class="modern-page-navigation"><span class="modern-page-title">Страницы:</span><a class="modern-page-previous" href="#">Назад</a><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><span class="modern-page-current">5</span><a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#">10</a><a href="#">11</a><a class="modern-page-next" href="#">Вперед</a></div>
+                          </div>
+                        </div>
+                        <div class="list-controls-r">
+                          <div class="show-num">
+                            <div class="show-num-ttl">Показать по</div>
+                            <div class="show-num-buttons">
+                              <div class="show-num-buttons-item">
+                                <button class="active">12</button>
+                              </div>
+                              <div class="show-num-buttons-item">
+                                <button>24</button>
+                              </div>
+                              <div class="show-num-buttons-item">
+                                <button>36</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vac-r">
+                      <div class="vac-num">
+                        <div class="vac-num-inner">963</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-top">
+              <div class="footer-ttl">
+                <p>прямо сейчас мы&nbsp;предлагаем<br><span class="footer-green">932 вакансии</span> в&nbsp;<span class="footer-blue">42&nbsp;городах</span> страны</p>
+              </div>
+              <div class="footer-button"><a class="btn btn-1" href="#">Посмотреть все вакансии</a></div>
+            </div>
+            <div class="footer-bottom">
+              <div class="h3">Меняем жизнь через спорт</div>
+              <div class="footer-soclinks"><a class="footer-soclink" href="#"><img class="svg-inline" src="images/ico-footer-vk.svg"></a><a class="footer-soclink" href="#"><img class="svg-inline" src="images/ico-footer-fb.svg"></a><a class="footer-soclink" href="#"><img class="svg-inline" src="images/ico-footer-instagram.svg"></a></div>
+              <div class="footer-copy">
+                <div class="footer-copy-item">
+                  <p>&copy;&nbsp;Adidas 2019. Все права защищены</p>
+                </div>
+                <div class="footer-copy-item">
+                  <p><a href="#">Политика конфиденциальности</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="modal fade form-modal order-modal" id="orderModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header">
+              <div class="h2">Оставить заявку</div>
+              <p>Оставьте заявку, наш специалист свяжется с&nbsp;Вами в&nbsp;течении 15&nbsp;мин!</p>
+            </div>
+            <div class="modal-body">
+              <div class="form-alt">
+                <form id="orderForm">
+                  <div class="row">
+                    <div class="col-12 col-sm-6">
+                      <div class="form-group">
+                        <label for="modal_order_name">Ваше имя</label>
+                        <input type="text" name="modal_order_name" id="modal_order_name" required>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <div class="form-group">
+                        <label for="modal_order_phone">Телефон</label>
+                        <input class="input-phone" type="text" name="modal_order_phone" id="modal_order_phone" required>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <div class="form-footer">
+                        <button class="btn btn-2" type="submit"><span>Отправить заявку</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade form-modal order-modal" id="bankModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header">
+              <div class="h2">Оставить заявку</div>
+              <p>Оставьте заявку, наш специалист свяжется с&nbsp;Вами в&nbsp;течении 15&nbsp;мин!</p>
+            </div>
+            <div class="modal-body">
+              <div class="form-alt">
+                <form id="bankForm">
+                  <input type="hidden" name="modal_bank_bank" id="modal_bank_bank">
+                  <div class="row">
+                    <div class="col-12 col-sm-6">
+                      <div class="form-group">
+                        <label for="modal_bank_name">Ваше имя</label>
+                        <input type="text" name="modal_bank_name" id="modal_bank_name" required>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <div class="form-group">
+                        <label for="modal_bank_phone">Телефон</label>
+                        <input class="input-phone" type="text" name="modal_bank_phone" id="modal_bank_phone" required>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <div class="form-footer">
+                        <button class="btn btn-2" type="submit"><span>Отправить заявку</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade form-modal" id="teamModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header">
+              <div class="h2">Задать вопрос</div>
+              <p>Оставьте заявку, наш специалист свяжется с&nbsp;Вами в&nbsp;течении 15&nbsp;мин!</p>
+            </div>
+            <div class="modal-body">
+              <div class="form-alt">
+                <form id="teamForm">
+                  <input type="hidden" name="modal_team_person" id="modal_team_person">
+                  <div class="row">
+                    <div class="col-12 col-sm-6">
+                      <div class="form-group">
+                        <label for="modal_team_name">Ваше имя</label>
+                        <input type="text" name="modal_team_name" id="modal_team_name" required>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <div class="form-group">
+                        <label for="modal_team_phone">Телефон</label>
+                        <input class="input-phone" type="text" name="modal_team_phone" id="modal_team_phone" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="modal_team_message">Сообщение</label>
+                        <textarea name="modal_team_message" id="modal_team_message" rows="4"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      <div class="form-footer">
+                        <button class="btn btn-2" type="submit"><span>Отправить</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade form-modal callback-modal" id="callbackModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header">
+              <div class="h2">Заказать звонок</div>
+            </div>
+            <div class="modal-body">
+              <p>Оставьте свои данные и&nbsp;наш специалист свяжется с&nbsp;вами в&nbsp;течение 15&nbsp;минут</p>
+              <div class="modal-form callback-form">
+                <form>
+                  <div class="form-group">
+                    <label class="placeholder" for="callback_name">Ваше имя</label>
+                    <input type="text" name="callback_name" id="callback_name" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="placeholder" for="callback_phone">+7 (___) ___-__-__</label>
+                    <input class="input-phone" type="text" name="callback_phone" id="callback_phone" required>
+                  </div>
+                  <div class="form-footer">
+                    <div class="row">
+                      <div class="col-12 col-md-6">
+                        <button class="btn btn-2 btn-small" type="submit"><span>Отправить</span></button>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="form-agree">
+                          <p>Нажимая кнопку «Отправить», Вы даете свое согласие с&nbsp;<a href="#">политикой конфиденциальности</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade client-modal" id="clientModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade client-modal" id="addressModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body"></div>
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade success-modal" id="successModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header">
+              <div class="h2"><span>Ваша заявка успешно принята!</span></div>
+              <div class="text">
+                <p>Перезвоним в течение 15 минут</p>
+              </div>
+            </div>
+            <div class="modal-body">
+              <div class="success-modal-button">
+                <button class="btn btn-2" type="button" data-dismiss="modal" aria-label="Close">Закрыть</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="js/bootstrap-select.min.js"></script>
+      <script src="js/jquery.validate.min.js"></script>
+      <script src="js/additional-methods.min.js"></script>
+      <script src="js/jquery.maskedinput.min.js"></script>
+      <script src="js/wNumb.min.js"></script>
+      <script src="js/slick.min.js"></script>
+      <script src="js/fancybox/jquery.fancybox.min.js"></script>
+      <script src="js/bootstrap-fileinput/js/fileinput.min.js"></script>
+      <script src="js/jquery.mousewheel.js"></script>
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/moment-with-locales.js"></script>
+      <script src="js/tempusdominus/tempusdominus-bootstrap-4.min.js"></script>
+      <script src="js/jquery-svg-to-inline.js"></script>
+      <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=cefbc555-bed0-48f8-b6ad-23f808b12244"></script>
+      <script src="js/main.js"></script>
+      <script src="js/stores-map.js"></script>
+    </div>
+  </body>
+</html>
