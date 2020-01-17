@@ -1,3 +1,32 @@
+$(window).resize(function () {
+
+  storesTableMakeup();
+
+});
+
+$(document).ready(function () {
+
+  $(".stores-map-menu li").click(function () {
+
+    if (!$(this).hasClass("active")) {
+
+      $(".stores-map-menu li").removeClass("active");
+      $(this).addClass("active");
+
+      $(".stores-tab").hide();
+
+      $($(this).data("view")).fadeIn(250);
+
+      storesTableMakeup();
+
+    }
+
+  });
+
+  $(".stores-table-wrapper").mCustomScrollbar();
+
+});
+
 if ($(".stores-map").length) {
 
   if ($("#mobile-indicator").css("display") == "block") {
@@ -11,17 +40,6 @@ if ($(".stores-map").length) {
   var baseUrl = "";
 
   var initialUrl = $("#stores_city option[selected]").data("stores");
-
-  var getPointOptions = function () {
-    return {
-      iconLayout: 'default#image',
-      iconImageHref: baseUrl + 'images/store-pin.png',
-      iconImageSize: [27, 38],
-      iconImageOffset: [-14, -38],
-      hideIconOnBalloonOpen: false,
-      balloonLayout: MyBalloonLayout
-    };
-  };
 
   ymaps.ready(function () {
 
@@ -37,6 +55,8 @@ if ($(".stores-map").length) {
         balloonMaxWidth: balMaxWidth
       }),
 
+
+
       clusterer = new ymaps.Clusterer({
         /**
          * Через кластеризатор можно указать только стили кластеров,
@@ -44,9 +64,9 @@ if ($(".stores-map").length) {
          * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/option.presetStorage.xml
          */
         clusterIcons: [{
-          href: baseUrl + 'images/ico-cluster.png',
-          size: [55, 55],
-          offset: [-28, -24]
+          href: baseUrl + 'images/store-pin-cluster.png',
+          size: [27, 38],
+          offset: [-14, -38]
         }],
         clusterIconContentLayout: ymaps.templateLayoutFactory.createClass('<div class="cluster-icon">$[properties.geoObjects.length]</div>'),
         /**
@@ -136,8 +156,8 @@ if ($(".stores-map").length) {
            */
           applyElementOffset: function () {
             this._$element.css({
-              left: -(this._$element[0].offsetWidth / 2),
-              top: -(this._$element[0].offsetHeight) - 20
+              left: 30,
+              top: -45
             });
           },
 
@@ -192,6 +212,18 @@ if ($(".stores-map").length) {
       );
 
 
+    var getPointOptions = function () {
+      return {
+        iconLayout: 'default#image',
+        iconImageHref: baseUrl + 'images/store-pin.png',
+        iconImageSize: [27, 38],
+        iconImageOffset: [-14, -38],
+        hideIconOnBalloonOpen: false,
+        balloonLayout: MyBalloonLayout
+      };
+    };
+
+
     myMap.behaviors.disable('scrollZoom');
 
     clusterer.events
@@ -232,36 +264,30 @@ if ($(".stores-map").length) {
       }
     });
 
-    var edisonPlacemark = new ymaps.Placemark([55.771902, 37.578022], {}, {
-      iconLayout: 'default#image',
-      iconImageHref: baseUrl + 'images/location-edison.png',
-      iconImageSize: [36, 54],
-      iconImageOffset: [-18, -54],
-      hideIconOnBalloonOpen: false,
-      zIndex: 9999999
-    });
-
-    myMap.geoObjects.add(edisonPlacemark);
-
-
     // URL выбранного списка при загрузке страницы
     var dataLink = baseUrl + initialUrl;
 
     $.getJSON(dataLink, function (data) {
 
-      objectsMap(data.objects, myMap, clusterer);
+      objectsMap(data.objects, myMap, clusterer, getPointOptions);
+
+      objectsList(data.objects);
 
     });
 
     // Фильтр
 
-    $(".objects-filter form").change(function () {
+    $(".city-select").change(function () {
 
-      var dataLink = "load/objects-2.json";
+      var dataLink = baseUrl + $(this).find("option:selected").data("stores");
+      
+      console.log(dataLink);
 
       $.getJSON(dataLink, function (data) {
 
-        objectsMap(data.objects, myMap, clusterer);
+        objectsMap(data.objects, myMap, clusterer, getPointOptions);
+
+        objectsList(data.objects);
 
       });
 
@@ -357,7 +383,7 @@ if ($(".stores-map").length) {
 }
 
 
-function objectsMap(elements, map, clusterer) {
+function objectsMap(elements, map, clusterer, getPointOptions) {
 
   var geoObjects = [];
 
@@ -365,27 +391,68 @@ function objectsMap(elements, map, clusterer) {
 
   $.each(elements, function (key, val) {
 
+
+    var pointBrands = '';
+
+    var pointBrandsArr = val.properties.brands;
+
+    $.each(pointBrandsArr, function (key, val) {
+
+      pointBrands += '<span class="point-brands-item">' + val + '</span>, ';
+
+    });
+
+    pointBrands = pointBrands.slice(0, -2);
+    
+    var pointMetros = '';
+
+    var pointMetrosArr = val.properties.metro;
+
+    $.each(pointMetrosArr, function (key, val) {
+
+      pointMetros += '<span class="point-metros-item">' + val.name + '</span>, ';
+
+    });
+
+    pointMetros = pointMetros.slice(0, -2);
+
+    var pointPhones = '';
+
+    var pointPhonesArr = val.properties.phones;
+
+    $.each(pointPhonesArr, function (key, val) {
+
+      pointPhones += '<div class="point-phones-item"><a href="tel:' + val.number + '">' + val.number + '</a> &mdash; ' + val.name + '</div>';
+
+    });
+
     geoObjects[key] = new ymaps.Placemark(val.geometry.coordinates, {
       id: val.properties.id,
       type: val.properties.type,
       clusterCaption: val.properties.name,
-      balloonContentHeader: val.properties.name,
+      balloonContentHeader: '',
       balloonContentBody: '\
-        <!--div class="point-descr-wrapper">\
+        <div class="point-descr-wrapper">\
           <div class="point-descr-cont">\
+            <div class="point-name">\
+              ' + val.properties.name + '\
+            </div>\
+            <div class="point-brand">\
+              ' + pointBrands + '\
+            </div>\
+            <div class="point-metro">\
+              ' + pointMetros + '\
+            </div>\
             <div class="point-address">\
               ' + val.properties.address + '\
             </div>\
-            <div class="point-area">\
-              ' + val.properties.area + ' м&sup2;\
-            </div>\
-            <div class="point-link">\
-              <a href="' + val.properties.url + '">Подробнее</a>\
+            <div class="point-phones">\
+              ' + pointPhones + '\
             </div>\
           </div>\
-        </div-->\
+        </div>\
       '
-    }, getPointOptions(val.properties.iconType));
+    }, getPointOptions());
 
   });
 
@@ -397,6 +464,73 @@ function objectsMap(elements, map, clusterer) {
     checkZoomRange: true,
     zoomMargin: mapMargin
   });
+
+}
+
+
+function objectsList(elements) {
+
+  $(".stores-table .stores-item").remove();
+
+  $.each(elements, function (key, val) {
+
+    var storeBrands = '';
+
+    var storeBrandsArr = val.properties.brands;
+
+    $.each(storeBrandsArr, function (key, val) {
+
+      storeBrands += '<div class="store-brands-item">' + val + '</div>';
+
+    });
+
+    storeBrands = storeBrands.slice(0, -2);
+
+    var storeMetros = '';
+
+    var storeMetrosArr = val.properties.metro;
+
+    $.each(storeMetrosArr, function (key, val) {
+
+      storeMetros += '<div class="store-metros-item" style="color:' + val.color + ';">' + val.name + '</div>';
+
+    });
+
+    var storePhones = '';
+
+    var storePhonesArr = val.properties.phones;
+
+    $.each(storePhonesArr, function (key, val) {
+
+      storePhones += '<div class="store-phones-item"><a href="tel:' + val.number + '">' + val.number + '</a> &mdash; ' + val.name + '</div>'
+
+    });
+
+    var storesItem = '\
+      <tr class="stores-item">\
+        <td class="stores-item-name">\
+          ' + val.properties.name + '\
+        </td>\
+        <td class="stores-item-brand">\
+          ' + storeBrands + '\
+        </td>\
+        <td class="stores-item-metro">\
+          ' + storeMetros + '\
+        </td>\
+        <td class="stores-item-address">\
+          ' + val.properties.address + '\
+        </td>\
+        <td class="stores-item-phones">\
+          ' + storePhones + '\
+        </td>\
+      </tr>\
+      ';
+
+    $(".stores-table").append(storesItem);
+
+  });
+
+  storesTableMakeup();
 
 }
 
@@ -448,5 +582,23 @@ function openObject(id, map, clusterer) {
     }, 1000);
 
   }
+
+}
+
+function storesTableMakeup() {
+
+  $(".stores-table tr:first-child td").each(function () {
+
+    var curTd = $(this);
+
+    $(".stores-table-header th").filter(function () {
+
+      return $(this).prevAll().length == curTd.prevAll().length;
+
+    }).css({
+      width: curTd.outerWidth()
+    });
+
+  });
 
 }

@@ -18,7 +18,10 @@ foreach($_REQUEST as $key => $arItem)
 			$arStrFilter .= "&" . $key . "[" . $keys . "]=" . $arElem;
 		}
 	} else {
-		$arStrFilter .= "&" . $key . "=" . $arItem;
+	    if ($key != "PAGEN_1")
+	    {
+			$arStrFilter .= "&" . $key . "=" . $arItem;
+		}
 	}
 }
 

@@ -18,43 +18,14 @@ $this->setFrameMode(true);
 			echo $arItem["INPUT"];
 		endif;
 	endforeach;?>
-<!--	<table class="data-table" cellspacing="0" cellpadding="2">-->
-<!--	<thead>-->
-<!--		<tr>-->
-<!--			<td colspan="2" align="center">--><?//=GetMessage("IBLOCK_FILTER_TITLE")?><!--</td>-->
-<!--		</tr>-->
-<!--	</thead>-->
-<!--	<tbody>-->
-<!--		--><?//foreach($arResult["ITEMS"] as $arItem):?>
-<!--			--><?//if(!array_key_exists("HIDDEN", $arItem)):?>
-<!--				<tr>-->
-<!--					<td valign="top">--><?//=$arItem["NAME"]?><!--:</td>-->
-<!--					<td valign="top">--><?//=$arItem["INPUT"]?><!--</td>-->
-<!--				</tr>-->
-<!--			--><?//endif?>
-<!--		--><?//endforeach;?>
-<!--	</tbody>-->
-<!--	<tfoot>-->
-<!--		<tr>-->
-<!--			<td colspan="2">-->
-<!--				<input type="submit" name="set_filter" value="--><?//=GetMessage("IBLOCK_SET_FILTER")?><!--" /><input type="hidden" name="set_filter" value="Y" />-->
-<!--                <input type="submit" name="del_filter" value="--><?//=GetMessage("IBLOCK_DEL_FILTER")?><!--" /></td>-->
-<!--		</tr>-->
-<!--	</tfoot>-->
-<!--	</table>-->
-
-
-
     <div class="form-group">
-<!--        <label for="vac_city">--><?//=$arResult["ITEMS"]["PROPERTY_51"]["NAME"]?><!--</label>-->
-<!--        <select class="select-alt" name="vac_city" id="vac_city">-->
-<!--            <option value="1">Все города</option>-->
-<!--            <option value="2">Москва</option>-->
-<!--            <option value="3">Санкт-Петербург</option>-->
-<!--            <option value="4">Екатеринбург</option>-->
-<!--            <option value="5">Казань</option>-->
-<!--            <option value="6">Новосибирск</option>-->
-<!--        </select>-->
+        <label for="vac_city"><?=$arResult["ITEMS"]["PROPERTY_51"]["NAME"]?></label>
+        <select class="select-alt" name="vac_city" id="vac_city">
+            <option value="1">Все города</option>
+            <?foreach($arResult["LIST_CITY"] as $key => $arItem):?>
+                <option value="<?=$key + 2?>"><?=$arItem["UF_NAME"]?></option>
+            <?endforeach;?>
+        </select>
     </div>
     <div class="form-group">
         <label><?=$arResult["ITEMS"]["PROPERTY_53"]["NAME"]?></label>
@@ -112,5 +83,5 @@ $this->setFrameMode(true);
         </div>
     </div>
 
-    <input type="submit" name="set_filter" value="Найти" /><input type="hidden" name="set_filter" value="Y" />
+<!--    <input type="submit" name="set_filter" value="Найти" /><input type="hidden" name="set_filter" value="Y" />-->
 </form>

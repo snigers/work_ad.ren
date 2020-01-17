@@ -87,6 +87,324 @@ $(document).ready(function () {
 
   // New
 
+  // Contacts map
+
+  ymaps.ready(function () {
+
+    var myMap1 = new ymaps.Map('officeMap1', {
+        center: [55.733341, 37.660086],
+        zoom: 16,
+        controls: ['zoomControl']
+      }, {}),
+
+      myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+        hintContent: '',
+        balloonContent: ''
+      }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'images/store-pin.png',
+        // Размеры метки.
+        iconImageSize: [27, 38],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-13, -38]
+      });
+
+    myMap1.behaviors.disable('scrollZoom');
+
+    myMap1.geoObjects
+      .add(myPlacemark);
+
+    var myMap2 = new ymaps.Map('officeMap2', {
+        center: [55.733341, 37.660086],
+        zoom: 16,
+        controls: ['zoomControl']
+      }, {}),
+
+      myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+        hintContent: '',
+        balloonContent: ''
+      }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'images/store-pin.png',
+        // Размеры метки.
+        iconImageSize: [27, 38],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-13, -38]
+      });
+
+    myMap2.behaviors.disable('scrollZoom');
+
+    myMap2.geoObjects
+      .add(myPlacemark);
+
+    var myMap3 = new ymaps.Map('officeMap3', {
+        center: [55.733341, 37.660086],
+        zoom: 16,
+        controls: ['zoomControl']
+      }, {}),
+
+      myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+        hintContent: '',
+        balloonContent: ''
+      }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'images/store-pin.png',
+        // Размеры метки.
+        iconImageSize: [27, 38],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-13, -38]
+      });
+
+    myMap3.behaviors.disable('scrollZoom');
+
+    myMap3.geoObjects
+      .add(myPlacemark);
+
+    var myMap4 = new ymaps.Map('officeMap4', {
+        center: [55.733341, 37.660086],
+        zoom: 16,
+        controls: ['zoomControl']
+      }, {}),
+
+      myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+        hintContent: '',
+        balloonContent: ''
+      }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'images/store-pin.png',
+        // Размеры метки.
+        iconImageSize: [27, 38],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-13, -38]
+      });
+
+    myMap4.behaviors.disable('scrollZoom');
+
+    myMap4.geoObjects
+      .add(myPlacemark);
+
+    var myMap5 = new ymaps.Map('officeMap5', {
+        center: [55.733341, 37.660086],
+        zoom: 16,
+        controls: ['zoomControl']
+      }, {}),
+
+      myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+        hintContent: '',
+        balloonContent: ''
+      }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'images/store-pin.png',
+        // Размеры метки.
+        iconImageSize: [27, 38],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-13, -38]
+      });
+
+    myMap5.behaviors.disable('scrollZoom');
+
+    myMap5.geoObjects
+      .add(myPlacemark);
+
+    var myMap6 = new ymaps.Map('officeMap6', {
+        center: [55.733341, 37.660086],
+        zoom: 16,
+        controls: ['zoomControl']
+      }, {}),
+
+      myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+        hintContent: '',
+        balloonContent: ''
+      }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'images/store-pin.png',
+        // Размеры метки.
+        iconImageSize: [27, 38],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-13, -38]
+      });
+
+    myMap6.behaviors.disable('scrollZoom');
+
+    myMap6.geoObjects
+      .add(myPlacemark);
+
+
+
+  });
+
+  // Contacts map END
+
+  // Mobile submenu
+
+  if ($("#sm-indicator").css("display") == "block") {
+
+    $(".navbar-nav li.has-submenu").click(function (e) {
+
+      if ($(e.target).prop("tagName") != "SPAN" && !$(e.target).hasClass("submenu") && !$(e.target).parents().hasClass("submenu")) {
+
+        $(this).find(".submenu").slideToggle(350);
+        $(this).toggleClass("open");
+
+        return false;
+
+      }
+
+
+    });
+
+  }
+
+  // Mobile submenu END
+
+  // Popups
+
+  $(".popup").on("scroll touchmove", function () {
+
+    popupMenu();
+
+  });
+
+  $("body").on("click", "[data-popup]", function () {
+
+    setHashVar("story", "");
+
+    if ($(".popup.active").length) {
+
+      if ($(this).data("popup") != "#" + $(".popup.active").attr("id")) {
+
+        $(".popup.active").fadeOut(250).removeClass("active");
+
+      }
+
+    }
+
+    $("body").addClass("popup-open");
+
+    var curPopup = $($(this).data("popup"));
+
+    if ($(this).data("popup") == "#storyPopup") {
+
+      setHashVar("story", $(this).data("hash"));
+
+    }
+
+    var popupHash = $(this).data("hash");
+
+    $.ajax({
+      url: $(this).data("popup-content"),
+      dataType: "html"
+    }).done(function (data) {
+
+      curPopup.find(".popup-inner").html($(data));
+
+      //curPopup.find(".popup-menu a[data-hash]").removeClass("active");
+      //curPopup.find(".popup-menu a[data-hash='" + popupHash + "']").addClass("active");
+
+      curPopup.find(".popup-inner").animate({
+        scrollTop: 0
+      },0);
+
+
+
+      validateForms();
+
+    });
+
+    curPopup.show();
+
+    if ($(this).data("popup") != "#" + $(".popup.active").attr("id")) {
+
+      TweenMax.to(curPopup.find(".popup-backdrop"), 1, {
+        opacity: 1,
+        ease: Power2.easeInOut
+      });
+
+      TweenMax.to(curPopup, 0, {
+        x: $(window).width()
+      });
+
+      TweenMax.to(curPopup, 1, {
+        x: "0",
+        ease: Power2.easeInOut,
+        onComplete: function () {
+
+          curPopup.addClass("active");
+
+          //popupMenu();
+
+          popupMakeup();
+
+        }
+      });
+
+    } else {
+
+      //popupMenu();
+
+      popupMakeup();
+
+    }
+
+    return false;
+
+  });
+
+  $("body").on("click", ".popup .close", function () {
+
+    $(this).closest(".popup").fadeOut(250).removeClass("active");
+
+    $("body").removeClass("popup-open");
+
+    setHashVar("case", "");
+    setHashVar("service", "");
+    setHashVar("vac", "");
+
+  });
+
+  $("body").on("click", ".popup", function (e) {
+
+    if (!$(e.target).hasClass("popup-menu") && !$(e.target).parents().hasClass("popup-menu") && !$(e.target).hasClass("popup-inner") && !$(e.target).parents().hasClass("popup-inner") && !$(e.target).hasClass("popup-up-link") && !$(e.target).parents().hasClass("popup-up-link")) {
+
+      $(this).closest(".popup").fadeOut(250).removeClass("active");
+
+      $("body").removeClass("popup-open");
+
+      setHashVar("case", "");
+      setHashVar("service", "");
+      setHashVar("vac", "");
+
+    }
+
+
+  });
+
+  // Popups END
+
   var scrollPos = $(window).scrollTop();
 
   if (scrollPos > 150) {
@@ -123,7 +441,7 @@ $(document).ready(function () {
   $("body").on("click", "a", function () {
 
 
-    if ($("[name='" + $(this).attr("href").replace("#","") + "']").length) {
+    if ($(this).attr("href") && $("[name='" + $(this).attr("href").replace("#","") + "']").length) {
 
       $("html,body").animate({
         scrollTop: $("[name='" + $(this).attr("href").replace("#","") + "']").offset().top - $("header").height() - 30
@@ -258,7 +576,15 @@ $(document).ready(function () {
     rows: 0,
     arrows: false,
     fade: true,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: true
+        }
+      }
+    ]
   });
 
   // New End
@@ -684,7 +1010,7 @@ $(document).ready(function () {
 
   });
 
-  $(".navbar-wrapper .close, .navbar-wrapper a").click(function () {
+  $(".navbar-wrapper .close").click(function () {
 
     $(".navbar-wrapper").fadeOut(150);
     $("body").removeClass("menu-open");
@@ -694,7 +1020,7 @@ $(document).ready(function () {
 
   $(".navbar-wrapper").click(function (e) {
 
-    if (!$(e.target).hasClass("navbar-nav") && !$(e.target).parents().hasClass("navbar-nav")) {
+    if (!$(e.target).hasClass("navbar-wrapper-inner") && !$(e.target).parents().hasClass("navbar-wrapper-inner")) {
 
       $(".navbar-wrapper").fadeOut(150);
       $("body").removeClass("menu-open");
@@ -852,24 +1178,6 @@ $(document).ready(function () {
   });
 
   validateForms();
-
-  // Popup anchors
-
-  var hashArr = getHashVars();
-
-  if (hashArr["serviceId"]) {
-
-    $(".service-menu-link[data-service-id='" + hashArr["serviceId"] + "']").click();
-
-  }
-
-  if (hashArr["projectId"]) {
-
-    $(".projects-list .project-tmb[data-project-id='" + hashArr["projectId"] + "']").click();
-
-  }
-
-  // Popup anchors END
 
 
 
@@ -1044,7 +1352,7 @@ function validateForms() {
     require_from_group: [1, ".phone-email-group"]
   });
 
-  $("select").on("change", function () {
+  $("select").not(".city-select").on("change", function () {
     if (!$(this).closest(".picker").length && !$(this).hasClass("faq-select")) {
       $(this).valid();
     }
@@ -1144,11 +1452,41 @@ function slickResponsive() {
 
   if ($("#mobile-indicator").css("display") == "block") {
 
+    if (!$(".vac-list-alt .row").hasClass("slick-initialized")) {
 
+      $(".vac-list-alt .row").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        rows: 0
+      });
+
+    }
+
+    if (!$(".section-success .success-list .row").hasClass("slick-initialized")) {
+
+      $(".section-success .success-list .row").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        rows: 0
+      });
+
+    }
 
   } else {
 
+    if ($(".vac-list-alt .row").hasClass("slick-initialized")) {
 
+      $(".vac-list-alt .row").slick("unslick");
+
+    }
+
+    if ($(".section-success .success-list .row").hasClass("slick-initialized")) {
+
+      $(".section-success .success-list .row").slick("unslick");
+
+    }
 
   }
 
@@ -1246,6 +1584,7 @@ function getHashVars() {
   var hashVars = new Array();
 
   for (var i in hashArray) {
+
     hashVar = hashArray[i].split("=");
 
     hashVars[hashVar[0]] = hashVar[1];
@@ -1253,6 +1592,41 @@ function getHashVars() {
   }
 
   return hashVars;
+
+}
+
+function setHashVar(name, val) {
+
+  var hVars = getHashVars();
+
+  if (val) {
+
+    hVars[name] = val;
+
+  } else if (hVars[name]) {
+
+    delete hVars[name];
+    delete hVars[name];
+
+  }
+
+
+  history.pushState('', document.title, window.location.pathname);
+
+  var hashString = "#";
+
+  for (var key in hVars) {
+
+    if (key) {
+
+      hashString += key + "=" + hVars[key] + "&";
+
+    }
+
+
+  }
+
+  history.pushState({}, null, hashString.substring(0, hashString.length - 1));
 
 }
 
@@ -1643,6 +2017,58 @@ function pageMenu() {
         marginTop: 0,
         top: "auto",
         width: "auto"
+      });
+
+    }
+
+  }
+
+}
+
+function getScrollBarWidth() {
+  var inner = document.createElement('p');
+  inner.style.width = "100%";
+  inner.style.height = "200px";
+
+  var outer = document.createElement('div');
+  outer.style.position = "absolute";
+  outer.style.top = "0px";
+  outer.style.left = "0px";
+  outer.style.visibility = "hidden";
+  outer.style.width = "200px";
+  outer.style.height = "150px";
+  outer.style.overflow = "hidden";
+  outer.appendChild(inner);
+
+  document.body.appendChild(outer);
+  var w1 = inner.offsetWidth;
+  outer.style.overflow = 'scroll';
+  var w2 = inner.offsetWidth;
+  if (w1 == w2) w2 = outer.clientWidth;
+
+  document.body.removeChild(outer);
+
+  return (w1 - w2);
+};
+
+function popupMakeup() {
+
+  if ($(".popup").length && $(".popup").hasClass("active")) {
+
+    slickResponsive();
+
+    $(".popup a.fancybox").fancybox();
+
+    if ($(".popup.active .popup-inner").height() > $(".popup.active .popup-inner-scroll").height()) {
+
+      $(".popup.active .close, .popup.active .popup-up-link").css({
+        marginRight: getScrollBarWidth()
+      });
+
+    } else {
+
+      $(".popup.active .close, .popup.active .popup-up-link").css({
+        marginRight: 0
       });
 
     }

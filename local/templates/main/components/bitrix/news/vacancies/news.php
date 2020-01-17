@@ -16,14 +16,60 @@ $this->setFrameMode(true);
 
 <main>
     <div class="page-header">
-        <div class="row">
-            <div class="col-6">
-                <div class="page-header-bg" style="background-image: url(/layout/files/page-header-bg-vacancies-l.jpg)"></div>
-            </div>
-            <div class="col-6">
-                <div class="page-header-bg" style="background-image: url(/layout/files/page-header-bg-vacancies-r.jpg)"></div>
-            </div>
-        </div>
+		<?$APPLICATION->IncludeComponent(
+			"bitrix:news.detail",
+			"vacanciesImgHeader",
+			Array(
+				"ACTIVE_DATE_FORMAT" => "d.m.Y",
+				"ADD_ELEMENT_CHAIN" => "N",
+				"ADD_SECTIONS_CHAIN" => "N",
+				"AJAX_MODE" => "N",
+				"AJAX_OPTION_ADDITIONAL" => "",
+				"AJAX_OPTION_HISTORY" => "N",
+				"AJAX_OPTION_JUMP" => "N",
+				"AJAX_OPTION_STYLE" => "N",
+				"BROWSER_TITLE" => "-",
+				"CACHE_GROUPS" => "N",
+				"CACHE_TIME" => "36000000",
+				"CACHE_TYPE" => "A",
+				"CHECK_DATES" => "Y",
+				"DETAIL_URL" => "",
+				"DISPLAY_BOTTOM_PAGER" => "N",
+				"DISPLAY_DATE" => "Y",
+				"DISPLAY_NAME" => "Y",
+				"DISPLAY_PICTURE" => "Y",
+				"DISPLAY_PREVIEW_TEXT" => "Y",
+				"DISPLAY_TOP_PAGER" => "N",
+				"ELEMENT_CODE" => "",
+				"ELEMENT_ID" => "195",
+				"FIELD_CODE" => array("PREVIEW_PICTURE",""),
+				"IBLOCK_ID" => "34",
+				"IBLOCK_TYPE" => "vacancies",
+				"IBLOCK_URL" => "",
+				"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+				"MESSAGE_404" => "",
+				"META_DESCRIPTION" => "-",
+				"META_KEYWORDS" => "-",
+				"PAGER_BASE_LINK_ENABLE" => "N",
+				"PAGER_SHOW_ALL" => "N",
+				"PAGER_TEMPLATE" => ".default",
+				"PAGER_TITLE" => "Страница",
+				"PROPERTY_CODE" => array("LEFT_IMG_HEADER","RIGHT_IMG_HEADER",""),
+				"SET_BROWSER_TITLE" => "N",
+				"SET_CANONICAL_URL" => "N",
+				"SET_LAST_MODIFIED" => "N",
+				"SET_META_DESCRIPTION" => "N",
+				"SET_META_KEYWORDS" => "N",
+				"SET_STATUS_404" => "N",
+				"SET_TITLE" => "N",
+				"SHOW_404" => "N",
+				"STRICT_SECTION_CHECK" => "N",
+				"USE_PERMISSIONS" => "N",
+				"USE_SHARE" => "N"
+			),
+			false,
+			array('HIDE_ICONS' => "Y")
+		);?>
     </div>
     <div class="page-body page-body-grey">
         <div class="container">
@@ -32,17 +78,17 @@ $this->setFrameMode(true);
                     <div class="page-sidebar">
                         <div class="filter">
                             <div class="filter-search-form form-alt">
-<!--                                --><?//pr($arResult["URL_TEMPLATES"])?>
 								<?if($arParams["USE_SEARCH"]=="Y"):?>
-									<?=GetMessage("SEARCH_LABEL")?><?$APPLICATION->IncludeComponent(
-										"bitrix:search.form",
-										"flat",
-										Array(
-											"PAGE" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["search"]
-										),
-										$component
-									);?>
-                                    <br />
+                                    <form>
+                                        <div class="form-group" id="vac_search_form">
+                                            <div class="form-field">
+                                                <input type="text" name="vac_search" id="vac_search" placeholder="Найти вакансию" required>
+                                            </div>
+                                            <div class="form-button">
+                                                <button type="submit"></button>
+                                            </div>
+                                        </div>
+                                    </form>
 								<?endif?>
                             </div>
                             <div class="filter-form form-alt" id="filter_vacancies" data-filter="<?=$str = getFiltersSTR($_REQUEST["arrFilter_pf"])?>">
@@ -66,74 +112,6 @@ $this->setFrameMode(true);
 									?>
                                     <br />
 								<?endif?>
-<!--                                <form>-->
-<!--                                    <div class="form-group">-->
-<!--                                        <label for="vac_city">Город</label>-->
-<!--                                        <select class="select-alt" name="vac_city" id="vac_city">-->
-<!--                                            <option value="1">Все города</option>-->
-<!--                                            <option value="2">Москва</option>-->
-<!--                                            <option value="3">Санкт-Петербург</option>-->
-<!--                                            <option value="4">Екатеринбург</option>-->
-<!--                                            <option value="5">Казань</option>-->
-<!--                                            <option value="6">Новосибирск</option>-->
-<!--                                        </select>-->
-<!--                                    </div>-->
-<!--                                    <div class="form-group">-->
-<!--                                        <label>Направление</label>-->
-<!--                                        <div class="form-radios">-->
-<!--                                            <div class="form-radio">-->
-<!--                                                <input type="radio" name="vac_direction" id="vac_direction_1" value="1" checked>-->
-<!--                                                <label for="vac_direction_1">Все направления</label>-->
-<!--                                            </div>-->
-<!--                                            <div class="form-radio">-->
-<!--                                                <input type="radio" name="vac_direction" id="vac_direction_2" value="2">-->
-<!--                                                <label for="vac_direction_2">Фирменные магазины</label>-->
-<!--                                            </div>-->
-<!--                                            <div class="form-radio">-->
-<!--                                                <input type="radio" name="vac_direction" id="vac_direction_3" value="3">-->
-<!--                                                <label for="vac_direction_3">Офис</label>-->
-<!--                                            </div>-->
-<!--                                            <div class="form-radio">-->
-<!--                                                <input type="radio" name="vac_direction" id="vac_direction_4" value="4">-->
-<!--                                                <label for="vac_direction_4">Центр дистрибуции</label>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <div class="form-group">-->
-<!--                                        <label>Тип занаятости</label>-->
-<!--                                        <div class="form-radios">-->
-<!--                                            <div class="form-radio">-->
-<!--                                                <input type="radio" name="vac_type" id="vac_type_1" value="1" checked>-->
-<!--                                                <label for="vac_type_1">Все типы занятости</label>-->
-<!--                                            </div>-->
-<!--                                            <div class="form-radio">-->
-<!--                                                <input type="radio" name="vac_type" id="vac_type_2" value="2">-->
-<!--                                                <label for="vac_type_2">Полная занятость</label>-->
-<!--                                            </div>-->
-<!--                                            <div class="form-radio">-->
-<!--                                                <input type="radio" name="vac_type" id="vac_type_3" value="3">-->
-<!--                                                <label for="vac_type_3">Частичная  занятость</label>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <div class="form-group">-->
-<!--                                        <label>Бренд</label>-->
-<!--                                        <div class="form-radios">-->
-<!--                                            <div class="form-radio">-->
-<!--                                                <input type="radio" name="vac_brand" id="vac_brand_1" value="1" checked>-->
-<!--                                                <label for="vac_brand_1">Все бренды</label>-->
-<!--                                            </div>-->
-<!--                                            <div class="form-radio">-->
-<!--                                                <input type="radio" name="vac_brand" id="vac_brand_2" value="2">-->
-<!--                                                <label for="vac_brand_2">Adidas</label>-->
-<!--                                            </div>-->
-<!--                                            <div class="form-radio">-->
-<!--                                                <input type="radio" name="vac_brand" id="vac_brand_3" value="3">-->
-<!--                                                <label for="vac_brand_3">Reebok</label>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </form>-->
                             </div>
                         </div>
                     </div>
@@ -186,8 +164,15 @@ $this->setFrameMode(true);
                                     </div>
                                 </div>
                                     <?$sort = getSortVacancies($_REQUEST["sort_num"]);?>
-                                    <?pr($_REQUEST)?>
-<!--                                    --><?//pr($arParams["PAGER_PARAMS_NAME"])?>
+                                    <?if ($_REQUEST["cityxml"]):?>
+                                        <?$GLOBALS['arrFilter'] = array("PROPERTY_CITY" => $_REQUEST["cityxml"])?>
+                                    <?endif;?>
+                                    <?if ($_REQUEST["direction"]):?>
+                                        <?$GLOBALS['arrFilter'] = array("PROPERTY_DIRECTION_VALUE" => $_REQUEST["direction"])?>
+                                    <?endif;?>
+                                    <?if ($_REQUEST["type_employment"]):?>
+                                        <?$GLOBALS['arrFilter'] = array("PROPERTY_TYPE_EMPLOYMENT_VALUE" => $_REQUEST["type_employment"])?>
+                                    <?endif;?>
                                     <?$APPLICATION->IncludeComponent(
                                         "bitrix:news.list",
                                         "vacanciesList",
@@ -235,7 +220,8 @@ $this->setFrameMode(true);
                                             "ACTIVE_DATE_FORMAT" => $arParams["LIST_ACTIVE_DATE_FORMAT"],
                                             "USE_PERMISSIONS" => $arParams["USE_PERMISSIONS"],
                                             "GROUP_PERMISSIONS" => $arParams["GROUP_PERMISSIONS"],
-                                            "FILTER_NAME" => $arParams["FILTER_NAME"],
+//                                            "FILTER_NAME" => $arParams["FILTER_NAME"],
+                                            "FILTER_NAME" => "arrFilter",
                                             "HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
                                             "CHECK_DATES" => $arParams["CHECK_DATES"],
                                         ),
@@ -259,51 +245,3 @@ $this->setFrameMode(true);
 
 
 
-
-
-
-
-
-
-
-
-
-<?//if($arParams["USE_RSS"]=="Y"):?>
-<!--	--><?//
-//	if(method_exists($APPLICATION, 'addheadstring'))
-//		$APPLICATION->AddHeadString('<link rel="alternate" type="application/rss+xml" title="'.$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["rss"].'" href="'.$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["rss"].'" />');
-//	?>
-<!--	<a href="--><?//=$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["rss"]?><!--" title="rss" target="_self"><img alt="RSS" src="--><?//=$templateFolder?><!--/images/gif-light/feed-icon-16x16.gif" border="0" align="right" /></a>-->
-<?//endif?>
-<!---->
-<?//if($arParams["USE_SEARCH"]=="Y"):?>
-<?//=GetMessage("SEARCH_LABEL")?><!----><?//$APPLICATION->IncludeComponent(
-//	"bitrix:search.form",
-//	"flat",
-//	Array(
-//		"PAGE" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["search"]
-//	),
-//	$component
-//);?>
-<!--<br />-->
-<?//endif?>
-<?//if($arParams["USE_FILTER"]=="Y"):?>
-<?//$APPLICATION->IncludeComponent(
-//	"bitrix:catalog.filter",
-//	"",
-//	Array(
-//		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-//		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-//		"FILTER_NAME" => $arParams["FILTER_NAME"],
-//		"FIELD_CODE" => $arParams["FILTER_FIELD_CODE"],
-//		"PROPERTY_CODE" => $arParams["FILTER_PROPERTY_CODE"],
-//		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
-//		"CACHE_TIME" => $arParams["CACHE_TIME"],
-//		"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-//		"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
-//	),
-//	$component
-//);
-//?>
-<!--<br />-->
-<?//endif?>

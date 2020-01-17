@@ -65,6 +65,8 @@ $(window).on("scroll touchmove", function () {
 
 $(window).resize(function () {
 
+  swapElements();
+
   pageMenu();
 
   makeUp();
@@ -87,13 +89,255 @@ $(document).ready(function () {
 
   // New
 
+  swapElements();
+
+
+
+  // Mob popup
+
+  $("body").on("click", "[data-mob-popup]", function () {
+
+    var curPopup = $($(this).data("mob-popup"));
+
+    if (!curPopup.hasClass("mob-popup-active")) {
+
+      curPopup.fadeIn(250).addClass("mob-popup-active");
+
+      $("body").addClass("popup-open");
+
+    }
+
+
+  });
+
+  $("body").on("click", ".mob-popup .close, .mob-popup .btn-close", function () {
+
+    var curPopup = $(this).closest(".mob-popup");
+
+    curPopup.fadeOut(250, function() {
+      curPopup.removeClass("mob-popup-active");
+      $("body").removeClass("popup-open");
+    });
+
+  });
+
+  $("body").on("click", ".mob-popup", function (e) {
+
+    if (!$(e.target).hasClass("mob-popup-content") && !$(e.target).parents().hasClass("mob-popup-content")) {
+
+      var curPopup = $(this);
+
+      curPopup.fadeOut(250, function() {
+        curPopup.removeClass("mob-popup-active");
+        $("body").removeClass("popup-open");
+      });
+
+    }
+
+
+  });
+
+  // Mob popup END
+
+  // Contacts map
+
+  // ymaps.ready(function () {
+  //
+  //   var myMap1 = new ymaps.Map('officeMap1', {
+  //       center: [55.733341, 37.660086],
+  //       zoom: 16,
+  //       controls: ['zoomControl']
+  //     }, {}),
+  //
+  //     myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+  //       hintContent: '',
+  //       balloonContent: ''
+  //     }, {
+  //       // Опции.
+  //       // Необходимо указать данный тип макета.
+  //       iconLayout: 'default#image',
+  //       // Своё изображение иконки метки.
+  //       iconImageHref: 'images/store-pin.png',
+  //       // Размеры метки.
+  //       iconImageSize: [27, 38],
+  //       // Смещение левого верхнего угла иконки относительно
+  //       // её "ножки" (точки привязки).
+  //       iconImageOffset: [-13, -38]
+  //     });
+  //
+  //   myMap1.behaviors.disable('scrollZoom');
+  //
+  //   myMap1.geoObjects
+  //     .add(myPlacemark);
+  //
+  //   var myMap2 = new ymaps.Map('officeMap2', {
+  //       center: [55.733341, 37.660086],
+  //       zoom: 16,
+  //       controls: ['zoomControl']
+  //     }, {}),
+  //
+  //     myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+  //       hintContent: '',
+  //       balloonContent: ''
+  //     }, {
+  //       // Опции.
+  //       // Необходимо указать данный тип макета.
+  //       iconLayout: 'default#image',
+  //       // Своё изображение иконки метки.
+  //       iconImageHref: 'images/store-pin.png',
+  //       // Размеры метки.
+  //       iconImageSize: [27, 38],
+  //       // Смещение левого верхнего угла иконки относительно
+  //       // её "ножки" (точки привязки).
+  //       iconImageOffset: [-13, -38]
+  //     });
+  //
+  //   myMap2.behaviors.disable('scrollZoom');
+  //
+  //   myMap2.geoObjects
+  //     .add(myPlacemark);
+  //
+  //   var myMap3 = new ymaps.Map('officeMap3', {
+  //       center: [55.733341, 37.660086],
+  //       zoom: 16,
+  //       controls: ['zoomControl']
+  //     }, {}),
+  //
+  //     myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+  //       hintContent: '',
+  //       balloonContent: ''
+  //     }, {
+  //       // Опции.
+  //       // Необходимо указать данный тип макета.
+  //       iconLayout: 'default#image',
+  //       // Своё изображение иконки метки.
+  //       iconImageHref: 'images/store-pin.png',
+  //       // Размеры метки.
+  //       iconImageSize: [27, 38],
+  //       // Смещение левого верхнего угла иконки относительно
+  //       // её "ножки" (точки привязки).
+  //       iconImageOffset: [-13, -38]
+  //     });
+  //
+  //   myMap3.behaviors.disable('scrollZoom');
+  //
+  //   myMap3.geoObjects
+  //     .add(myPlacemark);
+  //
+  //   var myMap4 = new ymaps.Map('officeMap4', {
+  //       center: [55.733341, 37.660086],
+  //       zoom: 16,
+  //       controls: ['zoomControl']
+  //     }, {}),
+  //
+  //     myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+  //       hintContent: '',
+  //       balloonContent: ''
+  //     }, {
+  //       // Опции.
+  //       // Необходимо указать данный тип макета.
+  //       iconLayout: 'default#image',
+  //       // Своё изображение иконки метки.
+  //       iconImageHref: 'images/store-pin.png',
+  //       // Размеры метки.
+  //       iconImageSize: [27, 38],
+  //       // Смещение левого верхнего угла иконки относительно
+  //       // её "ножки" (точки привязки).
+  //       iconImageOffset: [-13, -38]
+  //     });
+  //
+  //   myMap4.behaviors.disable('scrollZoom');
+  //
+  //   myMap4.geoObjects
+  //     .add(myPlacemark);
+  //
+  //   var myMap5 = new ymaps.Map('officeMap5', {
+  //       center: [55.733341, 37.660086],
+  //       zoom: 16,
+  //       controls: ['zoomControl']
+  //     }, {}),
+  //
+  //     myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+  //       hintContent: '',
+  //       balloonContent: ''
+  //     }, {
+  //       // Опции.
+  //       // Необходимо указать данный тип макета.
+  //       iconLayout: 'default#image',
+  //       // Своё изображение иконки метки.
+  //       iconImageHref: 'images/store-pin.png',
+  //       // Размеры метки.
+  //       iconImageSize: [27, 38],
+  //       // Смещение левого верхнего угла иконки относительно
+  //       // её "ножки" (точки привязки).
+  //       iconImageOffset: [-13, -38]
+  //     });
+  //
+  //   myMap5.behaviors.disable('scrollZoom');
+  //
+  //   myMap5.geoObjects
+  //     .add(myPlacemark);
+  //
+  //   var myMap6 = new ymaps.Map('officeMap6', {
+  //       center: [55.733341, 37.660086],
+  //       zoom: 16,
+  //       controls: ['zoomControl']
+  //     }, {}),
+  //
+  //     myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+  //       hintContent: '',
+  //       balloonContent: ''
+  //     }, {
+  //       // Опции.
+  //       // Необходимо указать данный тип макета.
+  //       iconLayout: 'default#image',
+  //       // Своё изображение иконки метки.
+  //       iconImageHref: 'images/store-pin.png',
+  //       // Размеры метки.
+  //       iconImageSize: [27, 38],
+  //       // Смещение левого верхнего угла иконки относительно
+  //       // её "ножки" (точки привязки).
+  //       iconImageOffset: [-13, -38]
+  //     });
+  //
+  //   myMap6.behaviors.disable('scrollZoom');
+  //
+  //   myMap6.geoObjects
+  //     .add(myPlacemark);
+  //
+  //
+  //
+  // });
+
+  // Contacts map END
+
+  // Mobile submenu
+
+  if ($("#sm-indicator").css("display") == "block") {
+
+    $(".navbar-nav li.has-submenu").click(function (e) {
+
+      if ($(e.target).prop("tagName") != "SPAN" && !$(e.target).hasClass("submenu") && !$(e.target).parents().hasClass("submenu")) {
+
+        $(this).find(".submenu").slideToggle(350);
+        $(this).toggleClass("open");
+
+        return false;
+
+      }
+
+
+    });
+
+  }
+
+  // Mobile submenu END
+
   // Popups
 
   $(".popup").on("scroll touchmove", function () {
 
     popupMenu();
-
-    console.log("popup scroll")
 
   });
 
@@ -106,6 +350,12 @@ $(document).ready(function () {
       if ($(this).data("popup") != "#" + $(".popup.active").attr("id")) {
 
         $(".popup.active").fadeOut(250).removeClass("active");
+
+      } else {
+
+        $(".popup.active .popup-inner-scroll").animate({
+          scrollTop: 0
+        },1000);
 
       }
 
@@ -212,6 +462,20 @@ $(document).ready(function () {
   });
 
   // Popups END
+
+  // Popup anchors
+
+  var hashArr = getHashVars();
+
+  if (hashArr["story"]) {
+
+    console.log($(".success-tmb[data-hash='" + hashArr["story"] + "']").first().length)
+
+    $(".success-tmb[data-hash='" + hashArr["story"] + "']").first().click();
+
+  }
+
+  // Popup anchors END
 
   var scrollPos = $(window).scrollTop();
 
@@ -384,7 +648,15 @@ $(document).ready(function () {
     rows: 0,
     arrows: false,
     fade: true,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: true
+        }
+      }
+    ]
   });
 
   // New End
@@ -810,7 +1082,7 @@ $(document).ready(function () {
 
   });
 
-  $(".navbar-wrapper .close, .navbar-wrapper a").click(function () {
+  $(".navbar-wrapper .close").click(function () {
 
     $(".navbar-wrapper").fadeOut(150);
     $("body").removeClass("menu-open");
@@ -820,7 +1092,7 @@ $(document).ready(function () {
 
   $(".navbar-wrapper").click(function (e) {
 
-    if (!$(e.target).hasClass("navbar-nav") && !$(e.target).parents().hasClass("navbar-nav")) {
+    if (!$(e.target).hasClass("navbar-wrapper-inner") && !$(e.target).parents().hasClass("navbar-wrapper-inner")) {
 
       $(".navbar-wrapper").fadeOut(150);
       $("body").removeClass("menu-open");
@@ -996,10 +1268,7 @@ function validateForms() {
         }
       });
     } else {
-      $(this).selectpicker({
-        selectAllText: "Выбрать всё",
-        deselectAllText: "Снять выбор"
-      });
+      $(this).selectpicker();
     }
   });
 
@@ -1252,11 +1521,41 @@ function slickResponsive() {
 
   if ($("#mobile-indicator").css("display") == "block") {
 
+    if (!$(".vac-list-alt .row").hasClass("slick-initialized")) {
 
+      $(".vac-list-alt .row").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        rows: 0
+      });
+
+    }
+
+    if (!$(".section-success .success-list .row").hasClass("slick-initialized")) {
+
+      $(".section-success .success-list .row").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        rows: 0
+      });
+
+    }
 
   } else {
 
+    if ($(".vac-list-alt .row").hasClass("slick-initialized")) {
 
+      $(".vac-list-alt .row").slick("unslick");
+
+    }
+
+    if ($(".section-success .success-list .row").hasClass("slick-initialized")) {
+
+      $(".section-success .success-list .row").slick("unslick");
+
+    }
 
   }
 
@@ -1842,6 +2141,57 @@ function popupMakeup() {
       });
 
     }
+
+  }
+
+}
+
+function swapElements() {
+
+  if ($("#mobile-indicator").css("display") == "block") {
+
+    if ($(".page-sidebar .filter").length && !$(".page-sidebar .filter").hasClass("is-mobile")) {
+
+      $(".page-sidebar .filter").addClass("is-mobile");
+
+      var pageTitleOrig = $(".page-title"),
+          pageTitleClone = $(".page-title").clone();
+
+      $(".page-sidebar .filter").prepend(pageTitleClone);
+      pageTitleOrig.remove();
+
+      var sortGroupOrig = $(".sort-wrapper-group"),
+          sortGroupClone = $(".sort-wrapper-group").clone();
+
+      $(".sort-wrapper-mob").append(sortGroupClone);
+      sortGroupOrig.remove();
+
+      $(".sort-wrapper-mob select").selectpicker();
+
+    }
+
+  } else {
+
+    if ($(".page-sidebar .filter").length && $(".page-sidebar .filter").hasClass("is-mobile")) {
+
+      $(".page-sidebar .filter").removeClass("is-mobile");
+
+      var pageTitleOrig = $(".page-title"),
+        pageTitleClone = $(".page-title").clone();
+
+      $(".breadcrumb").after(pageTitleClone);
+      pageTitleOrig.remove();
+
+      var sortGroupOrig = $(".sort-wrapper-group"),
+        sortGroupClone = $(".sort-wrapper-group").clone();
+
+      $(".sort-wrapper").append(sortGroupClone);
+      sortGroupOrig.remove();
+
+      $(".sort-wrapper select").selectpicker();
+
+    }
+
 
   }
 

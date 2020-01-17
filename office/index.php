@@ -30,8 +30,9 @@ $APPLICATION->SetTitle("Работа в офисе в департаментах
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
 		"DETAIL_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "CONTENT",
+			1 => "LEFT_IMG_HEADER",
+			2 => "RIGHT_IMG_HEADER",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "N",

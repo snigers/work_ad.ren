@@ -1,7 +1,9 @@
 <?
-$sSectionName = "Adidas";
-$arDirProperties = Array(
-   "TITLE" => "Вакансии в adidas",
-   "ROBOTS" => "index, follow"
+$sSectionName = 'Главная';
+$arDirProperties = array(
+	'title' => 'Вакансии в adidas',
+	'description' => '',
+	'keywords' => '',
+	'robots' => 'index, follow'
 );
 ?>

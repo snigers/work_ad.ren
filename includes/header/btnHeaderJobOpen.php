@@ -1,1 +1,1 @@
-<a class="btn btn-1 btn-1-small" href="#"><span>Все вакансии</span></a>
+<a class="btn btn-1 btn-1-small" href="/vacancies/">Все вакансии</a>

@@ -1,7 +1,7 @@
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php"); ?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+use Bitrix\Highloadblock\HighloadBlockTable as HLBT;?>
 
 <?
-pr($_REQUEST);
 $sort = getSortVacancies($_REQUEST["sort_num"]);
 
 
@@ -34,6 +34,38 @@ if($_REQUEST["set_filter"] == "Y")
 		false
 	);
 }
+
+if ($_REQUEST["sort_city"] != "Все города")
+{
+	$arCity = getListCity();
+	foreach ($arCity as $arItem)
+	{
+		if ($arItem["UF_NAME"] == $_REQUEST["sort_city"])
+		{
+			$arHItem = $arItem["UF_XML_ID"];
+		}
+		
+	}
+	$GLOBALS['arrFilter'] = array("PROPERTY_CITY" => $arHItem);
+}
+if ($_REQUEST["search"] != "")
+{
+	$GLOBALS['arrFilter']["NAME"] = "%" . $_REQUEST["search"] . "%";
+}
+
+if ($_REQUEST["DIRECTION"] != "Все направления")
+{
+	$GLOBALS['arrFilter']["PROPERTY_DIRECTION_VALUE"] = $_REQUEST["DIRECTION"];
+}
+if ($_REQUEST["TYPE_EMPLOYMENT"] != "Все типы занятости")
+{
+	$GLOBALS['arrFilter']["PROPERTY_TYPE_EMPLOYMENT_VALUE"] = $_REQUEST["TYPE_EMPLOYMENT"];
+}
+if ($_REQUEST["BRAND"] != "Все бренды")
+{
+	$GLOBALS['arrFilter']["PROPERTY_BRAND_VALUE"] = $_REQUEST["BRAND"];
+}
+
 
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list",

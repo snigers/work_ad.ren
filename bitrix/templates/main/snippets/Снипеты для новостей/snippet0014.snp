@@ -1,0 +1,20 @@
+<div class="block-wide">
+    <div class="blockquote-alt-wrapper">
+        <div class="blockquote-alt-pics">
+            <div class="row">
+                <div class="col-6"><img src="/layout/files/blockquote-pic-1.jpg"></div>
+                <div class="col-6"><img src="/layout/files/blockquote-pic-2.jpg"></div>
+            </div>
+        </div>
+        <blockquote class="blockquote-alt">
+            <div class="blockquote-alt-content">
+                <div class="blockquote-alt-text">
+                    <p>Ключевое для меня&nbsp;&mdash; то, что я&nbsp;работаю с&nbsp;людьми. Я&nbsp;вижу, как они растут и&nbsp;развиваются. С&nbsp;запуском новой стратегии все больше вдохновляет&nbsp;то, что я&nbsp;могу помочь другим людям изменить свою жизнь через спорт.</p>
+                </div>
+                <div class="blockquote-alt-author">
+                    <p><strong>Дроздов Роман,</strong> территориальный операционный менеджер, г. Киев</p>
+                </div>
+            </div>
+        </blockquote>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="features-list">
+    <div class="feature-tmb">
+        <div class="feature-tmb-pic"><img src="/layout/files/feature-tmb-1.jpg"></div>
+        <div class="feature-tmb-descr">
+            <h4>Меняем жизнь через спорт</h4>
+            <p>Сегодня миллионы спортсменов и любителей моды по всему миру объединяются. Наша цель — удовлетворить и улучшить их потребности, создавая для них лучшие продукты.</p>
+        </div>
+    </div>
+    <div class="feature-tmb">
+        <div class="feature-tmb-pic"><img src="/layout/files/feature-tmb-2.jpg"></div>
+        <div class="feature-tmb-descr">
+            <h4>Меняем жизнь через спорт</h4>
+            <p>Сегодня миллионы спортсменов и любителей моды по всему миру объединяются. Наша цель — удовлетворить и улучшить их потребности, создавая для них лучшие продукты.</p>
+        </div>
+    </div>
+</div>

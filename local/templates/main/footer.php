@@ -32,6 +32,15 @@ use Bitrix\Main\Page\Asset;?>
           </div>
         </div>
       </footer>
+        <div class="popup story-popup" id="storyPopup">
+            <div class="popup-backdrop"></div>
+            <div class="close"></div>
+            <div class="popup-inner-wrapper">
+                <div class="popup-inner-scroll">
+                    <div class="popup-inner"></div>
+                </div>
+            </div>
+        </div>
       <div class="modal fade form-modal order-modal" id="orderModal" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">

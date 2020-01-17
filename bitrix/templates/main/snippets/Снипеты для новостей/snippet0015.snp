@@ -1,0 +1,162 @@
+<div class="block-wide">
+                                <div class="section section-reasons">
+                                    <div class="section-content">
+                                        <div class="h2">6&nbsp;причин работать с&nbsp;нами</div>
+                                        <div class="reasons-slider-tabs">
+                                            <div class="reasons-slider-tabs-item">
+                                                <div class="num">1</div>
+                                                <div class="ttl">Перемены</div>
+                                            </div>
+                                            <div class="reasons-slider-tabs-item">
+                                                <div class="num">2</div>
+                                                <div class="ttl">Карьера</div>
+                                            </div>
+                                            <div class="reasons-slider-tabs-item">
+                                                <div class="num">3</div>
+                                                <div class="ttl">Пространство</div>
+                                            </div>
+                                            <div class="reasons-slider-tabs-item">
+                                                <div class="num">4</div>
+                                                <div class="ttl">Многогранность</div>
+                                            </div>
+                                            <div class="reasons-slider-tabs-item">
+                                                <div class="num">5</div>
+                                                <div class="ttl">Забота</div>
+                                            </div>
+                                            <div class="reasons-slider-tabs-item">
+                                                <div class="num">6</div>
+                                                <div class="ttl">Окружение</div>
+                                            </div>
+                                        </div>
+                                        <div class="reasons-slider-wrapper">
+                                            <div class="reasons-slider">
+                                                <div class="slide">
+                                                    <div class="reasons-item">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-7">
+                                                                <div class="reasons-item-pic">
+                                                                    <div class="reasons-item-pic-back"><img src="/layout/files/reason-1-back.jpg"></div>
+                                                                    <div class="reasons-item-pic-front"><img src="/layout/files/reason-1-front.jpg"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 col-md-5">
+                                                                <div class="reasons-item-descr">
+                                                                    <div class="h3"><strong>Меняем жизнь</strong><br>через спорт</div>
+                                                                    <p>Мы&nbsp;формируем будущее спорта, потому что верим, что спорт способен изменить жизнь к&nbsp;лучшему. Спорт дает силу, уверенность и&nbsp;позволяет найти друзей на&nbsp;всю жизнь. Он&nbsp;помогает бороться с&nbsp;болезнями и&nbsp;депрессией, делает нас сильнее.</p>
+                                                                    <p>Мы&nbsp;видим будущее там, где спорт и&nbsp;фитнес помогают получать удовольствие от&nbsp;жизни, раскрывать свой потенциал и&nbsp;достигать поставленных целей. Если ты&nbsp;хочешь помочь людям изменить жизнь через спорт, то&nbsp;мы&nbsp;ждем тебя!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="reasons-item">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-7">
+                                                                <div class="reasons-item-pic">
+                                                                    <div class="reasons-item-pic-back"><img src="/layout/files/reason-2-back.jpg"></div>
+                                                                    <div class="reasons-item-pic-front"><img src="/layout/files/reason-2-front.jpg"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 col-md-5">
+                                                                <div class="reasons-item-descr">
+                                                                    <div class="h3"><strong>Карьера</strong><br>через спорт</div>
+                                                                    <p>Мы&nbsp;формируем будущее спорта, потому что верим, что спорт способен изменить жизнь к&nbsp;лучшему. Спорт дает силу, уверенность и&nbsp;позволяет найти друзей на&nbsp;всю жизнь. Он&nbsp;помогает бороться с&nbsp;болезнями и&nbsp;депрессией, делает нас сильнее.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="reasons-item">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-7">
+                                                                <div class="reasons-item-pic">
+                                                                    <div class="reasons-item-pic-back"><img src="/layout/files/reason-1-back.jpg"></div>
+                                                                    <div class="reasons-item-pic-front"><img src="/layout/files/reason-1-front.jpg"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 col-md-5">
+                                                                <div class="reasons-item-descr">
+                                                                    <div class="h3"><strong>Пространство</strong><br>через спорт</div>
+                                                                    <p>Мы&nbsp;формируем будущее спорта, потому что верим, что спорт способен изменить жизнь к&nbsp;лучшему. Спорт дает силу, уверенность и&nbsp;позволяет найти друзей на&nbsp;всю жизнь. Он&nbsp;помогает бороться с&nbsp;болезнями и&nbsp;депрессией, делает нас сильнее.</p>
+                                                                    <p>Мы&nbsp;видим будущее там, где спорт и&nbsp;фитнес помогают получать удовольствие от&nbsp;жизни, раскрывать свой потенциал и&nbsp;достигать поставленных целей. Если ты&nbsp;хочешь помочь людям изменить жизнь через спорт, то&nbsp;мы&nbsp;ждем тебя!</p>
+                                                                    <p>Мы&nbsp;видим будущее там, где спорт и&nbsp;фитнес помогают получать удовольствие от&nbsp;жизни, раскрывать свой потенциал и&nbsp;достигать поставленных целей. Если ты&nbsp;хочешь помочь людям изменить жизнь через спорт, то&nbsp;мы&nbsp;ждем тебя!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="reasons-item">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-7">
+                                                                <div class="reasons-item-pic">
+                                                                    <div class="reasons-item-pic-back"><img src="/layout/files/reason-2-back.jpg"></div>
+                                                                    <div class="reasons-item-pic-front"><img src="/layout/files/reason-2-front.jpg"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 col-md-5">
+                                                                <div class="reasons-item-descr">
+                                                                    <div class="h3"><strong>Многогранность</strong><br>через спорт</div>
+                                                                    <p>Мы&nbsp;формируем будущее спорта, потому что верим, что спорт способен изменить жизнь к&nbsp;лучшему. Спорт дает силу, уверенность и&nbsp;позволяет найти друзей на&nbsp;всю жизнь. Он&nbsp;помогает бороться с&nbsp;болезнями и&nbsp;депрессией, делает нас сильнее.</p>
+                                                                    <p>Мы&nbsp;видим будущее там, где спорт и&nbsp;фитнес помогают получать удовольствие от&nbsp;жизни, раскрывать свой потенциал и&nbsp;достигать поставленных целей. Если ты&nbsp;хочешь помочь людям изменить жизнь через спорт, то&nbsp;мы&nbsp;ждем тебя!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="reasons-item">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-7">
+                                                                <div class="reasons-item-pic">
+                                                                    <div class="reasons-item-pic-back"><img src="/layout/files/reason-1-back.jpg"></div>
+                                                                    <div class="reasons-item-pic-front"><img src="/layout/files/reason-1-front.jpg"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 col-md-5">
+                                                                <div class="reasons-item-descr">
+                                                                    <div class="h3"><strong>Забота</strong><br>через спорт</div>
+                                                                    <p>Мы&nbsp;формируем будущее спорта, потому что верим, что спорт способен изменить жизнь к&nbsp;лучшему. Спорт дает силу, уверенность и&nbsp;позволяет найти друзей на&nbsp;всю жизнь. Он&nbsp;помогает бороться с&nbsp;болезнями и&nbsp;депрессией, делает нас сильнее.</p>
+                                                                    <p>Мы&nbsp;видим будущее там, где спорт и&nbsp;фитнес помогают получать удовольствие от&nbsp;жизни, раскрывать свой потенциал и&nbsp;достигать поставленных целей. Если ты&nbsp;хочешь помочь людям изменить жизнь через спорт, то&nbsp;мы&nbsp;ждем тебя!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="reasons-item">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-7">
+                                                                <div class="reasons-item-pic">
+                                                                    <div class="reasons-item-pic-back"><img src="/layout/files/reason-2-back.jpg"></div>
+                                                                    <div class="reasons-item-pic-front"><img src="/layout/files/reason-2-front.jpg"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 col-md-5">
+                                                                <div class="reasons-item-descr">
+                                                                    <div class="h3"><strong>Окружение</strong><br>через спорт</div>
+                                                                    <p>Мы&nbsp;формируем будущее спорта, потому что верим, что спорт способен изменить жизнь к&nbsp;лучшему. Спорт дает силу, уверенность и&nbsp;позволяет найти друзей на&nbsp;всю жизнь. Он&nbsp;помогает бороться с&nbsp;болезнями и&nbsp;депрессией, делает нас сильнее.</p>
+                                                                    <p>Мы&nbsp;видим будущее там, где спорт и&nbsp;фитнес помогают получать удовольствие от&nbsp;жизни, раскрывать свой потенциал и&nbsp;достигать поставленных целей. Если ты&nbsp;хочешь помочь людям изменить жизнь через спорт, то&nbsp;мы&nbsp;ждем тебя!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="reasons-slider-nav">
+                                                <div class="reasons-slider-arrows">
+                                                    <div class="reasons-slider-prev">
+                                                        <div class="arrow-tip"><img class="svg-inline" src="/layout/images/arrow-tip-prev.svg"></div>
+                                                    </div>
+                                                    <div class="reasons-slider-next">
+                                                        <div class="arrow-tip"><img class="svg-inline" src="/layout/images/arrow-tip-next.svg"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="reasons-slider-nav-count"><span class="cur"></span>/<span class="total"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>

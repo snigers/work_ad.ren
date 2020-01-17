@@ -26,7 +26,7 @@ for($index = 0; $index < $itemSize; $index++)
 	}
 	else
 	{
-		$strReturn .= '<li><span>'.$title.'</span></li>';
+			$strReturn .= '<li><span>'.$title.'</span></li>';
 	}
 }
 
