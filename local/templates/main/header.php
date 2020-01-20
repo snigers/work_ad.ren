@@ -55,64 +55,28 @@ use Bitrix\Main\Page\Asset;
               </div>
             </div>
             <div class="header-m">
+                <div class="navbar-trigger"><span></span><span></span><span></span></div>
               <div class="navbar-wrapper">
                 <div class="navbar-wrapper-inner">
 					<?$APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"topMenu", 
-	array(
-		"ALLOW_MULTI_SELECT" => "N",
-		"CHILD_MENU_TYPE" => "topSubMenu",
-		"COMPONENT_TEMPLATE" => "topMenu",
-		"DELAY" => "N",
-		"MAX_LEVEL" => "4",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_TYPE" => "N",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"ROOT_MENU_TYPE" => "top",
-		"USE_EXT" => "Y"
-	),
-	false
-);?>
-                  
-<!--                  <ul class="nav navbar-nav">-->
-<!--                    <li class="has-submenu"><a href="#"><span>Магазины</span></a></li>-->
-<!--                    <li class="has-submenu"><a href="#"><span>Офис</span></a>-->
-<!--                      <div class="submenu">-->
-<!--                        <div class="submenu-inner">-->
-<!--                          <div class="row">-->
-<!--                            <div class="submenu-descr">-->
-<!--                              <ul class="submenu-list">-->
-<!--                                <li><a href="#">the base fitness</a></li>-->
-<!--                                <li><a href="#">Маркетинг adidas</a></li>-->
-<!--                                <li><a href="#">Маркетинг reebok</a></li>-->
-<!--                                <li><a href="#">Дизайн и строительство</a></li>-->
-<!--                                <li><a href="#">Юридический отдел</a></li>-->
-<!--                                <li><a href="#">финансовый отдел</a></li>-->
-<!--                                <li><a href="#">логистика</a></li>-->
-<!--                                <li><a href="#">it-отдел</a></li>-->
-<!--                                <li><a href="#">управление персоналом</a></li>-->
-<!--                                <li><a href="#">отдел закупок</a></li>-->
-<!--                                <li><a href="#">коммерческий отдел</a></li>-->
-<!--                                <li><a href="#">поддержка фирменных магазинов</a></li>-->
-<!--                                <li><a href="#">Электронная торговля</a></li>-->
-<!--                              </ul>-->
-<!--                            </div>-->
-<!--                            <div class="submenu-pic" style="background-image: url(files/submenu-office-bg.jpg)"><img src="/layout/files/submenu-office-pic.jpg"></div>-->
-<!--                          </div>-->
-<!--                        </div>-->
-<!--                      </div>-->
-<!--                    </li>-->
-<!--                    <li><a href="#"><span>Центр дистрибуции</span></a></li>-->
-<!--                    <li class="has-submenu"><a href="#"><span>Обучение и&nbsp;развитие</span></a></li>-->
-<!--                    <li><a href="#"><span>О&nbsp;компании</span></a></li>-->
-<!--                    <li class="has-submenu"><a href="#"><span>Бренды</span></a></li>-->
-<!--                    <li><a href="#"><span>Контакты</span></a></li>-->
-<!--                  </ul>-->
-                  
-                  
+                        "bitrix:menu",
+                        "topMenu",
+                        array(
+                            "ALLOW_MULTI_SELECT" => "N",
+                            "CHILD_MENU_TYPE" => "topSubMenu",
+                            "COMPONENT_TEMPLATE" => "topMenu",
+                            "DELAY" => "N",
+                            "MAX_LEVEL" => "4",
+                            "MENU_CACHE_GET_VARS" => array(
+                            ),
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_TYPE" => "N",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "ROOT_MENU_TYPE" => "top",
+                            "USE_EXT" => "Y"
+                        ),
+                        false
+                    );?>
                 </div>
               </div>
             </div>

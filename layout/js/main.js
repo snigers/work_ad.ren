@@ -91,7 +91,50 @@ $(document).ready(function () {
 
   swapElements();
 
+  // Career
 
+  ladderSliders();
+
+  if ($("#sm-indicator").css("display") == "block") {
+
+    $(".ladder-item-header").click(function () {
+
+      $(this).toggleClass("active");
+
+      $(this).closest(".ladder-item").find(".ladder-item-descr").slideToggle(250);
+
+    });
+
+  }
+  
+  $(".career-nav a").click(function () {
+
+    if (!$(this).hasClass("active") && !$(this).hasClass("in-process")) {
+
+      var thisLink = $(this);
+
+      $(".career-nav a").removeClass("active");
+      $(this).addClass("active").addClass("in-process");
+
+      $(".career-tab.active").hide().removeClass("active");
+
+      $(".career-tab" + thisLink.data("tab")).fadeIn(500,function () {
+
+        $(".career-tab" + thisLink.data("tab")).addClass("active");
+
+        thisLink.removeClass("in-process");
+
+      });
+
+      $(".career-tab" + thisLink.data("tab")).find(".ladder-slider.slick-initialized").slick("setPosition");
+
+    }
+
+    return false;
+
+  });
+  
+  // Career END
 
   // Mob popup
 
@@ -141,173 +184,173 @@ $(document).ready(function () {
 
   // Contacts map
 
-  // ymaps.ready(function () {
-  //
-  //   var myMap1 = new ymaps.Map('officeMap1', {
-  //       center: [55.733341, 37.660086],
-  //       zoom: 16,
-  //       controls: ['zoomControl']
-  //     }, {}),
-  //
-  //     myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
-  //       hintContent: '',
-  //       balloonContent: ''
-  //     }, {
-  //       // Опции.
-  //       // Необходимо указать данный тип макета.
-  //       iconLayout: 'default#image',
-  //       // Своё изображение иконки метки.
-  //       iconImageHref: 'images/store-pin.png',
-  //       // Размеры метки.
-  //       iconImageSize: [27, 38],
-  //       // Смещение левого верхнего угла иконки относительно
-  //       // её "ножки" (точки привязки).
-  //       iconImageOffset: [-13, -38]
-  //     });
-  //
-  //   myMap1.behaviors.disable('scrollZoom');
-  //
-  //   myMap1.geoObjects
-  //     .add(myPlacemark);
-  //
-  //   var myMap2 = new ymaps.Map('officeMap2', {
-  //       center: [55.733341, 37.660086],
-  //       zoom: 16,
-  //       controls: ['zoomControl']
-  //     }, {}),
-  //
-  //     myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
-  //       hintContent: '',
-  //       balloonContent: ''
-  //     }, {
-  //       // Опции.
-  //       // Необходимо указать данный тип макета.
-  //       iconLayout: 'default#image',
-  //       // Своё изображение иконки метки.
-  //       iconImageHref: 'images/store-pin.png',
-  //       // Размеры метки.
-  //       iconImageSize: [27, 38],
-  //       // Смещение левого верхнего угла иконки относительно
-  //       // её "ножки" (точки привязки).
-  //       iconImageOffset: [-13, -38]
-  //     });
-  //
-  //   myMap2.behaviors.disable('scrollZoom');
-  //
-  //   myMap2.geoObjects
-  //     .add(myPlacemark);
-  //
-  //   var myMap3 = new ymaps.Map('officeMap3', {
-  //       center: [55.733341, 37.660086],
-  //       zoom: 16,
-  //       controls: ['zoomControl']
-  //     }, {}),
-  //
-  //     myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
-  //       hintContent: '',
-  //       balloonContent: ''
-  //     }, {
-  //       // Опции.
-  //       // Необходимо указать данный тип макета.
-  //       iconLayout: 'default#image',
-  //       // Своё изображение иконки метки.
-  //       iconImageHref: 'images/store-pin.png',
-  //       // Размеры метки.
-  //       iconImageSize: [27, 38],
-  //       // Смещение левого верхнего угла иконки относительно
-  //       // её "ножки" (точки привязки).
-  //       iconImageOffset: [-13, -38]
-  //     });
-  //
-  //   myMap3.behaviors.disable('scrollZoom');
-  //
-  //   myMap3.geoObjects
-  //     .add(myPlacemark);
-  //
-  //   var myMap4 = new ymaps.Map('officeMap4', {
-  //       center: [55.733341, 37.660086],
-  //       zoom: 16,
-  //       controls: ['zoomControl']
-  //     }, {}),
-  //
-  //     myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
-  //       hintContent: '',
-  //       balloonContent: ''
-  //     }, {
-  //       // Опции.
-  //       // Необходимо указать данный тип макета.
-  //       iconLayout: 'default#image',
-  //       // Своё изображение иконки метки.
-  //       iconImageHref: 'images/store-pin.png',
-  //       // Размеры метки.
-  //       iconImageSize: [27, 38],
-  //       // Смещение левого верхнего угла иконки относительно
-  //       // её "ножки" (точки привязки).
-  //       iconImageOffset: [-13, -38]
-  //     });
-  //
-  //   myMap4.behaviors.disable('scrollZoom');
-  //
-  //   myMap4.geoObjects
-  //     .add(myPlacemark);
-  //
-  //   var myMap5 = new ymaps.Map('officeMap5', {
-  //       center: [55.733341, 37.660086],
-  //       zoom: 16,
-  //       controls: ['zoomControl']
-  //     }, {}),
-  //
-  //     myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
-  //       hintContent: '',
-  //       balloonContent: ''
-  //     }, {
-  //       // Опции.
-  //       // Необходимо указать данный тип макета.
-  //       iconLayout: 'default#image',
-  //       // Своё изображение иконки метки.
-  //       iconImageHref: 'images/store-pin.png',
-  //       // Размеры метки.
-  //       iconImageSize: [27, 38],
-  //       // Смещение левого верхнего угла иконки относительно
-  //       // её "ножки" (точки привязки).
-  //       iconImageOffset: [-13, -38]
-  //     });
-  //
-  //   myMap5.behaviors.disable('scrollZoom');
-  //
-  //   myMap5.geoObjects
-  //     .add(myPlacemark);
-  //
-  //   var myMap6 = new ymaps.Map('officeMap6', {
-  //       center: [55.733341, 37.660086],
-  //       zoom: 16,
-  //       controls: ['zoomControl']
-  //     }, {}),
-  //
-  //     myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
-  //       hintContent: '',
-  //       balloonContent: ''
-  //     }, {
-  //       // Опции.
-  //       // Необходимо указать данный тип макета.
-  //       iconLayout: 'default#image',
-  //       // Своё изображение иконки метки.
-  //       iconImageHref: 'images/store-pin.png',
-  //       // Размеры метки.
-  //       iconImageSize: [27, 38],
-  //       // Смещение левого верхнего угла иконки относительно
-  //       // её "ножки" (точки привязки).
-  //       iconImageOffset: [-13, -38]
-  //     });
-  //
-  //   myMap6.behaviors.disable('scrollZoom');
-  //
-  //   myMap6.geoObjects
-  //     .add(myPlacemark);
-  //
-  //
-  //
-  // });
+  ymaps.ready(function () {
+
+    var myMap1 = new ymaps.Map('officeMap1', {
+        center: [55.733341, 37.660086],
+        zoom: 16,
+        controls: ['zoomControl']
+      }, {}),
+
+      myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+        hintContent: '',
+        balloonContent: ''
+      }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'images/store-pin.png',
+        // Размеры метки.
+        iconImageSize: [27, 38],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-13, -38]
+      });
+
+    myMap1.behaviors.disable('scrollZoom');
+
+    myMap1.geoObjects
+      .add(myPlacemark);
+
+    var myMap2 = new ymaps.Map('officeMap2', {
+        center: [55.733341, 37.660086],
+        zoom: 16,
+        controls: ['zoomControl']
+      }, {}),
+
+      myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+        hintContent: '',
+        balloonContent: ''
+      }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'images/store-pin.png',
+        // Размеры метки.
+        iconImageSize: [27, 38],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-13, -38]
+      });
+
+    myMap2.behaviors.disable('scrollZoom');
+
+    myMap2.geoObjects
+      .add(myPlacemark);
+
+    var myMap3 = new ymaps.Map('officeMap3', {
+        center: [55.733341, 37.660086],
+        zoom: 16,
+        controls: ['zoomControl']
+      }, {}),
+
+      myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+        hintContent: '',
+        balloonContent: ''
+      }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'images/store-pin.png',
+        // Размеры метки.
+        iconImageSize: [27, 38],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-13, -38]
+      });
+
+    myMap3.behaviors.disable('scrollZoom');
+
+    myMap3.geoObjects
+      .add(myPlacemark);
+
+    var myMap4 = new ymaps.Map('officeMap4', {
+        center: [55.733341, 37.660086],
+        zoom: 16,
+        controls: ['zoomControl']
+      }, {}),
+
+      myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+        hintContent: '',
+        balloonContent: ''
+      }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'images/store-pin.png',
+        // Размеры метки.
+        iconImageSize: [27, 38],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-13, -38]
+      });
+
+    myMap4.behaviors.disable('scrollZoom');
+
+    myMap4.geoObjects
+      .add(myPlacemark);
+
+    var myMap5 = new ymaps.Map('officeMap5', {
+        center: [55.733341, 37.660086],
+        zoom: 16,
+        controls: ['zoomControl']
+      }, {}),
+
+      myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+        hintContent: '',
+        balloonContent: ''
+      }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'images/store-pin.png',
+        // Размеры метки.
+        iconImageSize: [27, 38],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-13, -38]
+      });
+
+    myMap5.behaviors.disable('scrollZoom');
+
+    myMap5.geoObjects
+      .add(myPlacemark);
+
+    var myMap6 = new ymaps.Map('officeMap6', {
+        center: [55.733341, 37.660086],
+        zoom: 16,
+        controls: ['zoomControl']
+      }, {}),
+
+      myPlacemark = new ymaps.Placemark([55.733341, 37.660086], {
+        hintContent: '',
+        balloonContent: ''
+      }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'images/store-pin.png',
+        // Размеры метки.
+        iconImageSize: [27, 38],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-13, -38]
+      });
+
+    myMap6.behaviors.disable('scrollZoom');
+
+    myMap6.geoObjects
+      .add(myPlacemark);
+
+
+
+  });
 
   // Contacts map END
 
@@ -1174,8 +1217,7 @@ $(document).ready(function () {
       msgPlaceholder: "",
       dropZoneEnabled: false,
       maxFileCount: 1,
-      mainClass: "input-group-lg",
-      rtl: true
+      mainClass: "input-group-lg"
     });
 
   });
@@ -1543,6 +1585,8 @@ function slickResponsive() {
 
     }
 
+
+
   } else {
 
     if ($(".vac-list-alt .row").hasClass("slick-initialized")) {
@@ -1554,6 +1598,29 @@ function slickResponsive() {
     if ($(".section-success .success-list .row").hasClass("slick-initialized")) {
 
       $(".section-success .success-list .row").slick("unslick");
+
+    }
+
+  }
+
+  if ($("#sm-indicator").css("display") == "block") {
+
+    if ($(".ladder-slider").hasClass("slick-initialized")) {
+
+      $(".ladder-slider").each(function () {
+
+        $(this).slick("unslick");
+
+      });
+
+
+    }
+
+  } else {
+
+    if (!$(".ladder-slider").hasClass("slick-initialized")) {
+
+      ladderSliders();
 
     }
 
@@ -2194,5 +2261,95 @@ function swapElements() {
 
 
   }
+
+}
+
+function ladderSliders() {
+
+  console.log('ladder sliders')
+
+  $(".ladder-slider").each(function () {
+
+    var ladderSlider = $(this),
+      ladderNav = $(this).closest(".ladder-wrapper").find(".ladder-nav");
+
+    ladderSlider.on("init", function () {
+
+      ladderNav.find("li").click(function () {
+
+        ladderSlider.slick("slickGoTo", $(this).prevAll().length);
+
+      });
+
+    });
+
+    ladderSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+
+      ladderNav.find("li").removeClass("active");
+
+      ladderNav.find("li").filter(function () {
+
+        return $(this).prevAll().length == nextSlide;
+
+      }).addClass("active");
+
+    });
+
+    ladderSlider.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      speed: 500,
+      rows: 0,
+      fade: true
+    });
+
+    ladderSlider.find(".ladder-link").click(function () {
+
+      var curTab = $($(this).data("tab")),
+          curIndex = $(this).data("slide") - 1;
+
+      $(".career-nav a[data-tab='" + $(this).data("tab") + "']").click();
+
+      curTab.find(".ladder-slider.slick-initialized").slick("slickGoTo", $(this).data("slide") - 1);
+
+      if ($("#sm-indicator").css("display") == "block") {
+
+        var curHeader = curTab.find(".slide").filter(function () {
+
+          return $(this).prevAll().length == curIndex;
+
+        }).find(".ladder-item-header");
+
+        var curDescr = curTab.find(".slide").filter(function () {
+
+          return $(this).prevAll().length == curIndex;
+
+        }).find(".ladder-item-descr");
+
+        curTab.find(".ladder-item-header.active").not(curHeader).removeClass("active");
+        curTab.find(".ladder-item-descr").not(curDescr).hide();
+
+
+
+        console.log(curHeader.find(".ladder-item-ttl").html())
+
+        setTimeout(function () {
+
+          curHeader.click();
+
+          $("html, body").animate({
+            scrollTop: curTab.find(".ladder-item-header.active").offset().top - 60
+          },1000);
+
+        }, 550);
+
+
+      }
+
+      return false;
+
+    });
+
+  });
 
 }

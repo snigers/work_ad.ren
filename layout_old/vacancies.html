@@ -145,75 +145,94 @@
                         </div>
                       </form>
                     </div>
-                    <div class="filter-form form-alt">
-                      <form>
-                        <div class="form-group">
-                          <label for="vac_city">Город</label>
-                          <select class="select-alt" name="vac_city" id="vac_city">
-                            <option value="1">Все города</option>
-                            <option value="2">Москва</option>
-                            <option value="3">Санкт-Петербург</option>
-                            <option value="4">Екатеринбург</option>
-                            <option value="5">Казань</option>
-                            <option value="6">Новосибирск</option>
-                          </select>
+                    <div class="list-controls-mob d-block d-md-none">
+                      <div class="list-controls-mob-col-1">
+                        <div class="btn btn-filter-mob" data-mob-popup="#filterPopup">Фильтр вакансий</div>
+                      </div>
+                      <div class="list-controls-mob-col-2">
+                        <div class="sort-wrapper-mob"></div>
+                      </div>
+                    </div>
+                    <div class="mob-popup" id="filterPopup">
+                      <div class="mob-popup-content">
+                        <div class="close"></div>
+                        <div class="mob-popup-header d-block d-md-none">
+                          <div class="h2">Фильтр</div>
                         </div>
-                        <div class="form-group">
-                          <label>Направление</label>
-                          <div class="form-radios">
-                            <div class="form-radio">
-                              <input type="radio" name="vac_direction" id="vac_direction_1" value="1" checked>
-                              <label for="vac_direction_1">Все направления</label>
+                        <div class="filter-form form-alt">
+                          <form>
+                            <div class="form-group">
+                              <label for="vac_city">Город</label>
+                              <select class="select-alt" name="vac_city" id="vac_city">
+                                <option value="1">Все города</option>
+                                <option value="2">Москва</option>
+                                <option value="3">Санкт-Петербург</option>
+                                <option value="4">Екатеринбург</option>
+                                <option value="5">Казань</option>
+                                <option value="6">Новосибирск</option>
+                              </select>
                             </div>
-                            <div class="form-radio">
-                              <input type="radio" name="vac_direction" id="vac_direction_2" value="2">
-                              <label for="vac_direction_2">Фирменные магазины</label>
+                            <div class="form-group">
+                              <label>Направление</label>
+                              <div class="form-radios">
+                                <div class="form-radio">
+                                  <input type="radio" name="vac_direction" id="vac_direction_1" value="1" checked>
+                                  <label for="vac_direction_1">Все направления</label>
+                                </div>
+                                <div class="form-radio">
+                                  <input type="radio" name="vac_direction" id="vac_direction_2" value="2">
+                                  <label for="vac_direction_2">Фирменные магазины</label>
+                                </div>
+                                <div class="form-radio">
+                                  <input type="radio" name="vac_direction" id="vac_direction_3" value="3">
+                                  <label for="vac_direction_3">Офис</label>
+                                </div>
+                                <div class="form-radio">
+                                  <input type="radio" name="vac_direction" id="vac_direction_4" value="4">
+                                  <label for="vac_direction_4">Центр дистрибуции</label>
+                                </div>
+                              </div>
                             </div>
-                            <div class="form-radio">
-                              <input type="radio" name="vac_direction" id="vac_direction_3" value="3">
-                              <label for="vac_direction_3">Офис</label>
+                            <div class="form-group">
+                              <label>Тип занаятости</label>
+                              <div class="form-radios">
+                                <div class="form-radio">
+                                  <input type="radio" name="vac_type" id="vac_type_1" value="1" checked>
+                                  <label for="vac_type_1">Все типы занятости</label>
+                                </div>
+                                <div class="form-radio">
+                                  <input type="radio" name="vac_type" id="vac_type_2" value="2">
+                                  <label for="vac_type_2">Полная занятость</label>
+                                </div>
+                                <div class="form-radio">
+                                  <input type="radio" name="vac_type" id="vac_type_3" value="3">
+                                  <label for="vac_type_3">Частичная  занятость</label>
+                                </div>
+                              </div>
                             </div>
-                            <div class="form-radio">
-                              <input type="radio" name="vac_direction" id="vac_direction_4" value="4">
-                              <label for="vac_direction_4">Центр дистрибуции</label>
+                            <div class="form-group">
+                              <label>Бренд</label>
+                              <div class="form-radios">
+                                <div class="form-radio">
+                                  <input type="radio" name="vac_brand" id="vac_brand_1" value="1" checked>
+                                  <label for="vac_brand_1">Все бренды</label>
+                                </div>
+                                <div class="form-radio">
+                                  <input type="radio" name="vac_brand" id="vac_brand_2" value="2">
+                                  <label for="vac_brand_2">Adidas</label>
+                                </div>
+                                <div class="form-radio">
+                                  <input type="radio" name="vac_brand" id="vac_brand_3" value="3">
+                                  <label for="vac_brand_3">Reebok</label>
+                                </div>
+                              </div>
                             </div>
+                          </form>
+                          <div class="d-block d-md-none">
+                            <div class="btn btn-1 btn-close">Применить фильтр</div>
                           </div>
                         </div>
-                        <div class="form-group">
-                          <label>Тип занаятости</label>
-                          <div class="form-radios">
-                            <div class="form-radio">
-                              <input type="radio" name="vac_type" id="vac_type_1" value="1" checked>
-                              <label for="vac_type_1">Все типы занятости</label>
-                            </div>
-                            <div class="form-radio">
-                              <input type="radio" name="vac_type" id="vac_type_2" value="2">
-                              <label for="vac_type_2">Полная занятость</label>
-                            </div>
-                            <div class="form-radio">
-                              <input type="radio" name="vac_type" id="vac_type_3" value="3">
-                              <label for="vac_type_3">Частичная  занятость</label>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label>Бренд</label>
-                          <div class="form-radios">
-                            <div class="form-radio">
-                              <input type="radio" name="vac_brand" id="vac_brand_1" value="1" checked>
-                              <label for="vac_brand_1">Все бренды</label>
-                            </div>
-                            <div class="form-radio">
-                              <input type="radio" name="vac_brand" id="vac_brand_2" value="2">
-                              <label for="vac_brand_2">Adidas</label>
-                            </div>
-                            <div class="form-radio">
-                              <input type="radio" name="vac_brand" id="vac_brand_3" value="3">
-                              <label for="vac_brand_3">Reebok</label>
-                            </div>
-                          </div>
-                        </div>
-                      </form>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -231,14 +250,16 @@
                     <div class="vac-l">
                       <div class="list-controls form-alt">
                         <div class="list-controls-l">
-                          <div class="form-group">
-                            <div class="form-item-sort">
-                              <div class="select-sort-name">Сортировка:</div>
-                              <select class="select-sort" name="controls_sort" id="controls_sort">
-                                <option value="1">По умолчанию</option>
-                                <option value="2">Сначала новые</option>
-                                <option value="3">Сначала старые</option>
-                              </select>
+                          <div class="sort-wrapper">
+                            <div class="form-group sort-wrapper-group">
+                              <div class="form-item-sort">
+                                <div class="select-sort-name">Сортировка:</div>
+                                <select class="select-sort" name="controls_sort" id="controls_sort">
+                                  <option value="1">По умолчанию</option>
+                                  <option value="2">Сначала новые</option>
+                                  <option value="3">Сначала старые</option>
+                                </select>
+                              </div>
                             </div>
                           </div>
                         </div>

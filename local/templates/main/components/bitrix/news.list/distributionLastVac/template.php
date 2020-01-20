@@ -13,7 +13,7 @@
 				</div>
 				<div class="vac-tmb-footer">
 					<div class="vac-tmb-place">
-                        <p><?=$arItem["PROPERTIES"]["DIRECTION"]["VALUE"]?>, <?=$arItem["PROPERTIES"]["CITY"]["VALUE"]?></p>
+						<p><?=$arItem["PROPERTIES"]["DIRECTION"]["VALUE"]?>, <?=$arItem["PROPERTIES"]["CITY"]["VALUE"]?></p>
 					</div>
 					
 					<?$img = CFile::ResizeImageGet($arItem["PROPERTIES"]["LOGO_PREVIEW"]["VALUE"], Array("width" => 55, "height" => 37), BX_RESIZE_IMAGE_EXACT);?>

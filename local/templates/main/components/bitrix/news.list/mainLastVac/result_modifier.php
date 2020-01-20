@@ -4,12 +4,13 @@ $arRes = array();
 $arCity = getListCity();
 $count = 0;
 
+$section = $arParams["SECTION_LAST_VAC"];
 
 foreach ($arResult["ITEMS"] as $key => $arItem)
 {
-	if ($count < 6)
+	if ($count < 3)
 	{
-		if ($arItem["PROPERTIES"]["DIRECTION"]["VALUE"] == "Офис")
+		if ($arItem["PROPERTIES"]["DIRECTION"]["VALUE"] == $section)
 		{
 			foreach($arCity as $city)
 			{

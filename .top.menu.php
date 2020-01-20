@@ -4,7 +4,7 @@ $aMenuLinks = Array(
 		"Магазины", 
 		"/retail/", 
 		Array(), 
-		Array(), 
+		Array("TYPE"=>"1"), 
 		"" 
 	),
 	Array(

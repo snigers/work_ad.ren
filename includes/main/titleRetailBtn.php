@@ -1,0 +1,1 @@
+<a class="btn btn-2" href="/retail/">Все вакансии в магазинах</a>

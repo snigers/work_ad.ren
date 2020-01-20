@@ -4,12 +4,11 @@ $arRes = array();
 $arCity = getListCity();
 $count = 0;
 
-
 foreach ($arResult["ITEMS"] as $key => $arItem)
 {
 	if ($count < 6)
 	{
-		if ($arItem["PROPERTIES"]["DIRECTION"]["VALUE"] == "Офис")
+		if ($arItem["PROPERTIES"]["DIRECTION"]["VALUE"] == "Центр дистрибуции")
 		{
 			foreach($arCity as $city)
 			{
