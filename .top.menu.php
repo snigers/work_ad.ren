@@ -16,7 +16,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Центр дистрибуции", 
-		"#", 
+		"/distribution/", 
 		Array(), 
 		Array(), 
 		"" 

@@ -55,24 +55,52 @@ $(document).ready(function () {
 		page = "news";
 		getPerPageNews();
 		setTag();
-		// getSortNum();
-		// getFilterPage();
-		// setCheckboxFilterVac();
 	}
 
 	$("body").on("click", ".next-story-link", function(e){
-
+		var id = $(this).data("next-id");
+		var url_ajax = "/ajax/ajax_success_detail.php";
+		var url = document.location.href;
+		var base_url = url.slice(0, url.indexOf("#"));
 		var elem = "";
-		$("body").find(".success-tmb-name").each(function(){
-			if ($(this).find("p").text() == $(".popup-header-title-l").find(".h2").text())
-			{
-				console.log($(this).parent().parent().parent().data("popup-next"));
-				$("#storyPopup").find(".next-story-link").attr("data-popup-content", "/education_and_development/success/mariya-spiridonova8909/?detail=Y");
-				$("#storyPopup").find(".next-story-link").attr("data-hash", $(this).parent().parent().parent().data("popup-next"));
 
-				console.log($("#storyPopup").find(".next-story-link"));
+		e.preventDefault();
+
+		console.log(hash);
+		console.log(url.slice(url.indexOf("=story") + 6));
+
+		$.ajax({
+			url: url_ajax,
+			dataType: 'html',
+			type: 'POST',
+			data: "id=" + id,
+			success: function (html) {
+
+				console.log(html);
+
+				$(".popup-header").remove();
+				$(".popup-body").remove();
+				$(".popup-footer").remove();
+				$(".popup-inner").append($(html));
+				// $(".popup-inner").append($(html).filter(".popup-body"));
+				// $(".popup-inner").append($(html).filter(".popup-footer"));
+				// $(".vac-l").append($(html).filter(".list-controls-bottom"));
+
+
 			}
 		});
+
+
+		// $("body").find(".success-tmb-name").each(function(){
+		// 	if ($(this).find("p").text() == $(".popup-header-title-l").find(".h2").text())
+		// 	{
+		// 		console.log($(this).parent().parent().parent().data("popup-next"));
+		// 		$("#storyPopup").find(".next-story-link").attr("data-popup-content", "/education_and_development/success/mariya-spiridonova8909/?detail=Y");
+		// 		$("#storyPopup").find(".next-story-link").attr("data-hash", $(this).parent().parent().parent().data("popup-next"));
+		//
+		// 		console.log($("#storyPopup").find(".next-story-link"));
+		// 	}
+		// });
 	});
 
 

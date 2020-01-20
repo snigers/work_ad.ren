@@ -21,7 +21,7 @@ if(CModule::IncludeModule("iblock"))
 			$arFields['DETAIL_PAGE_URL'],
 			Array(),
 			Array(
-				"IMG" => CFile::GetPath($arFields["PREVIEW_PICTURE"]),
+				"IMAGE" => CFile::GetPath($arFields["PREVIEW_PICTURE"]),
 			),
 			""
 		);

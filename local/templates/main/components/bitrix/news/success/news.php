@@ -66,7 +66,9 @@ $this->setFrameMode(true);
 				"STRICT_SECTION_CHECK" => "N",
 				"USE_PERMISSIONS" => "N",
 				"USE_SHARE" => "N"
-			)
+			),
+			false,
+			array('HIDE_ICONS' => "Y")
 		);?>
     </div>
     <div class="page-body">
@@ -143,7 +145,6 @@ $this->setFrameMode(true);
 								"CHECK_DATES" => $arParams["CHECK_DATES"],
 							),
 							$component,
-                            false,
 							array('HIDE_ICONS' => "Y")
        
 						);?>

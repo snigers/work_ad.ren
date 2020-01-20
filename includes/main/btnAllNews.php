@@ -1,1 +1,1 @@
-<a class="btn btn-2" href="#">Все новости и статьи</a>
+<a class="btn btn-2" href="/about/news/">Все новости и статьи</a>

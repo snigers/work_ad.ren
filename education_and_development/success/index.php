@@ -7,7 +7,6 @@ if ($_REQUEST["detail"] != "Y")
 }
 
 
-//pr($_REQUEST);
 $APPLICATION->SetTitle("");?><?$APPLICATION->IncludeComponent("bitrix:news", "success", Array(
 	"ADD_ELEMENT_CHAIN" => "Y",	// Включать название элемента в цепочку навигации
 		"ADD_SECTIONS_CHAIN" => "Y",	// Включать раздел в цепочку навигации
@@ -107,7 +106,7 @@ $APPLICATION->SetTitle("");?><?$APPLICATION->IncludeComponent("bitrix:news", "su
 		"USE_SEARCH" => "N",	// Разрешить поиск
 		"USE_SHARE" => "N",	// Отображать панель соц. закладок
 	),
-	false
+	array('HIDE_ICONS' => "Y")
 );?><?
 if ($_REQUEST["detail"] != "Y")
 {

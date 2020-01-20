@@ -6,7 +6,7 @@
 		
 		<?
 		echo "<!--";
-//		pr($arResult);
+		pr($arResult);
 		echo "-->";
 		foreach($arResult as $key => $arItem):
 			if($arParams["MAX_LEVEL"] == 1 && $arItem["DEPTH_LEVEL"] > 1)
@@ -44,7 +44,7 @@
 									<?if ($arSubItem["CHAIN"][0] == $arItem["TEXT"]):?>
 										<li>
 											<a class="submenu-item" href="<?=$arSubItem["LINK"]?>">
-												<div class="submenu-item-pic" style="background-image:url(<?=$arSubItem["PARAMS"]["IMG"]?>);"></div>
+												<div class="submenu-item-pic" style="background-image:url(<?=$arSubItem["PARAMS"]["IMAGE"]?>);"></div>
 												<div class="submenu-item-descr">
 													<div class="ttl"><?=$arSubItem["TEXT"]?></div>
 												</div>

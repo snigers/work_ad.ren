@@ -72,7 +72,8 @@ $APPLICATION->SetTitle("Бренды");
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N"
-	)
+	),
+	array('HIDE_ICONS' => "Y")
 );?><?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
 ?>
