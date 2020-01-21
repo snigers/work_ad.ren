@@ -1,9 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
 
-<?
-//pr($arResult["ITEMS"][0]);
-?>
 <div>
 
 <div class="career-nav-wrapper">
@@ -85,7 +82,7 @@
 																		<?if ($keys != $key):?>
 																			<div class="col-12 col-md-6">
 																				<div class="ladder-link" data-tab="#careerTab<?=$keys + 1?>" data-slide="<?=($count == 1) ? $arElement["PROPERTIES"]["SIMILAR_POSTS"]["VALUE"][0]["PROPERTY_LEVEL_VALUE"] : $arElement["PROPERTIES"]["SIMILAR_POSTS"]["VALUE"][1]["PROPERTY_LEVEL_VALUE"]?>">
-																					<div class="ladder-link-dept">В <?=$arSections["NAME"]?></div>
+																					<div class="ladder-link-dept"><?=$arSections["~UF_MIN_NAME"]?></div>
 																					<div class="ladder-link-ttl"><?=($count == 1) ? $arElement["PROPERTIES"]["SIMILAR_POSTS"]["VALUE"][0]["~NAME"] : $arElement["PROPERTIES"]["SIMILAR_POSTS"]["VALUE"][1]["~NAME"]?></div>
 																				</div>
 																			</div>
@@ -169,7 +166,7 @@
 																	<?if ($keys != $key):?>
                                                                         <div class="col-12 col-md-6">
                                                                             <div class="ladder-link" data-tab="#careerTab<?=$keys + 1?>" data-slide="<?=($count == 1) ? $arElement["PROPERTIES"]["SIMILAR_POSTS"]["VALUE"][0]["PROPERTY_LEVEL_VALUE"] : $arElement["PROPERTIES"]["SIMILAR_POSTS"]["VALUE"][1]["PROPERTY_LEVEL_VALUE"]?>">
-                                                                                <div class="ladder-link-dept">В <?=$arSections["NAME"]?></div>
+                                                                                <div class="ladder-link-dept"><?=$arSections["~UF_MIN_NAME"]?></div>
                                                                                 <div class="ladder-link-ttl"><?=($count == 1) ? $arElement["PROPERTIES"]["SIMILAR_POSTS"]["VALUE"][0]["~NAME"] : $arElement["PROPERTIES"]["SIMILAR_POSTS"]["VALUE"][1]["~NAME"]?></div>
                                                                             </div>
                                                                         </div>

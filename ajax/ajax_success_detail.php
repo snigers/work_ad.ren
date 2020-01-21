@@ -1,6 +1,6 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");?>
 
-
+<!--Пока не работает, оставил на всякий случай-->
 
 
 <?$ElementID = $APPLICATION->IncludeComponent(

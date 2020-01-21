@@ -11,7 +11,7 @@
 			<div class="h3"><?=$arItem["NAME"]?></div>
 		</div>
 		<div class="faq-item-content">
-			<p><?=$arItem["PROPERTIES"]["QUOTE"]["VALUE"]?></p>
+			<p><?=$arItem["PROPERTIES"]["ANSWER"]["~VALUE"]?></p>
 		</div>
 	</div>
 <?endforeach;?>

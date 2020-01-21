@@ -12,7 +12,7 @@
 
 	<?if ($count === 1):?>
 		<div class="col-12" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-			<a class="success-tmb" href="<?=$arItem["DETAIL_PAGE_URL"]?>">
+			<a class="success-tmb" href="/education_and_development/success/#story=story<?=$arItem["ID"]?>">
 				<?$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], Array("width" => 749, "height" => 300), BX_RESIZE_IMAGE_EXACT);?>
 				<div class="success-tmb-pic"><img src="<?=$img["src"]?>"></div>
 				<div class="success-tmb-descr">
@@ -32,7 +32,7 @@
 	
 	<?if ($count >= 2):?>
 		<div class="col-12 col-md-6" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-			<a class="success-tmb" href="<?=$arItem["DETAIL_PAGE_URL"]?>">
+			<a class="success-tmb" href="/education_and_development/success/#story=story<?=$arItem["ID"]?>">
 				<?$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], Array("width" => 364, "height" => 300), BX_RESIZE_IMAGE_EXACT);?>
 				<div class="success-tmb-pic"><img src="<?=$img["src"]?>"></div>
 				<div class="success-tmb-descr">

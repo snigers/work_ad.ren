@@ -1,17 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-$arResult["SECTION_LIST"] = array();
-
-if(CModule::IncludeModule('iblock')){
-	$arSelect = Array('ID', 'NAME', 'DESCRIPTION', 'PICTURE');
-	$arFilter = Array('IBLOCK_ID'=>$arResult["IBLOCK_ID"], 'ACTIVE'=>'Y', 'GLOBAL_ACTIVE'=>'Y');
-	$res = CIBlockSection::GetList(Array('SORT'=>'ASC'), $arFilter, true, $arSelect);
-	while($ob = $res->GetNext())
-	{
-		$arResult["SECTION_LIST"][] = $ob;
-	}
-}
-
 foreach ($arResult["ITEMS"] as $key => $arItem)
 {
 	if (is_array($arItem["PROPERTIES"]["SIMILAR_POSTS"]))
@@ -26,5 +14,21 @@ foreach ($arResult["ITEMS"] as $key => $arItem)
 			}
 		}
 	}
+	
 }
+
+$arResult["SECTION_LIST"] = array();
+
+if(CModule::IncludeModule('iblock')){
+	$arSelect = Array('IBLOCK_ID', "ID", "NAME", "DESCRIPTION", "PICTURE", "UF_*");
+	$arFilter = Array('IBLOCK_ID'=> 50);
+	
+	$res = CIBlockSection::GetList(Array('SORT'=>'ASC'), $arFilter, true, $arSelect);
+	while($ob = $res->GetNext())
+	{
+		$arResult["SECTION_LIST"][] = $ob;
+	}
+}
+
+
 

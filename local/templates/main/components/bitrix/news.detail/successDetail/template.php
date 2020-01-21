@@ -1,7 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
 
-<?//pr($arResult["NEXT_ITEM"])?>
+<?//pr($arParams)?>
 <?//pr($_REQUEST["NEXT_DETAIL"])?>
 
 <div class="popup-header">
@@ -61,7 +61,9 @@
     <div class="h3"><?=($arResult["PROPERTIES"]["TITLE_WHY_LIKE_WORK"]["VALUE"]) ? $arResult["PROPERTIES"]["TITLE_WHY_LIKE_WORK"]["VALUE"] : "Почему я люблю свою работу?"?></div>
 	<?=$arResult["PROPERTIES"]["DESC_WHY_LIKE_WORK"]["~VALUE"]["TEXT"]?>
 </div>
-<div class="popup-footer"><a class="next-story-link" href="#" data-next-id="<?=$arResult["NEXT_ITEM"]["ID"]?>">
+
+<div class="popup-footer">
+    <a class="next-story-link" href="#" data-popup="#storyPopup" data-popup-content="<?=$arResult["NEXT_ITEM"]["DETAIL_PAGE_URL"] . '?detail=Y'?>" data-hash="story<?=$arResult["NEXT_ITEM"]["ID"]?>">
 		<?$img = CFile::ResizeImageGet($arResult["NEXT_ITEM"]["PROPERTY_IMG_HEADER_DETAIL_VALUE"], Array("width" => 869, "height" => 260), BX_RESIZE_IMAGE_EXACT);?>
         <div class="next-story-link-arrow"><img class="svg-inline" src="/layout/images/next-arrow.svg"/></div>
         <div class="next-story-link-pic" style="background-image:url(<?=$img["src"]?>)"></div>
@@ -77,4 +79,6 @@
                     <p><?=$arResult["NEXT_ITEM"]["PROPERTY_POSITION_VALUE"]?></p>
                 </div>
             </div>
-        </div></a></div>
+        </div>
+    </a>
+</div>

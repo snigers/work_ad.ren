@@ -71,7 +71,7 @@
 html,
 body {
   font-family: 'AdihausDIN';
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5;
   font-weight: normal;
   color: #000;
@@ -105,7 +105,27 @@ h2,
 
 .section h2,
 .section .h2 {
-  margin: 0 0 17px 0; }
+  margin: 0 0 22px 0; }
+
+h2 a,
+h2 a:focus,
+.h2 a,
+.h2 a:focus {
+  text-decoration: none !important;
+  color: #000;
+  transition: color .2s ease; }
+
+.section-group-dark-grey h2 a,
+.section-group-dark-grey h2 a:focus,
+.section-group-dark-grey .h2 a,
+.section-group-dark-grey .h2 a:focus {
+  text-decoration: none !important;
+  color: #fff;
+  transition: color .2s ease; }
+
+h2 a:hover,
+.h2 a:hover {
+  color: #FC4237; }
 
 h3,
 .h3 {
@@ -1619,7 +1639,10 @@ header {
 .header-r .header-button {
   margin: 0 0 0 10px; }
 
-.header-fav {
+.header-r .header-button .btn {
+  display: block; }
+
+.btn-header-fav {
   display: block;
   width: 34px;
   height: 34px;
@@ -1632,13 +1655,16 @@ header {
       align-items: center;
   transition: all .2s ease; }
 
-.header-fav:hover {
+.btn-header-fav:hover {
   background: #636363; }
 
-.header-fav svg * {
+.btn-header-fav svg {
+  display: block; }
+
+.btn-header-fav svg * {
   transition: all .2s ease; }
 
-.header-fav:hover svg * {
+.btn-header-fav:hover svg * {
   fill: #fff !important; }
 
 ul.navbar-nav {
@@ -1875,7 +1901,7 @@ ul.submenu-list a.active {
   margin-left: -388px; }
 
 .blockquote-alt-wrapper {
-  margin: 140px 0 140px 0; }
+  margin: 50px 0 50px 0; }
 
 .blockquote-alt-pics {
   margin: 0 -83px 0 -83px; }
@@ -2000,6 +2026,9 @@ ul.submenu-list a.active {
 .reasons-slider-arrows {
   display: -ms-flexbox;
   display: flex; }
+
+.reasons-slider-arrows .arrow-tip svg {
+  display: block; }
 
 .reasons-slider-prev {
   width: 43px;
@@ -3560,7 +3589,7 @@ ul.page-tabs a.active {
 .gallery-slider .slick-prev:before {
   content: "";
   width: 20px;
-  height: 32px;
+  height: 33px;
   background: url(../images/arrow-tip-gal-prev.png) 0 0 no-repeat;
   background-size: 100% 100%;
   position: absolute;
@@ -3570,12 +3599,11 @@ ul.page-tabs a.active {
 
 .gallery-slider .slick-prev:after {
   content: "";
-  height: 2px;
+  height: 3px;
   background: #fff;
   position: absolute;
-  left: 2px;
-  top: 50%;
-  margin-top: -1px;
+  left: 3px;
+  top: 27px;
   right: 0;
   transition: all .2s ease; }
 
@@ -3585,7 +3613,7 @@ ul.page-tabs a.active {
 .gallery-slider .slick-next:before {
   content: "";
   width: 20px;
-  height: 32px;
+  height: 33px;
   background: url(../images/arrow-tip-gal-next.png) 0 0 no-repeat;
   background-size: 100% 100%;
   position: absolute;
@@ -3596,12 +3624,11 @@ ul.page-tabs a.active {
 
 .gallery-slider .slick-next:after {
   content: "";
-  height: 2px;
+  height: 3px;
   background: #fff;
   position: absolute;
-  right: 2px;
-  top: 50%;
-  margin-top: -1px;
+  right: 3px;
+  top: 27px;
   left: 0;
   transition: all .2s ease; }
 
@@ -4175,7 +4202,7 @@ body.popup-open {
 .stores-map-menu ul > li {
   margin: 0;
   transition: all .2s ease;
-  padding: 12px 15px 9px 15px;
+  padding: 10px 15px 11px 15px;
   color: #000000;
   background: #fff;
   cursor: pointer; }
@@ -4210,7 +4237,7 @@ body.popup-open {
   text-transform: uppercase;
   color: #ACACAC;
   vertical-align: top;
-  padding: 0 30px 0 30px; }
+  padding: 0 30px 3px 30px; }
 
 .stores-table {
   width: 100%;
@@ -4266,7 +4293,7 @@ td.stores-item-brand {
   font-weight: bold;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 3px 10px 0 10px;
+  padding: 1px 10px 2px 10px;
   margin: 0 0 2px 0;
   text-align: center; }
 
@@ -4447,8 +4474,7 @@ td.stores-item-brand {
   margin-top: 50px; }
 
 .offices-item-descr {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  width: 50%;
   -ms-flex-positive: 0;
       flex-grow: 0;
   -ms-flex-negative: 0;
@@ -4456,8 +4482,7 @@ td.stores-item-brand {
   padding: 0 15px; }
 
 .offices-item-map {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  width: 50%;
   -ms-flex-positive: 0;
       flex-grow: 0;
   -ms-flex-negative: 0;
@@ -4571,7 +4596,8 @@ a.contacts-email:hover {
       flex-grow: 0; }
 
 .buttons-404 .btn {
-  min-width: 260px; }
+  min-width: 260px;
+  margin: 0 0 30px 0; }
 
 .career-nav-wrapper {
   margin: 40px 0 37px 0;

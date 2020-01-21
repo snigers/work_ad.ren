@@ -1,7 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetPageProperty("TITLE", "Работай в&nbsp;фирменных магазинах adidas");
-$APPLICATION->SetTitle("Главная");
+$APPLICATION->SetPageProperty("TITLE", "Работай в фирменных магазинах adidas");
+$APPLICATION->SetTitle("Работай в фирменных магазинах adidas");
 ?>
 	
 	
@@ -146,7 +146,7 @@ $APPLICATION->SetTitle("Главная");
 							);?>
        
 							<div class="page-title">
-								<div class="h1"><?$APPLICATION->ShowTitle();?></div>
+								<div class="h1"><?$APPLICATION->ShowTitle(false);?></div>
 							</div>
        
 							<div class="page-content">
@@ -503,7 +503,7 @@ $APPLICATION->SetTitle("Главная");
 										false,
 										array('HIDE_ICONS' => "Y")
 									);?>
-         
+									
 									<div class="vac-list vac-list-alt">
 										<div class="row">
                                             <?$APPLICATION->IncludeComponent(
@@ -567,7 +567,7 @@ $APPLICATION->SetTitle("Главная");
 											);?>
 										</div>
 									</div>
-									<div class="all-link-wrapper"><a class="btn btn-2" href="/vacancies/">Все вакансии</a></div>
+									<div class="all-link-wrapper"><a class="btn btn-2" href="#">Все вакансии</a></div>
 								</div>
 							</div>
 						</div>
@@ -1228,8 +1228,8 @@ $APPLICATION->SetTitle("Главная");
 												"SET_STATUS_404" => "N",
 												"SET_TITLE" => "N",
 												"SHOW_404" => "N",
-												"SORT_BY1" => "ID",
-												"SORT_BY2" => "SORT",
+												"SORT_BY1" => "SORT",
+												"SORT_BY2" => "ID",
 												"SORT_ORDER1" => "ASC",
 												"SORT_ORDER2" => "ASC",
 												"STRICT_SECTION_CHECK" => "N"
