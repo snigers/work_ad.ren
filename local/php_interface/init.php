@@ -1,5 +1,6 @@
 <?
 use Bitrix\Highloadblock\HighloadBlockTable as HLBT;
+use Bitrix\Main\Diag\Debug;
 
 
 
@@ -84,5 +85,44 @@ function getListCity() {
 //	Передает весь список, основное UF_NAME, UF_XML_ID
 	return $arHItem;
 }
+
+
+function getListLang() {
+	CModule::IncludeModule('highloadblock');
+	
+	$highblock_id = 4;
+	$hl_block = HLBT::getById($highblock_id)->fetch();
+
+// Получение имени класса
+	$entity = HLBT::compileEntity($hl_block);
+	$entity_data_class = $entity->getDataClass();
+
+// Вывод элементов Highload-блока
+	$rs_data = $entity_data_class::getList(array(
+		'select' => array('*')
+	));
+	$arHItem = array();
+	while ($el = $rs_data->fetch()){
+		$arHItem[] = $el;
+	}
+//	Передает весь список, основное UF_NAME, UF_XML_ID
+	return $arHItem;
+}
+
+
+
+
+//AddEventHandler("iblock", "OnBeforeIBlockElementAdd", "MY_OnBeforeIBlockElementAdd");
+//function MY_OnBeforeIBlockElementAdd(&$arFields)
+//{
+//	$arFields["NAME"] = $arFields["PROPERTY_VALUES"][176] . " " . $arFields["PROPERTY_VALUES"][177];
+////	$arFields["PROPERTY_VALUES"][173] = 13;
+//
+//	echo "<pre>";  print_r($arFields); echo "</pre>";
+////	exit; // принудительно прервем работу, чтобы увидеть массив $arFields
+//}
+
+
+
 
 ?>

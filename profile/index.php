@@ -244,249 +244,46 @@ $APPLICATION->SetPageProperty("TITLE", "Анкета для работы в фи
 								);?>
 								
 								<div class="vacancy-form">
-									<form>
-										<div class="form-section"><a name="description"></a>
-											<div class="h3">Вакансия</div>
-											<div class="row">
-												<div class="col-12 col-md-6">
-													<div class="form-group">
-														<label for="vac_vacancy">На какую вакансию откликаетесь?</label>
-														<select name="vac_vacancy" id="vac_vacancy" title=" " required>
-															<option value="" disabled></option>
-															<option value="1">Пункт выпадающего списка 1</option>
-															<option value="2">Пункт выпадающего списка 2</option>
-															<option value="3">Пункт выпадающего списка, занимающий две строки</option>
-															<option value="4">Пункт выпадающего списка настолько длинный, что занимает целых три строки</option>
-															<option value="5">Пункт выпадающего списка 1</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-12 col-md-6">
-													<div class="form-group">
-														<label for="vac_vac_city">Город</label>
-														<select name="vac_vac_city" id="vac_vac_city" required>
-															<option value="1">Пункт выпадающего списка 1</option>
-															<option value="2">Пункт выпадающего списка 2</option>
-															<option value="3">Пункт выпадающего списка, занимающий две строки</option>
-															<option value="4">Пункт выпадающего списка настолько длинный, что занимает целых три строки</option>
-															<option value="5">Пункт выпадающего списка 1</option>
-														</select>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="form-section"><a name="info"></a>
-											<div class="h3">Общие сведения</div>
-											<div class="row">
-												<div class="col-12 col-md-6">
-													<div class="form-group">
-														<label for="vac_name">Имя</label>
-														<input type="text" name="vac_name" id="vac_name" placeholder=" " required>
-													</div>
-												</div>
-												<div class="col-12 col-md-6">
-													<div class="form-group">
-														<label for="vac_lastname">Фамилия</label>
-														<input type="text" name="vac_lastname" id="vac_lastname" placeholder=" " required>
-													</div>
-												</div>
-												<div class="col-12 col-md-6">
-													<div class="form-grop">
-														<label for="vac_birthdate_input">Дата рождения</label>
-														<div class="input-group date input-date" id="vac_birthdate" data-target-input="nearest">
-															<input class="datetimepicker-input" type="text" data-target="#vac_birthdate" id="vac_birthdate_input" name="vac_birthdate_input" placeholder="--.--.----" required>
-															<div class="input-date-arrow" data-target="#vac_birthdate" data-toggle="datetimepicker"></div>
-														</div>
-													</div>
-												</div>
-												<div class="col-12 col-md-6">
-													<div class="form-group">
-														<label for="vac_citizenship">Гражданство</label>
-														<input type="text" name="vac_citizenship" id="vac_citizenship" placeholder=" " required>
-													</div>
-												</div>
-												<div class="col-12 col-md-6">
-													<div class="form-group">
-														<label for="vac_city">Город проживания</label>
-														<input type="text" name="vac_city" id="vac_city" placeholder=" " required>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="form-section"><a name="contacts"></a>
-											<div class="h3">Контакты</div>
-											<div class="row">
-												<div class="col-12 col-md-6">
-													<div class="form-group">
-														<label for="vac_phone">Ваш телефон</label>
-														<input class="input-phone" type="text" name="vac_phone" id="vac_phone" placeholder=" " required>
-													</div>
-												</div>
-												<div class="col-12 col-md-6">
-													<div class="form-group">
-														<label for="vac_email">Электронная почта</label>
-														<input type="email" name="vac_email" id="vac_email" placeholder=" " required>
-													</div>
-												</div>
-												<div class="col-12 col-md-6">
-													<div class="form-group">
-														<label for="vac_facebook">Ссылка на профиль в Facebook</label>
-														<input type="text" name="vac_facebook" id="vac_facebook" placeholder=" " required>
-													</div>
-												</div>
-												<div class="col-12 col-md-6">
-													<div class="form-group">
-														<label for="vac_instagram">Ссылка на профиль в Instagram</label>
-														<input type="text" name="vac_instagram" id="vac_instagram" placeholder=" " required>
-													</div>
-												</div>
-												<div class="col-12 col-md-6">
-													<div class="form-group">
-														<label for="vac_vkontakte">Ссылка на профиль в Вконтакте</label>
-														<input type="text" name="vac_vkontakte" id="vac_vkontakte" placeholder=" " required>
-													</div>
-												</div>
-												<div class="col-12 col-md-6">
-													<div class="form-group">
-														<label for="vac_odnoklassniki">Ссылка на профиль в Одноклассники</label>
-														<input type="text" name="vac_odnoklassniki" id="vac_odnoklassniki" placeholder=" " required>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="form-section"><a name="languages"></a>
-											<div class="h3">Языки</div>
-											<div class="row">
-												<div class="col-12 col-md-6">
-													<div class="form-group">
-														<label for="vac_lang">Родной язык</label>
-														<select name="vac_lang[]" id="vac_lang" required>
-															<option value="1">Пункт выпадающего списка 1</option>
-															<option value="2">Пункт выпадающего списка 2</option>
-															<option value="3">Пункт выпадающего списка, занимающий две строки</option>
-															<option value="4">Пункт выпадающего списка настолько длинный, что занимает целых три строки</option>
-															<option value="5">Пункт выпадающего списка 1</option>
-														</select>
-													</div>
-												</div>
-											</div>
-											<div class="hr"></div>
-											<div class="multi-form-items">
-												<!-- Шаблон того, что добавляем по клику на кнопку-->
-												<div class="multi-form-item-template">
-													<div class="row">
-														<div class="col-12 col-md-6">
-															<div class="form-group">
-																<label for="vac_lang_foreign">Иностранный язык</label>
-																<select name="vac_lang_foreign[]" id="vac_lang_foreign">
-																	<option value="1">Пункт выпадающего списка 1</option>
-																	<option value="2">Пункт выпадающего списка 2</option>
-																	<option value="3">Пункт выпадающего списка, занимающий две строки</option>
-																	<option value="4">Пункт выпадающего списка настолько длинный, что занимает целых три строки</option>
-																	<option value="5">Пункт выпадающего списка 1</option>
-																</select>
-															</div>
-														</div>
-														<div class="col-12 col-md-6">
-															<div class="form-group">
-																<label for="vac_lang_level">Уровень владения</label>
-																<select name="vac_lang_level[]" id="vac_lang_level">
-																	<option value="1">Пункт выпадающего списка 1</option>
-																	<option value="2">Пункт выпадающего списка 2</option>
-																	<option value="3">Пункт выпадающего списка, занимающий две строки</option>
-																	<option value="4">Пункт выпадающего списка настолько длинный, что занимает целых три строки</option>
-																	<option value="5">Пункт выпадающего списка 1</option>
-																</select>
-															</div>
-														</div>
-													</div>
-												</div>
-												<!-- Шаблон того, что добавляем по клику на кнопку END-->
-												<div class="multi-form-item" data-index="1">
-													<div class="row">
-														<div class="col-12 col-md-6">
-															<div class="form-group">
-																<label for="vac_lang_foreign_1">Иностранный язык</label>
-																<select name="vac_lang_foreign[]" id="vac_lang_foreign_1" required>
-																	<option value="1">Пункт выпадающего списка 1</option>
-																	<option value="2">Пункт выпадающего списка 2</option>
-																	<option value="3">Пункт выпадающего списка, занимающий две строки</option>
-																	<option value="4">Пункт выпадающего списка настолько длинный, что занимает целых три строки</option>
-																	<option value="5">Пункт выпадающего списка 1</option>
-																</select>
-															</div>
-														</div>
-														<div class="col-12 col-md-6">
-															<div class="form-group">
-																<label for="vac_lang_level_1">Уровень владения</label>
-																<select name="vac_lang_level[]" id="vac_lang_level_1" required>
-																	<option value="1">Пункт выпадающего списка 1</option>
-																	<option value="2">Пункт выпадающего списка 2</option>
-																	<option value="3">Пункт выпадающего списка, занимающий две строки</option>
-																	<option value="4">Пункт выпадающего списка настолько длинный, что занимает целых три строки</option>
-																	<option value="5">Пункт выпадающего списка 1</option>
-																</select>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="btn-add-wrapper">
-													<div class="btn btn-2 btn-add btn-add-form-item">Добавить язык</div>
-												</div>
-											</div>
-										</div>
-										<div class="form-section"><a name="extra"></a>
-											<div class="h3">Дополнительно</div>
-											<div class="row">
-												<div class="col-12">
-													<div class="form-group">
-														<label for="vac_knew">Откуда узнали о нас?</label>
-														<select name="vac_knew" id="vac_knew" required>
-															<option value="1">Пункт выпадающего списка 1</option>
-															<option value="2">Пункт выпадающего списка 2</option>
-															<option value="3">Пункт выпадающего списка, занимающий две строки</option>
-															<option value="4">Пункт выпадающего списка настолько длинный, что занимает целых три строки</option>
-															<option value="5">Пункт выпадающего списка 1</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-12">
-													<div class="form-group">
-														<label for="vac_story">Расскажите о себе, или напишите что угодно</label>
-														<textarea name="vac_story" id="vac_story" rows="4" placeholder=" " required></textarea>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="form-section"><a name="cv"></a>
-											<div class="h3">Резюме <span>(необязательно)</span></div>
-											<div class="row">
-												<div class="col-12">
-													<div class="form-group">
-														<label for="vac_cv">Вставьте ссылку на ваше резюме</label>
-														<input type="text" name="vac_cv" id="vac_cv" placeholder=" ">
-													</div>
-												</div>
-												<div class="col-12">
-													<div class="form-group">
-														<label for="vac_cv_file">Или прикрепите файл резюме или его скриншоты</label>
-														<input type="file" name="vac_cv_file" id="vac_cv_file" data-label="Прикрепить резюме">
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="form-section">
-											<div class="form-agree">
-												<div class="form-checkbox">
-													<input type="checkbox" name="vac_agree" id="vac_agree" required>
-													<label for="vac_agree">Я принимаю <a href="#">пользовательское соглашение</a></label>
-												</div>
-											</div>
-										</div>
-										<div class="form-footer">
-											<button class="btn btn-1 btn-1-bigger" type="submit">Отправить анкету</button>
-										</div>
-									</form>
+									<?$APPLICATION->IncludeComponent(
+										"bitrix:iblock.element.add.form",
+										"jobApplication",
+										Array(
+											"COMPONENT_TEMPLATE" => ".default",
+											"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+											"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+											"CUSTOM_TITLE_DETAIL_PICTURE" => "",
+											"CUSTOM_TITLE_DETAIL_TEXT" => "",
+											"CUSTOM_TITLE_IBLOCK_SECTION" => "",
+											"CUSTOM_TITLE_NAME" => "",
+											"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+											"CUSTOM_TITLE_PREVIEW_TEXT" => "",
+											"CUSTOM_TITLE_TAGS" => "",
+											"DEFAULT_INPUT_SIZE" => "30",
+											"DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+											"ELEMENT_ASSOC" => "CREATED_BY",
+											"ELEMENT_ASSOC_PROPERTY" => "176",
+											"GROUPS" => array(0=>"2",),
+											"IBLOCK_ID" => "55",
+											"IBLOCK_TYPE" => "job_postings",
+											"LEVEL_LAST" => "Y",
+											"LIST_URL" => "",
+											"MAX_FILE_SIZE" => "0",
+											"MAX_LEVELS" => "100000",
+											"MAX_USER_ENTRIES" => "100000",
+											"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+											"PROPERTY_CODES" => array(0=>"173",1=>"174",2=>"175",3=>"176",4=>"177",5=>"178",6=>"179",7=>"180",8=>"181",9=>"182",10=>"183",11=>"184",12=>"185",13=>"186",14=>"187",15=>"188",16=>"189",17=>"190",18=>"191",19=>"192",20=>"193",),
+											"PROPERTY_CODES_REQUIRED" => array(0=>"",),
+											"RESIZE_IMAGES" => "N",
+											"SEF_MODE" => "N",
+											"STATUS" => "ANY",
+											"STATUS_NEW" => "N",
+											"USER_MESSAGE_ADD" => "",
+											"USER_MESSAGE_EDIT" => "",
+											"USE_CAPTCHA" => "N"
+										)
+									);?>
+         
+
 								</div>
 							</div>
 						</div>

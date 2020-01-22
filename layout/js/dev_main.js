@@ -118,6 +118,23 @@ $(document).ready(function () {
 	});
 
 
+	$("body").on("submit", "form", function(e){
+		e.preventDefault();
+
+		var array = "";
+
+		console.log("test");
+		$(this).find($(".form-group:has(select)")).each(function(index, value){
+			// console.log($(value).find("button"));
+		});
+		$(this).find($(".form-group:has(input)")).each(function(index, value){
+			// console.log($(value).find("input"));
+		});
+
+
+	});
+
+
 
 });
 
