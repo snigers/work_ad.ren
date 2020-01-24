@@ -567,7 +567,7 @@ $APPLICATION->SetTitle("Работай в фирменных магазинах 
 											);?>
 										</div>
 									</div>
-									<div class="all-link-wrapper"><a class="btn btn-2" href="#">Все вакансии</a></div>
+									<div class="all-link-wrapper"><a class="btn btn-2" href="/vacancies/">Все вакансии</a></div>
 								</div>
 							</div>
 						</div>

@@ -42,7 +42,7 @@ foreach ($arResult["PROPERTIES"]["SIMILAR_VACANCIES"]["VALUE"] as $key => $arIte
 foreach ($arResult["PROPERTIES"]["ITEM_STORIES"]["VALUE"] as $key => $arItem)
 {
 	
-	$arSelect1 = Array("ID", "IBLOCK_ID", "PREVIEW_PICTURE", "NAME", "PROPERTY_QUOTE", "PROPERTY_POSITION", "PROPERTY_CITY");
+	$arSelect1 = Array("ID", "IBLOCK_ID", "PREVIEW_PICTURE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_QUOTE", "PROPERTY_POSITION", "PROPERTY_CITY");
 	$arFilter1 = Array("IBLOCK_ID"=> $arResult["PROPERTIES"]["ITEM_STORIES"]["LINK_IBLOCK_ID"], "ID" => $arItem, "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y");
 	$res1 = CIBlockElement::GetList(Array(), $arFilter1, false, Array("nPageSize"=>50), $arSelect1);
 	while($ob1 = $res1->GetNextElement()){
@@ -63,4 +63,17 @@ foreach ($arResult["PROPERTIES"]["ITEMS_FAQ"]["VALUE"] as $key => $arItem)
 		
 		$arResult["PROPERTIES"]["ITEMS_FAQ"]["VALUE"][$key] = $arRes1;
 	}
+}
+
+if ($arResult["PROPERTIES"]["DIRECTION"]["VALUE_ENUM_ID"] == 1)
+{
+	$arResult["LINK_RESPOND"] = "/profile_retail/?name=" . $arResult["NAME"];
+}
+if ($arResult["PROPERTIES"]["DIRECTION"]["VALUE_ENUM_ID"] == 2)
+{
+	$arResult["LINK_RESPOND"] = "/profile_office/?name=" . $arResult["NAME"];
+}
+if ($arResult["PROPERTIES"]["DIRECTION"]["VALUE_ENUM_ID"] == 3)
+{
+	$arResult["LINK_RESPOND"] = "/profile_distribution/?name=" . $arResult["NAME"];
 }

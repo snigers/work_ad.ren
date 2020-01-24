@@ -44,6 +44,7 @@ use Bitrix\Main\Page\Asset;
     <div class="over-wrapper">
       <div id="mobile-indicator"></div>
       <div id="sm-indicator"></div>
+      <div id="md-indicator"></div>
       <header>
         <div class="header-content">
           <div class="row">

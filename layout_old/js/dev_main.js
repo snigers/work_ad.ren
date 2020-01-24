@@ -42,7 +42,7 @@ $(document).ready(function () {
 
 	var page = "";
 
-	if (document.location.pathname == "/vacancies/")
+	if (document.location.pathname.indexOf("/vacancies/") != -1)
 	{
 		page = "vacancies";
 		getPerPageVac();
@@ -50,7 +50,7 @@ $(document).ready(function () {
 		getFilterPage();
 		setCheckboxFilterVac();
 	}
-	if (document.location.pathname == "/about/news/")
+	if (document.location.pathname.indexOf("/about/news/") != -1)
 	{
 		page = "news";
 		getPerPageNews();
@@ -93,6 +93,7 @@ $(document).ready(function () {
 
 	$("body").on('click', '.show-num-buttons-item button', function (e) {
 		e.preventDefault();
+		console.log("test1");
 		var value = $(this).text();
 
 		displayNumElem(value);
@@ -100,20 +101,24 @@ $(document).ready(function () {
 	});
 
 	$(".dropdown-menu").on("click", "li", function(){
+		console.log("test2");
 		setFilterAjax(page, $(this));
 	});
 
 	$("#vac_search_form, #news_search_form").on("click", "button", function(e){
 		e.preventDefault();
+		console.log("test3");
 		setFilterAjax(page);
 	});
 
 	$("input:radio").on("change", function(){
+		console.log("test4");
 		setFilterAjax(page);
 	});
 
 	$(".wide-page-wrapper").on("click", ".news-tmb-tags a", function(e){
 		e.preventDefault();
+		console.log("test5");
 		setFilterAjax(page, $(this));
 	});
 
@@ -189,30 +194,25 @@ $(document).ready(function () {
 		});
 
 
-
-
-
 		$.ajax({
 			url: url,
 			type: "POST",
+			dataType: "html",
 			data: file,
 			processData: false,
 			contentType: false,
-			dataType: "json",
-
 		}).done(function() {
-			// Очищаем поля формы
-			$("#footer_order_name").val($(this).data('defvalue'));
-			$("#footer_order_phone").val($(this).data('defvalue'));
-			$("#footer_order_message").val($(this).data('defvalue'));
-			$(".file-input").addClass("file-input-new");
 
-			// Очищаем имя файла
-			$(".file-caption.icon-visible::before").show();
-			$(".file-caption-name").hide();
+				$(form).trigger('reset');
+				// Очищаю select от заполненых значений
 
-			// Показываем сообщение что форма отправленна
-			formSuccess(form);
+				form.find("select").val('default').selectpicker("refresh");
+
+				// form.find("[type=submit]").prop("disabled", false).removeClass("loading");
+
+				// Показываем сообщение что форма отправленна
+				formSuccess(form);
+			// }
 
 		});
 		return false;

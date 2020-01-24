@@ -5,34 +5,17 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 <?//pr($arResult);?>
 
 <form id="form_anketa" method="post" enctype="multipart/form-data">
-<!--	--><?//=bitrix_sessid_post()?>
-<!-- 	--><?//if ($arParams["MAX_FILE_SIZE"] > 0):?><!--<input type="hidden" name="MAX_FILE_SIZE" value="--><?//=$arParams["MAX_FILE_SIZE"]?><!--" />--><?//endif?>
-
-
-<!--    <input type="hidden" name="PROPERTY[NAME][0]" id="appeal_order" value="test">-->
-
-<!--    <div style="display: none">-->
-<!--        <select name="PROPERTY[173]" value="13">-->
-<!--            <option value="">(не установлено)</option>-->
-<!--            <option value="13">Фирменные магазины</option>-->
-<!--            <option value="14">Офис</option>-->
-<!--            <option value="15">Центр дистибуции</option>-->
-<!--        </select>-->
-<!--    </div>-->
-    
-    
-    
-    
         <div class="form-section"><a name="description"></a>
             <div class="h3">Вакансия</div>
             <div class="row">
+<!--                --><?//pr($arResult["PROPERTY_LIST_FULL"][174])?>
                 <div class="col-12 col-md-6">
                     <div class="form-group">
                         <label for="vac_vacancy"><?=$arResult["PROPERTY_LIST_FULL"][174]["NAME"]?></label>
-                        <select name="PROPERTY[174]" id="vac_vacancy" title=" " required>
+                        <select name="PROPERTY[174]" id="vac_vacancy" title=" " data-getname="<?=$_GET["name"]?>" required>
                             <option value="" disabled></option>
                             <?foreach ($arResult["PROPERTY_LIST_FULL"][174]["ENUM"] as $arItem):?>
-                                <option value="<?=$arItem["ID"]?>"><?=$arItem["VALUE"]?></option>
+                                <option value="<?=$arItem["ID"]?>"><?=$arItem["NAME"]?></option>
                             <?endforeach;?>
                         </select>
                     </div>
@@ -106,25 +89,25 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
                 <div class="col-12 col-md-6">
                     <div class="form-group">
                         <label for="vac_facebook"><?=$arResult["PROPERTY_LIST_FULL"][183]["NAME"]?></label>
-                        <input type="text" name="PROPERTY[183][0]" id="vac_facebook" placeholder=" " required>
+                        <input type="text" name="PROPERTY[183][0]" id="vac_facebook" placeholder=" ">
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group">
                         <label for="vac_instagram"><?=$arResult["PROPERTY_LIST_FULL"][184]["NAME"]?></label>
-                        <input type="text" name="PROPERTY[184][0]" id="vac_instagram" placeholder=" " required>
+                        <input type="text" name="PROPERTY[184][0]" id="vac_instagram" placeholder=" ">
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group">
                         <label for="vac_vkontakte"><?=$arResult["PROPERTY_LIST_FULL"][185]["NAME"]?></label>
-                        <input type="text" name="PROPERTY[185][0]" id="vac_vkontakte" placeholder=" " required>
+                        <input type="text" name="PROPERTY[185][0]" id="vac_vkontakte" placeholder=" ">
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group">
                         <label for="vac_odnoklassniki"><?=$arResult["PROPERTY_LIST_FULL"][186]["NAME"]?></label>
-                        <input type="text" name="PROPERTY[186][0]" id="vac_odnoklassniki" placeholder=" " required>
+                        <input type="text" name="PROPERTY[186][0]" id="vac_odnoklassniki" placeholder=" ">
                     </div>
                 </div>
             </div>
@@ -248,7 +231,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
             </div>
         </div>
         <div class="form-footer">
-<!--            <input class="btn btn-1 btn-1-bigger" type="submit" name="iblock_submit" value="Отправить анкету" />-->
             <button class="btn btn-1 btn-1-bigger" type="submit">Отправить анкету</button>
         </div>
     

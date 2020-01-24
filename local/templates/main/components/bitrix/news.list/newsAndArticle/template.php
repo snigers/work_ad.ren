@@ -9,7 +9,7 @@
 		<div class="col-12 col-md-8">
 			<div class="news-tmb news-tmb-big" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 				<?$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], Array("width" => 746, "height" => 570), BX_RESIZE_IMAGE_EXACT);?>
-				<a class="news-tmb-pic" href="#"><img src="<?=$img["src"]?>"></a>
+				<a class="news-tmb-pic" href="<?=$arItem["DETAIL_PAGE_URL"]?>"><img src="<?=$img["src"]?>"></a>
 				<div class="news-tmb-descr">
 					<ul class="news-tmb-tags">
 						<?$arStr = explode(', ', $arItem["TAGS"])?>
@@ -30,7 +30,7 @@
 		<div class="col-12 col-md-4">
 			<div class="news-tmb" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 				<?$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], Array("width" => 366, "height" => 210), BX_RESIZE_IMAGE_EXACT);?>
-				<a class="news-tmb-pic" href="#"><img src="<?=$img["src"]?>"></a>
+				<a class="news-tmb-pic" href="<?=$arItem["DETAIL_PAGE_URL"]?>"><img src="<?=$img["src"]?>"></a>
 				<div class="news-tmb-descr">
 					<ul class="news-tmb-tags">
 						<?$arStr = explode(', ', $arItem["TAGS"])?>
@@ -47,7 +47,7 @@
 	<?if ($key === 2):?>
 			<div class="news-tmb" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 				<?$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], Array("width" => 366, "height" => 210), BX_RESIZE_IMAGE_EXACT);?>
-				<a class="news-tmb-pic" href="#"><img src="<?=$img["src"]?>"></a>
+				<a class="news-tmb-pic" href="<?=$arItem["DETAIL_PAGE_URL"]?>"><img src="<?=$img["src"]?>"></a>
 				<div class="news-tmb-descr">
 					<ul class="news-tmb-tags">
 						<?$arStr = explode(', ', $arItem["TAGS"])?>

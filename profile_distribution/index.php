@@ -148,41 +148,33 @@ $APPLICATION->SetPageProperty("TITLE", "Анкета для работы в фи
 							);?>
 							
 							
-							<?
+							<?//Получаем свойство отвечающее за разделы
 								$sections = array();
 								$property_enums = CIBlockPropertyEnum::GetList(Array("SORT"=>"ASC"), Array("IBLOCK_ID"=>55, "CODE" => "SECTION"));
 								while($enum_fields = $property_enums->GetNext())
 								{	$sections[] = $enum_fields;	}
 //								pr($sections);
 							?>
-							<div class="d-block d-md-none">
-								<div class="page-tabs-mob">
-									<div class="dropdown">
-										<button class="btn dropdown-toggle btn-dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$sections[0]["VALUE"]?></button>
-										<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-											<a class="dropdown-item" href="#"><?=$sections[1]["VALUE"]?></a>
-											<a class="dropdown-item" href="#"><?=$sections[2]["VALUE"]?></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<ul class="page-tabs page-sections">
-								<?foreach ($sections as $key => $arItem):?>
-									<?if ($key == 0):?>
-										<li>
-											<a class="active" href="" data-section="<?=$arItem["ID"]?>">
-												<div class="cont"><?=$arItem["VALUE"]?></div>
-											</a>
-										</li>
-									<?else:?>
-										<li>
-											<a href="" data-section="<?=$arItem["ID"]?>">
-												<div class="cont"><?=$arItem["VALUE"]?></div>
-											</a>
-										</li>
-									<?endif;?>
-								<?endforeach;?>
-							</ul>
+							<?$APPLICATION->IncludeComponent(
+								"bitrix:menu",
+								"profileMenu",
+								array(
+									"ALLOW_MULTI_SELECT" => "N",
+									"CHILD_MENU_TYPE" => "topSubMenu",
+									"DELAY" => "N",
+									"MAX_LEVEL" => "1",
+									"MENU_CACHE_GET_VARS" => array(
+									),
+									"MENU_CACHE_TIME" => "3600",
+									"MENU_CACHE_TYPE" => "N",
+									"MENU_CACHE_USE_GROUPS" => "Y",
+									"ROOT_MENU_TYPE" => "topSubMenu",
+									"USE_EXT" => "N",
+									"COMPONENT_TEMPLATE" => "profileMenu"
+								),
+								false
+							);?>
+       
 							<div class="page-title">
 								<h1><?$APPLICATION->ShowTitle(false)?></h1>
 							</div>

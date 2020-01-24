@@ -38,11 +38,27 @@ $(document).ready(function () {
 		});
 	}
 
+	//Получение имени при переходи с вакансии в анкету
+	if (document.location.pathname.indexOf("profile") != -1)
+	{
+		if ($("#vac_vacancy").data("getname") != "")
+		{
+			console.log($("#vac_vacancy").siblings("button"));
+			$("#vac_vacancy").siblings("button").attr("title", $("#vac_vacancy").data("getname"));
+			$("#vac_vacancy").siblings("button").find(".filter-option-inner-inner").html($("#vac_vacancy").data("getname"));
+			$("#vac_vacancy").parent().removeClass("error");
+			$("#vac_vacancy").parent().addClass("dropup");
+			$("#vac_vacancy").attr("aria-required", "true");
+			// console.log();
+		}
+		// console.log();
+
+	}
 
 
 	var page = "";
 
-	if (document.location.pathname == "/vacancies/")
+	if (document.location.pathname.indexOf("/vacancies/") != -1)
 	{
 		page = "vacancies";
 		getPerPageVac();
@@ -50,7 +66,7 @@ $(document).ready(function () {
 		getFilterPage();
 		setCheckboxFilterVac();
 	}
-	if (document.location.pathname == "/about/news/")
+	if (document.location.pathname.indexOf("/about/news/") != -1)
 	{
 		page = "news";
 		getPerPageNews();
@@ -167,21 +183,9 @@ $(document).ready(function () {
 		var file = new FormData(form[0]);
 
 		//Доббавляем раздел
-		var section = "";
-		var display_mob = $("ul.page-tabs").css("display");
+		var section = $(".page-tabs-mob").find("button").html();
 
-		if (display_mob == "none")
-		{
-			$(".page-sections").find("li a").each(function () {
-				var name_section = $(this).find("div.cont").html();
-				if (name_section == $("#dropdownMenuButton").html())
-				{
-					section = $(this).data("section");
-				}
-			})
-		} else {
-			section = $(".page-sections").find("a.active").data("section");
-		}
+
 		file.append("PROPERTY[173]", section);
 
 		$('div.level-language button').each(function(index, value){
@@ -189,30 +193,25 @@ $(document).ready(function () {
 		});
 
 
-
-
-
 		$.ajax({
 			url: url,
 			type: "POST",
+			dataType: "html",
 			data: file,
 			processData: false,
 			contentType: false,
-			dataType: "json",
-
 		}).done(function() {
-			// Очищаем поля формы
-			$("#footer_order_name").val($(this).data('defvalue'));
-			$("#footer_order_phone").val($(this).data('defvalue'));
-			$("#footer_order_message").val($(this).data('defvalue'));
-			$(".file-input").addClass("file-input-new");
 
-			// Очищаем имя файла
-			$(".file-caption.icon-visible::before").show();
-			$(".file-caption-name").hide();
+				$(form).trigger('reset');
+				// Очищаю select от заполненых значений
 
-			// Показываем сообщение что форма отправленна
-			formSuccess(form);
+				form.find("select").val('default').selectpicker("refresh");
+
+				// form.find("[type=submit]").prop("disabled", false).removeClass("loading");
+
+				// Показываем сообщение что форма отправленна
+				formSuccess(form);
+			// }
 
 		});
 		return false;
