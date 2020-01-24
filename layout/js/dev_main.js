@@ -118,20 +118,104 @@ $(document).ready(function () {
 	});
 
 
-	$("body").on("submit", "form", function(e){
+
+	// Add form item
+
+	$(".btn-add-form-item").click(function () {
+
+		var itemsLength = $(this).closest(".multi-form-items").find(".multi-form-item").length;
+
+		var newItemTemplate = $(this).closest(".multi-form-items").find(".multi-form-item-template").html();
+
+		var newItem = $('<div class="multi-form-item"></div>');
+
+		newItem.html(newItemTemplate);
+
+		newItem.find("input, select, textarea").each(function () {
+
+			var name = $(this).attr("name");
+			name = name.replace("*", itemsLength);
+			$(this).attr("name", name);
+
+			$(this).prop("id", $(this).prop("id") + "_" + itemsLength + 1).prop("disabled", false);
+
+		});
+
+		newItem.find("label").each(function () {
+
+			$(this).prop("for", $(this).prop("for") + "_" + itemsLength + 1);
+
+		});
+
+		$(this).closest(".btn-add-wrapper").before(newItem);
+
+		validateForms();
+
+	});
+
+	// Add form item END
+
+
+
+	$("body").on("submit", "#form_anketa", function(e){
 		e.preventDefault();
 
-		var array = "";
+		var url = "/ajax/ajax_anketa.php";
+		var form = $(this);
+		form.children().find("select[name='PROPERTY[188][*][VALUE][]'], select[name='PROPERTY[189][*][VALUE][]']").remove();
 
-		console.log("test");
-		$(this).find($(".form-group:has(select)")).each(function(index, value){
-			// console.log($(value).find("button"));
+		var file = new FormData(form[0]);
+
+		//Доббавляем раздел
+		var section = "";
+		var display_mob = $("ul.page-tabs").css("display");
+
+		if (display_mob == "none")
+		{
+			$(".page-sections").find("li a").each(function () {
+				var name_section = $(this).find("div.cont").html();
+				if (name_section == $("#dropdownMenuButton").html())
+				{
+					section = $(this).data("section");
+				}
+			})
+		} else {
+			section = $(".page-sections").find("a.active").data("section");
+		}
+		file.append("PROPERTY[173]", section);
+
+		$('div.level-language button').each(function(index, value){
+			file.append("PROPERTY[194][" + index + "]", $(this).attr("title"));
 		});
-		$(this).find($(".form-group:has(input)")).each(function(index, value){
-			// console.log($(value).find("input"));
+
+
+
+
+
+		$.ajax({
+			url: url,
+			type: "POST",
+			data: file,
+			processData: false,
+			contentType: false,
+			dataType: "json",
+
+		}).done(function() {
+			// Очищаем поля формы
+			$("#footer_order_name").val($(this).data('defvalue'));
+			$("#footer_order_phone").val($(this).data('defvalue'));
+			$("#footer_order_message").val($(this).data('defvalue'));
+			$(".file-input").addClass("file-input-new");
+
+			// Очищаем имя файла
+			$(".file-caption.icon-visible::before").show();
+			$(".file-caption-name").hide();
+
+			// Показываем сообщение что форма отправленна
+			formSuccess(form);
+
 		});
-
-
+		return false;
 	});
 
 

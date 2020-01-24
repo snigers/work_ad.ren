@@ -4,7 +4,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 
 <?//pr($arResult);?>
 
-<form method="post" enctype="multipart/form-data">
+<form id="form_anketa" method="post" enctype="multipart/form-data">
 <!--	--><?//=bitrix_sessid_post()?>
 <!-- 	--><?//if ($arParams["MAX_FILE_SIZE"] > 0):?><!--<input type="hidden" name="MAX_FILE_SIZE" value="--><?//=$arParams["MAX_FILE_SIZE"]?><!--" />--><?//endif?>
 
@@ -150,25 +150,21 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <label for="vac_lang_foreign_1">Иностранный язык</label>
-                                <select name="vac_lang_foreign[]" id="vac_lang_foreign_1" required>
-                                    <option value="1">Пункт выпадающего списка 1</option>
-                                    <option value="2">Пункт выпадающего списка 2</option>
-                                    <option value="3">Пункт выпадающего списка, занимающий две строки</option>
-                                    <option value="4">Пункт выпадающего списка настолько длинный, что занимает целых три строки</option>
-                                    <option value="5">Пункт выпадающего списка 1</option>
+                                <label for="vac_lang_foreign"><?=$arResult["PROPERTY_LIST_FULL"][188]["NAME"]?></label>
+                                <select name="PROPERTY[188][*][VALUE][]" title=" " id="vac_lang_foreign">
+									<?foreach ($arResult["PROPERTY_LIST_FULL"][188]["ENUM"] as $arItem):?>
+                                        <option value="<?=$arItem["ID"]?>"><?=$arItem["UF_NAME"]?></option>
+									<?endforeach;?>
                                 </select>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <label for="vac_lang_level_1">Уровень владения</label>
-                                <select name="vac_lang_level[]" id="vac_lang_level_1" required>
-                                    <option value="1">Пункт выпадающего списка 1</option>
-                                    <option value="2">Пункт выпадающего списка 2</option>
-                                    <option value="3">Пункт выпадающего списка, занимающий две строки</option>
-                                    <option value="4">Пункт выпадающего списка настолько длинный, что занимает целых три строки</option>
-                                    <option value="5">Пункт выпадающего списка 1</option>
+                                <label for="vac_lang_level"><?=$arResult["PROPERTY_LIST_FULL"][189]["NAME"]?></label>
+                                <select class="level-language" name="PROPERTY[189][*][VALUE][]" title=" " id="vac_lang_level">
+									<?foreach ($arResult["PROPERTY_LIST_FULL"][189]["ENUM"] as $arItem):?>
+                                        <option value="<?=$arItem["ID"]?>"><?=$arItem["VALUE"]?></option>
+									<?endforeach;?>
                                 </select>
                             </div>
                         </div>
@@ -190,7 +186,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label for="vac_lang_level"><?=$arResult["PROPERTY_LIST_FULL"][189]["NAME"]?></label>
-                                <select name="PROPERTY[189][]" title=" " id="vac_lang_level">
+                                <select class="level-language" name="PROPERTY[189][0][VALUE][]" title=" " id="vac_lang_level">
 									<?foreach ($arResult["PROPERTY_LIST_FULL"][189]["ENUM"] as $arItem):?>
                                         <option value="<?=$arItem["ID"]?>"><?=$arItem["VALUE"]?></option>
 									<?endforeach;?>
@@ -238,7 +234,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
                     <div class="form-group">
                         <label for="vac_cv_file"><?=$arResult["PROPERTY_LIST_FULL"][193]["NAME"]?></label>
                         <input type="hidden" name="PROPERTY[193][0]" value="">
-                        <input type="file" name="PROPERTY_FILE_193_0" id="vac_cv_file" data-label="Прикрепить резюме">
+                        <input type="file" name="PROPERTY_FILE_193_0" id="file" data-label="Прикрепить резюме">
                     </div>
                 </div>
             </div>

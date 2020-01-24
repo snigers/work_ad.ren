@@ -119,7 +119,7 @@ function getListLang() {
 ////	$arFields["PROPERTY_VALUES"][173] = 13;
 //
 //	echo "<pre>";  print_r($arFields); echo "</pre>";
-////	exit; // принудительно прервем работу, чтобы увидеть массив $arFields
+//	exit; // принудительно прервем работу, чтобы увидеть массив $arFields
 //}
 
 

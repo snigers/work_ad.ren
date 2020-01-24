@@ -874,7 +874,9 @@ textarea {
 
 .form-alt .bootstrap-select .dropdown-toggle {
   border-color: #fff !important;
-  background-color: #fff !important;
+  background-color: #fff !important; }
+
+.stores-map-controls .bootstrap-select .dropdown-toggle {
   font-family: 'adineuePROCyr';
   font-size: 24px;
   line-height: 26px;
@@ -884,8 +886,8 @@ textarea {
 
 .bootstrap-select.city-select .dropdown-toggle {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1) !important;
-  padding-top: 17px !important;
-  padding-bottom: 13px !important;
+  padding-top: 15px !important;
+  padding-bottom: 11px !important;
   height: 56px; }
 
 .bootstrap-select.select-alt .dropdown-toggle {
@@ -897,7 +899,7 @@ textarea {
   font-size: 17px !important;
   font-weight: bold !important;
   color: #979797 !important;
-  padding: 5px 25px 1px 0 !important;
+  padding: 1px 25px 5px 0 !important;
   height: 34px; }
 
 .bootstrap-select .dropdown-toggle.filled {
@@ -1086,7 +1088,7 @@ input[type=radio] + label:before {
   transition: all .1s ease;
   position: absolute;
   left: 0;
-  top: -3px;
+  top: 0;
   background: url(../images/radio-check.png) center center no-repeat;
   background-size: 0 0; }
 
@@ -1477,11 +1479,35 @@ input[type=checkbox].disabled + label:before {
 
 .file-input .input-group,
 .file-input .input-group-append {
-  margin: 0 !important; }
+  margin: 0 !important;
+  position: relative;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start; }
 
 .file-input .input-group-append {
   margin: 0 !important;
   display: block; }
+
+.fileinput-remove-button {
+  position: absolute !important;
+  left: 100%;
+  top: 0;
+  width: 14px !important;
+  height: 14px !important;
+  background: url(../images/file-remove.png) 0 0 no-repeat;
+  background-size: 14px 28px;
+  font-size: 0;
+  text-indent: -1000px;
+  overflow: hidden;
+  padding: 0 !important;
+  background-color: transparent !important;
+  margin-left: 30px;
+  margin-top: 23px; }
+
+.fileinput-remove-button:hover {
+  background-position: 0 -14px; }
 
 .file-caption {
   border: none !important;
@@ -1489,13 +1515,17 @@ input[type=checkbox].disabled + label:before {
   outline: none !important;
   box-shadow: none !important;
   -ms-flex-order: 2;
-      order: 2; }
+      order: 2;
+  margin-left: 40px; }
 
 .file-caption .file-caption-name {
   border: none !important;
   border-radius: 0 !important;
   padding: 0 !important;
-  text-align: left !important; }
+  text-align: left !important;
+  font-weight: normal !important;
+  font-size: 18px;
+  line-height: 24px; }
 
 .vacancy-form .form-agree {
   margin: 8px 0 0 0;
@@ -1720,7 +1750,7 @@ ul.navbar-nav > li.has-submenu > a:after {
   width: 960px;
   transition: opacity .35s ease; }
 
-@media (min-width: 992px) {
+@media (min-width: 1220px) {
   .submenu {
     visibility: hidden;
     height: 0;
@@ -1903,6 +1933,9 @@ ul.submenu-list a.active {
 .blockquote-alt-wrapper {
   margin: 50px 0 50px 0; }
 
+.blockquote-alt-wrapper:last-child {
+  margin-bottom: 0; }
+
 .blockquote-alt-pics {
   margin: 0 -83px 0 -83px; }
 
@@ -1980,7 +2013,9 @@ ul.submenu-list a.active {
 
 .reasons-item-pic {
   position: relative;
-  margin: 0 20px 0 0; }
+  margin: 0 20px 0 0;
+  display: -ms-flexbox;
+  display: flex; }
 
 .reasons-item-pic-front {
   position: absolute;
@@ -1991,6 +2026,51 @@ ul.submenu-list a.active {
   display: flex;
   -ms-flex-pack: end;
       justify-content: flex-end; }
+
+.reasons-item-pic-front:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #FC4237;
+  transition: left .5s ease, right .5s ease;
+  opacity: 0; }
+
+.reasons-item-pic-front.out:after {
+  left: 0;
+  right: 0;
+  opacity: 1; }
+
+.reasons-item-pic-front.in:after {
+  right: 100%;
+  left: 0;
+  opacity: 1; }
+
+.reasons-item-pic-back {
+  position: relative; }
+
+.reasons-item-pic-back:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #000;
+  transition: left .5s ease, right .5s ease;
+  opacity: 0; }
+
+.reasons-item-pic-back.out:after {
+  left: 0;
+  right: 0;
+  opacity: 1; }
+
+.reasons-item-pic-back.in:after {
+  right: 100%;
+  left: 0;
+  opacity: 1; }
 
 .reasons-item-pic-front img {
   height: 100%; }
@@ -2198,7 +2278,8 @@ ul.submenu-list a.active {
   border: none;
   margin: 0;
   padding: 0;
-  height: 420px; }
+  height: 420px;
+  overflow: hidden; }
 
 .page-header .row {
   margin: 0;
@@ -2225,8 +2306,10 @@ ul.page-menu {
   margin: 0;
   padding: 0; }
 
-.page-menu-fixed {
-  position: fixed;
+.page-menu-fixed,
+.vac-num-fixed,
+.filter-fixed {
+  position: fixed !important;
   z-index: 10; }
 
 ul.page-menu > li {
@@ -2928,7 +3011,7 @@ footer {
       flex-wrap: nowrap; }
 
 .list-controls .show-num {
-  margin: 13px 0 0 0; }
+  margin: 11px 0 0 0; }
 
 .list-controls-bottom .show-num {
   margin: 11px 0 0 0; }
@@ -3221,7 +3304,15 @@ ul.vacancy-tags a:focus {
   background-repeat: no-repeat;
   background-position: center center;
   background-position: center center;
-  background-size: cover; }
+  background-size: cover;
+  transition: all .5s ease; }
+
+@media (min-width: 767px) {
+  .why-tmb:hover {
+    z-index: 10; }
+  .why-tmb:hover .why-tmb-pic {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08); } }
 
 .why-tmb-descr {
   min-height: 260px;
@@ -3404,7 +3495,8 @@ ul.page-tabs > li {
 ul.page-tabs > li:before {
   display: none; }
 
-ul.page-tabs a {
+ul.page-tabs a,
+ul.page-tabs a:focus {
   display: block;
   padding: 13px 15px 10px 15px;
   min-height: 60px;
@@ -3416,14 +3508,15 @@ ul.page-tabs a {
       justify-content: center;
   transition: all .2s ease;
   background: #EDEDED;
-  text-decoration: none !important; }
+  text-decoration: none !important;
+  color: #979797; }
 
 ul.page-tabs a:hover {
   color: #000; }
 
 ul.page-tabs a.active {
   background: #fff;
-  color: #979797; }
+  color: #000; }
 
 .vacancy-form {
   margin: 60px 0 0 0; }

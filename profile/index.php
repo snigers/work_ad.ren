@@ -153,6 +153,7 @@ $APPLICATION->SetPageProperty("TITLE", "Анкета для работы в фи
 								$property_enums = CIBlockPropertyEnum::GetList(Array("SORT"=>"ASC"), Array("IBLOCK_ID"=>55, "CODE" => "SECTION"));
 								while($enum_fields = $property_enums->GetNext())
 								{	$sections[] = $enum_fields;	}
+//								pr($sections);
 							?>
 							<div class="d-block d-md-none">
 								<div class="page-tabs-mob">
@@ -165,17 +166,17 @@ $APPLICATION->SetPageProperty("TITLE", "Анкета для работы в фи
 									</div>
 								</div>
 							</div>
-							<ul class="page-tabs">
+							<ul class="page-tabs page-sections">
 								<?foreach ($sections as $key => $arItem):?>
 									<?if ($key == 0):?>
 										<li>
-											<a class="active" href="#">
+											<a class="active" href="" data-section="<?=$arItem["ID"]?>">
 												<div class="cont"><?=$arItem["VALUE"]?></div>
 											</a>
 										</li>
 									<?else:?>
 										<li>
-											<a href="#">
+											<a href="" data-section="<?=$arItem["ID"]?>">
 												<div class="cont"><?=$arItem["VALUE"]?></div>
 											</a>
 										</li>
