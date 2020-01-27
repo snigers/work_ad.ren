@@ -2,13 +2,11 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 
 
-<?//pr($arResult);?>
 
 <form id="form_anketa" method="post" enctype="multipart/form-data">
         <div class="form-section"><a name="description"></a>
             <div class="h3">Вакансия</div>
             <div class="row">
-<!--                --><?//pr($arResult["PROPERTY_LIST_FULL"][174])?>
                 <div class="col-12 col-md-6">
                     <div class="form-group">
                         <label for="vac_vacancy"><?=$arResult["PROPERTY_LIST_FULL"][174]["NAME"]?></label>

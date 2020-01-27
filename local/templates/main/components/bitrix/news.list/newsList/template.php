@@ -65,7 +65,7 @@
 							<p>Получай интересные статьи о&nbsp;спорте, мотивации, работе сразу на&nbsp;почту</p>
 						</div>
 						<div class="subscribe-form">
-							<form>
+							<form id="newsletter_sub">
 								<div class="form-group">
 									<label for="subscribe_email">Ваша почта</label>
 									<input type="email" name="subscribe_email" id="subscribe_email" placeholder=" " required>
@@ -79,7 +79,17 @@
 							</form>
 						</div>
 						<div class="h4">Читай нас в&nbsp;соцсетях</div>
-						<div class="soclinks"><a class="soclink" href="#"><img class="svg-inline" src="images/ico-vk.svg"></a><a class="soclink" href="#"><img class="svg-inline" src="images/ico-fb.svg"></a><a class="soclink" href="#"><img class="svg-inline" src="images/ico-instagram.svg"></a></div>
+						<div class="soclinks">
+                            <a class="soclink" href="#">
+                                <img class="svg-inline" src="/layout/images/ico-vk.svg">
+                            </a>
+                            <a class="soclink" href="#">
+                                <img class="svg-inline" src="/layout/images/ico-fb.svg">
+                            </a>
+                            <a class="soclink" href="#">
+                                <img class="svg-inline" src="/layout/images/ico-instagram.svg">
+                            </a>
+                        </div>
 					</div>
 				</div>
 			<?else:?>

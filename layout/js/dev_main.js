@@ -38,26 +38,100 @@ $(document).ready(function () {
 		});
 	}
 
+	// Добавляем подписчика на рассылку
+	$("body").on("submit", "#newsletter_sub", function(e) {
+		e.preventDefault();
+		var form = $(this);
+		var email = "email=" + $(this).find("input").val();
+		var url = "/ajax/ajax_email_newsletter.php";
+		console.log("test");
+		console.log($(this).find("input").val());
+
+		$.ajax({
+			url: url,
+			type: "POST",
+			dataType: "html",
+			data: email,
+		}).done(function() {
+			// Очищаю select от заполненых значений
+			form.find("select").val('default').selectpicker("refresh");
+
+			// Показываем сообщение что форма отправленна
+			formSuccess(form);
+
+		});
+		return false;
+	});
+
 	//Получение имени при переходи с вакансии в анкету
 	if (document.location.pathname.indexOf("profile") != -1)
 	{
 		if ($("#vac_vacancy").data("getname") != "")
 		{
-			console.log($("#vac_vacancy").siblings("button"));
-			$("#vac_vacancy").siblings("button").attr("title", $("#vac_vacancy").data("getname"));
-			$("#vac_vacancy").siblings("button").find(".filter-option-inner-inner").html($("#vac_vacancy").data("getname"));
-			$("#vac_vacancy").parent().removeClass("error");
-			$("#vac_vacancy").parent().addClass("dropup");
-			$("#vac_vacancy").attr("aria-required", "true");
-			// console.log();
+			$("#vac_vacancy").find("option").each(function(){
+				if ($(this).text() == $("#vac_vacancy").data("getname"))
+				{
+					var value = $(this).val();
+					$("#vac_vacancy").val(value).change();
+				}
+			});
 		}
-		// console.log();
-
 	}
 
+	// Добавляем в избранное вакансии
+	$(".vac-tmb-fav").on("click", "", function(e){
+		e.preventDefault();
+		var url = "";
+		var id_favorites = "";
 
+		if ($(this).data("favorites") == 0)
+		{
+			$(this).attr("data-favorites", 1).data('favorites', 1);
+			$(this).addClass("favorites-true");
+			url = "/ajax/ajax_favorites.php";
+			id_favorites = "ID_FAVORITES=" + $(this).data("favorites-vac");
+		} else {
+			$(this).attr("data-favorites", 0).data('favorites', 0);
+			$(this).removeClass("favorites-true");
+			url = "/ajax/ajax_favorites.php";
+			id_favorites = "ID_REMOVE=" + $(this).data("favorites-vac");
+		}
+
+		$.ajax({
+			url: url,
+			type: "POST",
+			dataType: "html",
+			data: id_favorites,
+		}).done(function() {
+
+			console.log("test");
+
+		});
+		return false;
+	});
+
+	// Удаляем из на странице избранных вакансий вакансию
+	$("body").on("click", ".vac-tmb-remove", function(e) {
+		e.preventDefault();
+		var url = "/ajax/ajax_favorites_list.php";
+		var id_favorites = "ID_REMOVE=" + $(this).data("favorites-remove");
+
+		$.ajax({
+			url: url,
+			type: "POST",
+			dataType: "html",
+			data: id_favorites,
+		}).done(function(html) {
+
+			$(".row-alt").empty();
+			$(".row-alt").html($(html));
+
+		});
+	});
+
+
+	//	Определяем раздел и запускаем события на ней
 	var page = "";
-
 	if (document.location.pathname.indexOf("/vacancies/") != -1)
 	{
 		page = "vacancies";
@@ -110,25 +184,30 @@ $(document).ready(function () {
 	$("body").on('click', '.show-num-buttons-item button', function (e) {
 		e.preventDefault();
 		var value = $(this).text();
+		// console.log("test1");
 
 		displayNumElem(value);
 		setFilterAjax(page);
 	});
 
 	$(".dropdown-menu").on("click", "li", function(){
+		// console.log("test2");
 		setFilterAjax(page, $(this));
 	});
 
 	$("#vac_search_form, #news_search_form").on("click", "button", function(e){
+		// console.log("test3");
 		e.preventDefault();
 		setFilterAjax(page);
 	});
 
 	$("input:radio").on("change", function(){
+		// console.log("test4");
 		setFilterAjax(page);
 	});
 
 	$(".wide-page-wrapper").on("click", ".news-tmb-tags a", function(e){
+		// console.log("test5");
 		e.preventDefault();
 		setFilterAjax(page, $(this));
 	});
@@ -479,8 +558,6 @@ function setTag() {
 			}
 		});
 
-		console.log(name_tag);
-		console.log($(".filled"));
 		$(".filled").attr("title", name_tag);
 		$(".filter-option-inner-inner").text(name_tag);
 	}

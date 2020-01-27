@@ -59,9 +59,16 @@ $APPLICATION->AddChainItem($arResult["PROPERTIES"]["SHORT_TITLE"]["VALUE"], "", 
                                             </ul>
                                         </div>
                                         <div class="vacancy-controls-r">
-                                            <div class="controls-buttons"><a class="btn btn-fav" href="#">
-                                                    <div class="ico"><img src="/layout/images/ico-fav-2.svg"></div></a><a class="btn btn-share" href="#">
-                                                    <div class="ico"><img src="/layout/images/ico-share.svg"></div></a><a class="btn btn-1 btn-1-med" href="<?=$arResult["LINK_RESPOND"]?>"><?=($arResult["PROPERTIES"]["BTN_ONE_TITLE"]["VALUE"]) ? $arResult["PROPERTIES"]["BTN_ONE_TITLE"]["VALUE"] : "Откликнуться"?></a></div>
+                                            <div class="controls-buttons">
+                                                <a class="btn btn-fav" href="#">
+                                                    <div class="ico"><img src="/layout/images/ico-fav-2.svg"></div>
+                                                </a>
+                                                <a class="btn btn-share" href="#">
+                                                    <div class="ico"><img src="/layout/images/ico-share.svg"></div>
+                                                </a>
+                                                <a class="btn btn-1 btn-1-med" href="<?=$arResult["LINK_RESPOND"]?>"><?=($arResult["PROPERTIES"]["BTN_ONE_TITLE"]["VALUE"]) ? $arResult["PROPERTIES"]["BTN_ONE_TITLE"]["VALUE"] : "Откликнуться"?>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -69,7 +76,7 @@ $APPLICATION->AddChainItem($arResult["PROPERTIES"]["SHORT_TITLE"]["VALUE"], "", 
                             <div class="page-content"><a name="descrition"></a>
                                 <div class="h3"><?=$arResult["PROPERTIES"]["TITLE_VACANCIES"]["VALUE"]?></div>
                                 <?=$arResult["DETAIL_TEXT"]?>
-                                <div class="article-button-wrapper"><a class="btn btn-1 btn-1-big" href="#"><?=($arResult["PROPERTIES"]["BTN_ONE_TITLE"]["VALUE"]) ? $arResult["PROPERTIES"]["BTN_TWO_TITLE"]["VALUE"] : "Откликнуться на вакансию"?></a></div>
+                                <div class="article-button-wrapper"><a class="btn btn-1 btn-1-big" href="<?=$arResult["LINK_RESPOND"]?>"><?=($arResult["PROPERTIES"]["BTN_ONE_TITLE"]["VALUE"]) ? $arResult["PROPERTIES"]["BTN_TWO_TITLE"]["VALUE"] : "Откликнуться на вакансию"?></a></div>
                             </div>
                         </div>
                     </div>
@@ -195,7 +202,7 @@ $APPLICATION->AddChainItem($arResult["PROPERTIES"]["SHORT_TITLE"]["VALUE"], "", 
                                                 <?if ($count === 1):?>
 													<?$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], Array("width" => 749, "height" => 301), BX_RESIZE_IMAGE_EXACT);?>
                                                     <div class="col-12">
-                                                        <a class="success-tmb" href="<?=$arItem["DETAIL_PAGE_URL"] . "#story=story" . $arItem["ID"]?>">
+                                                        <a class="success-tmb" href="<?="/education_and_development/success/#story=story" . $arItem["ID"]?>">
                                                             <div class="success-tmb-pic"><img src="<?=$img["src"]?>"></div>
                                                             <div class="success-tmb-descr">
                                                                 <div class="h3"><?=$arItem["PROPERTY_QUOTE_VALUE"]["TEXT"]?></div>
@@ -213,7 +220,7 @@ $APPLICATION->AddChainItem($arResult["PROPERTIES"]["SHORT_TITLE"]["VALUE"], "", 
                                                 <?else:?>
 													<?$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], Array("width" => 364, "height" => 300), BX_RESIZE_IMAGE_EXACT);?>
                                                     <div class="col-12 col-md-6">
-                                                        <a class="success-tmb" href="<?=$arItem["DETAIL_PAGE_URL"] . "#story=story" . $arItem["ID"]?>">
+                                                        <a class="success-tmb" href="<?="/education_and_development/success/#story=story" . $arItem["ID"]?>">
                                                             <div class="success-tmb-pic"><img src="<?=$img["src"]?>"></div>
                                                             <div class="success-tmb-descr">
                                                                 <div class="h3"><?=$arItem["PROPERTY_QUOTE_VALUE"]["TEXT"]?></div>

@@ -1,1 +1,1 @@
-<a class="btn-header-fav" href="#"><div class="ico"><img class="svg-inline" src="/layout/images/ico-btn-header-fav.svg"></div></a>
+<a class="btn-header-fav" href="/favorites_vacancies/"><div class="ico"><img class="svg-inline" src="/layout/images/ico-btn-header-fav.svg"></div></a>

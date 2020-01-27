@@ -12,7 +12,9 @@ $this->setFrameMode(true);
 		<a class="vac-tmb" href="<?=$arItem["DETAIL_PAGE_URL"]?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 			<div class="vac-tmb-header">
 				<div class="h3"><?=$arItem["NAME"]?></div>
-				<div class="vac-tmb-fav">
+                <?//Проверяем есть ли элемент в избранном и или его удаляем от туда или добавляем по клику в избранное?>
+                <?$favorites = array_search($arItem["ID"],$_SESSION["LIST_FAVORITES"]);?>
+				<div class="vac-tmb-fav <?=($favorites) ? "favorites-true" : ""?>" data-favorites-vac="<?=$arItem["ID"]?>" data-favorites="<?=($favorites) ? "1" : "0"?>">
 					<img class="svg-inline" src="/layout/images/ico-fav.svg">
 				</div>
 			</div>

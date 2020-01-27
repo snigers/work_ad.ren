@@ -60,7 +60,7 @@ while($ob = $res->GetNextElement()){
 
 
 
-pr($_POST);
+//pr($_POST);
 //echo "Y";
 //pr($_FILES);
 

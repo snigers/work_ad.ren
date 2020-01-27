@@ -153,7 +153,6 @@ $APPLICATION->SetPageProperty("TITLE", "Анкета для работы в фи
 								$property_enums = CIBlockPropertyEnum::GetList(Array("SORT"=>"ASC"), Array("IBLOCK_ID"=>55, "CODE" => "SECTION"));
 								while($enum_fields = $property_enums->GetNext())
 								{	$sections[] = $enum_fields;	}
-//								pr($sections);
 							?>
 							<?$APPLICATION->IncludeComponent(
                                 "bitrix:menu",
@@ -174,60 +173,6 @@ $APPLICATION->SetPageProperty("TITLE", "Анкета для работы в фи
                                 ),
                                 false
                             );?>
-<!--							<div class="d-block d-md-none">-->
-<!--								<div class="page-tabs-mob">-->
-<!--									<div class="dropdown">-->
-<!--										<button class="btn dropdown-toggle btn-dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--><?//=$sections[0]["VALUE"]?><!--</button>-->
-<!--										<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
-<!--											<a class="dropdown-item" href="#">--><?//=$sections[1]["VALUE"]?><!--</a>-->
-<!--											<a class="dropdown-item" href="#">--><?//=$sections[2]["VALUE"]?><!--</a>-->
-<!--										</div>-->
-<!--									</div>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--							<ul class="page-tabs page-sections">-->
-<!--								-->
-<!--								<li>-->
-<!--									<a class="active" href="" data-section="13">-->
-<!--										<div class="cont">Фирменные магазины</div>-->
-<!--									</a>-->
-<!--								</li>-->
-<!--								<li>-->
-<!--									<a href="" data-section="14">-->
-<!--										<div class="cont">Офис</div>-->
-<!--									</a>-->
-<!--								</li>-->
-<!--								<li>-->
-<!--									<a href="" data-section="15">-->
-<!--										<div class="cont">Центр дистридуции</div>-->
-<!--									</a>-->
-<!--								</li>-->
-<!--								--><?//foreach ($sections as $key => $arItem):?>
-<!--									--><?//// Тут выбираем секцию в зависимости от раздела?>
-<!--									--><?//// Оставил в таком виде для возможности редактирования разделов из одного свойства?>
-<!--									--><?//if ($key == 0):?>
-<!--										<li>-->
-<!--											<a class="active" href="" data-section="--><?//=$arItem["ID"]?><!--">-->
-<!--												<div class="cont">--><?//=$arItem["VALUE"]?><!--</div>-->
-<!--											</a>-->
-<!--										</li>-->
-<!--									--><?//endif;?>
-<!--									--><?//if ($key == 1):?>
-<!--										<li>-->
-<!--											<a href="/profile_office/" data-section="--><?//=$arItem["ID"]?><!--">-->
-<!--												<div class="cont">--><?//=$arItem["VALUE"]?><!--</div>-->
-<!--											</a>-->
-<!--										</li>-->
-<!--									--><?//endif;?>
-<!--									--><?//if ($key == 2):?>
-<!--										<li>-->
-<!--											<a href="/profile_distribution/" data-section="--><?//=$arItem["ID"]?><!--">-->
-<!--												<div class="cont">--><?//=$arItem["VALUE"]?><!--</div>-->
-<!--											</a>-->
-<!--										</li>-->
-<!--									--><?//endif;?>
-<!--								--><?//endforeach;?>
-<!--							</ul>-->
 							<div class="page-title">
 								<h1><?$APPLICATION->ShowTitle(false)?></h1>
 							</div>

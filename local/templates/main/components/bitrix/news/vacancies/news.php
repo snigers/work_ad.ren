@@ -91,27 +91,46 @@ $this->setFrameMode(true);
                                     </form>
 								<?endif?>
                             </div>
-                            <div class="filter-form form-alt" id="filter_vacancies" data-filter="<?=$str = getFiltersSTR($_REQUEST["arrFilter_pf"])?>">
-								<?if($arParams["USE_FILTER"]=="Y"):?>
-									<?$APPLICATION->IncludeComponent(
-										"bitrix:catalog.filter",
-										"",
-										Array(
-											"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-											"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-											"FILTER_NAME" => $arParams["FILTER_NAME"],
-											"FIELD_CODE" => $arParams["FILTER_FIELD_CODE"],
-											"PROPERTY_CODE" => $arParams["FILTER_PROPERTY_CODE"],
-											"CACHE_TYPE" => $arParams["CACHE_TYPE"],
-											"CACHE_TIME" => $arParams["CACHE_TIME"],
-											"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-											"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
-										),
-										$component
-									);
-									?>
-                                    <br />
-								<?endif?>
+                            <div class="list-controls-mob d-block d-md-none">
+                                <div class="list-controls-mob-col-1">
+                                    <div class="btn btn-filter-mob" data-mob-popup="#filterPopup">Фильтр вакансий</div>
+                                </div>
+                                <div class="list-controls-mob-col-2">
+                                    <div class="sort-wrapper-mob"></div>
+                                </div>
+                            </div>
+                            <div class="mob-popup" id="filterPopup">
+                                <div class="mob-popup-content">
+                                    <div class="close"></div>
+                                    <div class="mob-popup-header d-block d-md-none">
+                                        <div class="h2">Фильтр</div>
+                                    </div>
+                                    <div class="filter-form form-alt" id="filter_vacancies" data-filter="<?=$str = getFiltersSTR($_REQUEST["arrFilter_pf"])?>">
+                                        <?if($arParams["USE_FILTER"]=="Y"):?>
+                                            <?$APPLICATION->IncludeComponent(
+                                                "bitrix:catalog.filter",
+                                                "",
+                                                Array(
+                                                    "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+                                                    "IBLOCK_ID" => $arParams["IBLOCK_ID"],
+                                                    "FILTER_NAME" => $arParams["FILTER_NAME"],
+                                                    "FIELD_CODE" => $arParams["FILTER_FIELD_CODE"],
+                                                    "PROPERTY_CODE" => $arParams["FILTER_PROPERTY_CODE"],
+                                                    "CACHE_TYPE" => $arParams["CACHE_TYPE"],
+                                                    "CACHE_TIME" => $arParams["CACHE_TIME"],
+                                                    "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
+                                                    "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
+                                                ),
+                                                $component
+                                            );
+                                            ?>
+                                            <br />
+                                        <?endif?>
+                                        <div class="d-block d-md-none">
+                                            <div class="btn btn-1 btn-close">Применить фильтр</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -135,14 +154,16 @@ $this->setFrameMode(true);
                             <div class="vac-l" data-perpage="<?=$_REQUEST["per_page"]?>" data-sort-num="<?=$_REQUEST["sort_num"]?>">
                                 <div class="list-controls form-alt">
                                     <div class="list-controls-l">
-                                        <div class="form-group">
-                                            <div class="form-item-sort">
-                                                <div class="select-sort-name">Сортировка:</div>
-                                                <select class="select-sort" name="controls_sort" id="controls_sort">
-                                                    <option value="1">По умолчанию</option>
-                                                    <option value="2">Сначала новые</option>
-                                                    <option value="3">Сначала старые</option>
-                                                </select>
+                                        <div class="sort-wrapper">
+                                            <div class="form-group sort-wrapper-group">
+                                                <div class="form-item-sort">
+                                                    <div class="select-sort-name">Сортировка:</div>
+                                                    <select class="select-sort" name="controls_sort" id="controls_sort">
+                                                        <option value="1">По умолчанию</option>
+                                                        <option value="2">Сначала новые</option>
+                                                        <option value="3">Сначала старые</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

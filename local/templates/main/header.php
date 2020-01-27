@@ -24,6 +24,7 @@ use Bitrix\Main\Page\Asset;
       Asset::getInstance()->addCss("/layout/js/datatables/datatables.min.css");
 	  Asset::getInstance()->addCss("/layout/css/main.css");
 	  Asset::getInstance()->addCss("/layout/css/responsive.css");
+	  Asset::getInstance()->addCss("/layout/css/animations.css");
       ?>
 <!--    <link rel="stylesheet" href="/layout/js/bootstrap/css/bootstrap.css">-->
 <!--    <link rel="stylesheet" href="/layout/css/bootstrap-select.min.css">-->

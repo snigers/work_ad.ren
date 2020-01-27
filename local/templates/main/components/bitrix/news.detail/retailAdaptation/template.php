@@ -9,7 +9,7 @@ $this->AddDeleteAction($arResult['ID'], $arSectionButtons['edit']['delete_elemen
 	<?$img = CFile::ResizeImageGet($arResult["PREVIEW_PICTURE"]["ID"], Array("width" => 842, "height" => 480), BX_RESIZE_IMAGE_EXACT);?>
 	<div class="career-item-pic"><img src="<?=$img["src"]?>"></div>
 	<div class="career-item-descr">
-		<div class="h2"><?=$arResult["NAME"]?></div>
+        <div class="h2"><?=$arResult["NAME"]?></div>
 		<?=$arResult["~PREVIEW_TEXT"]?>
 		<div class="career-item-button"><a class="btn btn-1" href="<?=$arResult["PROPERTIES"]["LINK_BTN"]["VALUE"]?>"><?=$arResult["PROPERTIES"]["TITLE_BTN"]["VALUE"]?></a></div>
 	</div>

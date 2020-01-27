@@ -260,6 +260,8 @@ use Bitrix\Main\Page\Asset;?>
 		Asset::getInstance()->addJs("/layout/js/main.js");
 		Asset::getInstance()->addJs("/layout/js/dev_main.js");
 		Asset::getInstance()->addJs("/layout/js/stores-map.js");
+		Asset::getInstance()->addJs("/layout/js/animations.js");
+//      <script src="js/animations.js"></script>
         ?>
 <!--        <script src="js/jquery-3.3.1.min.js"></script>-->
 <!--        <script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>-->
