@@ -1,0 +1,13 @@
+@media (max-width: 767px) {
+
+
+	.career-item-pic,
+	.career-item-descr,
+	.dept-teaser-pic,
+	.dept-teaser-descr {
+		opacity: 1 !important;
+		transform: none !important;
+	}
+
+
+}

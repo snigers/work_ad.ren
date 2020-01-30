@@ -79,22 +79,22 @@ $(document).ready(function () {
 	}
 
 	// Добавляем в избранное вакансии
-	$(".vac-tmb-fav").on("click", "", function(e){
+	$("body").on("click", ".vac-tmb-fav", function(e){
 		e.preventDefault();
 		var url = "";
 		var id_favorites = "";
 
-		if ($(this).data("favorites") == 0)
+		var curTmb = $(this).closest(".vac-tmb");
+		var curId = $(this).data("favorites-vac");
+		var curBtn = $(this);
+		var url = "/ajax/ajax_favorites.php";
+
+		if (curBtn.data("favorites") == 0)
 		{
-			$(this).attr("data-favorites", 1).data('favorites', 1);
-			$(this).addClass("favorites-true");
-			url = "/ajax/ajax_favorites.php";
-			id_favorites = "ID_FAVORITES=" + $(this).data("favorites-vac");
+			id_favorites = "ID_FAVORITES=" + curBtn.data("favorites-vac");
 		} else {
-			$(this).attr("data-favorites", 0).data('favorites', 0);
-			$(this).removeClass("favorites-true");
-			url = "/ajax/ajax_favorites.php";
-			id_favorites = "ID_REMOVE=" + $(this).data("favorites-vac");
+
+			id_favorites = "ID_REMOVE=" + curBtn.data("favorites-vac");
 		}
 
 		$.ajax({
@@ -104,17 +104,41 @@ $(document).ready(function () {
 			data: id_favorites,
 		}).done(function() {
 
-			console.log("test");
+			if (curBtn.data("favorites") == 0)
+			{
+				curBtn.attr("data-favorites", 1).data('favorites', 1);
+				curBtn.addClass("favorites-true");
+
+				$(".fav-modal .vac-tmb-header .h3").html(curTmb.find(".vac-tmb-header .h3").html());
+				$(".fav-modal .vac-tmb-place").html(curTmb.find(".vac-tmb-place").html());
+				$(".fav-modal .vac-tmb-logo").html(curTmb.find(".vac-tmb-logo").html());
+
+
+				$(".fav-modal .btn-modal-remove").attr("data-favorites-remove", curId);
+
+				$("#favModal").modal("show");
+
+			} else {
+
+				curBtn.attr("data-favorites", 0).data('favorites', 0);
+				curBtn.removeClass("favorites-true");
+
+			}
+
+
+
 
 		});
 		return false;
 	});
 
-	// Удаляем из на странице избранных вакансий вакансию
-	$("body").on("click", ".vac-tmb-remove", function(e) {
+	// Удаляем вакансию на странице избранных вакансий
+	$("body").on("click", "[data-favorites-remove]", function(e) {
+
 		e.preventDefault();
 		var url = "/ajax/ajax_favorites_list.php";
-		var id_favorites = "ID_REMOVE=" + $(this).data("favorites-remove");
+		var id_favorites = "ID_REMOVE=" + $(this).attr("data-favorites-remove");
+		var curId = $(this).attr("data-favorites-remove");
 
 		$.ajax({
 			url: url,
@@ -123,9 +147,14 @@ $(document).ready(function () {
 			data: id_favorites,
 		}).done(function(html) {
 
-			$(".row-alt").empty();
-			$(".row-alt").html($(html));
+			$(".vac-list-fav .row-alt").empty();
+			$(".vac-list-fav .row-alt").html($(html));
 
+			console.log(curId);
+
+			$("[data-favorites-vac='" + curId + "']").removeClass("favorites-true").data("favorites",0);
+
+			dynamicElements();
 		});
 	});
 
@@ -190,7 +219,7 @@ $(document).ready(function () {
 		setFilterAjax(page);
 	});
 
-	$(".dropdown-menu").on("click", "li", function(){
+	$(".form-group .dropdown-menu").on("click", "li", function(){
 		// console.log("test2");
 		setFilterAjax(page, $(this));
 	});

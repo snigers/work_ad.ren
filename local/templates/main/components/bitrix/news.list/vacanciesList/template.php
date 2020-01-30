@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 				<div class="h3"><?=$arItem["NAME"]?></div>
                 <?//Проверяем есть ли элемент в избранном и или его удаляем от туда или добавляем по клику в избранное?>
                 <?$favorites = array_search($arItem["ID"],$_SESSION["LIST_FAVORITES"]);?>
-				<div class="vac-tmb-fav <?=($favorites) ? "favorites-true" : ""?>" data-favorites-vac="<?=$arItem["ID"]?>" data-favorites="<?=($favorites) ? "1" : "0"?>">
+				<div class="vac-tmb-fav <?=(is_numeric($favorites)) ? "favorites-true" : ""?>" data-favorites-vac="<?=$arItem["ID"]?>" data-favorites="<?=(is_numeric($favorites)) ? "1" : "0"?>">
 					<img class="svg-inline" src="/layout/images/ico-fav.svg">
 				</div>
 			</div>

@@ -134,7 +134,7 @@
     left: 319px; }
   .stores-map-wrapper {
     margin: 0 -15px;
-    padding: 0 15px; }
+    padding: 29px 15px 0 15px; }
   .stores-map-wrapper:before {
     left: 15px;
     right: 15px; }
@@ -590,7 +590,12 @@
     top: 100%;
     margin: 19px 0 0 0; }
   .file-caption {
-    margin-left: 15px; } }
+    margin-left: 15px; }
+  .fav-modal .modal-content {
+    padding: 35px 90px 40px 40px; }
+  .fav-modal .modal-header h2, .fav-modal .modal-header .h2 {
+    font-size: 35px;
+    line-height: 40px; } }
 
 @media (max-width: 767px) {
   label {
@@ -1477,7 +1482,8 @@
   .feature-tmb h4, .feature-tmb .h4 {
     margin-bottom: 4px; }
   .stores-map-wrapper {
-    min-height: 0; }
+    min-height: 0;
+    padding-top: 0; }
   .stores-map {
     position: relative;
     left: auto;
@@ -1578,4 +1584,45 @@
     width: 100%; }
   .text-404 {
     font-size: 16px;
-    line-height: 24px; } }
+    line-height: 24px; }
+  .parks-balloon {
+    width: 240px;
+    font-size: 13px;
+    line-height: 18px; }
+  .parks-balloon-inner {
+    padding: 13px 25px 10px 10px; }
+  .parks-balloon .close {
+    right: 5px;
+    top: 5px; }
+  .point-name {
+    font-size: 16px;
+    line-height: 22px; }
+  .cluster-popover {
+    font-size: 13px;
+    line-height: 18px;
+    width: 240px; }
+  .cluster-popover .tabbable {
+    display: block; }
+  ul.cluster-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: auto;
+    border: none;
+    margin: 0 0 10px 0; }
+  .fav-modal .close {
+    width: 40px;
+    height: 40px; }
+  .fav-modal .modal-content {
+    padding: 50px 20px 20px 20px; }
+  .fav-modal .modal-header h2, .fav-modal .modal-header .h2 {
+    font-size: 24px;
+    line-height: 28px; }
+  .fav-modal-controls .col {
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%; }
+  .fav-modal-controls .btn {
+    width: 100%; } }

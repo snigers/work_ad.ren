@@ -32,7 +32,13 @@ $count = 1;
                             <p><?=$arItem["NAME"]?></p>
                         </div>
                     </div>
-                    <div class="contacts-item"><a class="contacts-phone" href="tel:<?=$arItem["PROPERTIES"]["PHONE"]["VALUE"]?>"><?=$arItem["PROPERTIES"]["PHONE"]["VALUE"]?></a></div>
+                    <div class="contacts-item">
+                        <?if (is_array($arItem["PROPERTIES"]["PHONE"]["VALUE"])):?>
+                            <a class="contacts-phone" href="tel:<?=$arItem["PROPERTIES"]["PHONE"]["VALUE"][0]?>"><?=$arItem["PROPERTIES"]["PHONE"]["VALUE"][0]?></a>
+                        <?else:?>
+                            <a class="contacts-phone" href="tel:<?=$arItem["PROPERTIES"]["PHONE"]["VALUE"]?>"><?=$arItem["PROPERTIES"]["PHONE"]["VALUE"]?></a>
+                        <?endif;?>
+                    </div>
                     <div class="contacts-item"><a class="contacts-email" href="mailto:<?=$arItem["PROPERTIES"]["EMAIL"]["VALUE"]?>"><?=$arItem["PROPERTIES"]["EMAIL"]["VALUE"]?></a></div>
                     <div class="contacts-button"><a class="btn btn-1" href="#"><span>Написать</span></a></div>
                 </div>
@@ -75,7 +81,11 @@ $count = 1;
                         <p><?=$arItem["NAME"]?></p>
                     </div>
                 </div>
-                <div class="contacts-item"><a class="contacts-phone" href="tel:<?=$arItem["PROPERTIES"]["PHONE"]["VALUE"]?>"><?=$arItem["PROPERTIES"]["PHONE"]["VALUE"]?></a></div>
+				<?if (is_array($arItem["PROPERTIES"]["PHONE"]["VALUE"])):?>
+                    <a class="contacts-phone" href="tel:<?=$arItem["PROPERTIES"]["PHONE"]["VALUE"][0]?>"><?=$arItem["PROPERTIES"]["PHONE"]["VALUE"][0]?></a>
+				<?else:?>
+                    <a class="contacts-phone" href="tel:<?=$arItem["PROPERTIES"]["PHONE"]["VALUE"]?>"><?=$arItem["PROPERTIES"]["PHONE"]["VALUE"]?></a>
+				<?endif;?>
                 <div class="contacts-item"><a class="contacts-email" href="mailto:<?=$arItem["PROPERTIES"]["EMAIL"]["VALUE"]?>"><?=$arItem["PROPERTIES"]["EMAIL"]["VALUE"]?></a></div>
             </div>
             <div class="offices-item-map">
@@ -98,7 +108,11 @@ $count = 1;
                             <p><?=$arItem["NAME"]?></p>
                         </div>
                     </div>
-                    <div class="contacts-item"><a class="contacts-phone" href="tel:<?=$arItem["PROPERTIES"]["PHONE"]["VALUE"]?>"><?=$arItem["PROPERTIES"]["PHONE"]["VALUE"]?></a></div>
+					<?if (is_array($arItem["PROPERTIES"]["PHONE"]["VALUE"])):?>
+                        <a class="contacts-phone" href="tel:<?=$arItem["PROPERTIES"]["PHONE"]["VALUE"][0]?>"><?=$arItem["PROPERTIES"]["PHONE"]["VALUE"][0]?></a>
+					<?else:?>
+                        <a class="contacts-phone" href="tel:<?=$arItem["PROPERTIES"]["PHONE"]["VALUE"]?>"><?=$arItem["PROPERTIES"]["PHONE"]["VALUE"]?></a>
+					<?endif;?>
                     <div class="contacts-item"><a class="contacts-email" href="mailto:<?=$arItem["PROPERTIES"]["EMAIL"]["VALUE"]?>"><?=$arItem["PROPERTIES"]["EMAIL"]["VALUE"]?></a></div>
                 </div>
                 <div class="offices-item-map">

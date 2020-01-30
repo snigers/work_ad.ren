@@ -1,7 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetPageProperty("TITLE", "Работа в Adidas");
-$APPLICATION->SetTitle("Работа в офисе в&nbsp;департаментах");
+$APPLICATION->SetTitle("Работа в офисе в департаментах");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"office", 

@@ -109,6 +109,27 @@ function getListLang() {
 	return $arHItem;
 }
 
+function getListColorMetro() {
+	CModule::IncludeModule('highloadblock');
+	
+	$highblock_id = 5;
+	$hl_block = HLBT::getById($highblock_id)->fetch();
+
+// Получение имени класса
+	$entity = HLBT::compileEntity($hl_block);
+	$entity_data_class = $entity->getDataClass();
+
+// Вывод элементов Highload-блока
+	$rs_data = $entity_data_class::getList(array(
+		'select' => array('*')
+	));
+	$arHItem = array();
+	while ($el = $rs_data->fetch()){
+		$arHItem[] = $el;
+	}
+//	Передает весь список, основное UF_NAME, UF_XML_ID
+	return $arHItem;
+}
 
 
 

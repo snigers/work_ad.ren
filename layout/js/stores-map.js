@@ -6,6 +6,16 @@ $(window).resize(function () {
 
 $(document).ready(function () {
 
+  if ($(".stores-map").css("display") == "block") {
+
+    $(".stores-map-controls").addClass("abs");
+
+  } else {
+
+    $(".stores-map-controls").removeClass("abs");
+
+  }
+
   $(".stores-map-menu li").click(function () {
 
     if (!$(this).hasClass("active")) {
@@ -14,6 +24,16 @@ $(document).ready(function () {
       $(this).addClass("active");
 
       $(".stores-tab").hide();
+
+      if ($(this).data("view") == "#storesMap") {
+
+        $(".stores-map-controls").addClass("abs");
+
+      } else {
+
+        $(".stores-map-controls").removeClass("abs");
+
+      }
 
       $($(this).data("view")).fadeIn(250);
 
@@ -55,7 +75,235 @@ if ($(".stores-map").length) {
         balloonMaxWidth: balMaxWidth
       }),
 
+      MyClusterBalloonLayout = ymaps.templateLayoutFactory.createClass(
+        '<div class="cluster-popover top">' +
+        '<a class="close" href="#"></a>' +
+        '<div class="arrow"></div>' +
+        '<div class="cluster-popover-inner">' +
+        '<div class="tabbable tabs-left">' +
+        '<ul class="cluster-nav cluster-nav-tabs"></ul>' +
+        '<div class="cluster-tab-content"></div>' +
+        '</div>' +
+        '</div>' +
+        '</div>', {
+          build: function () {
+            var state = this.getData().state;
 
+            this.geoObjects = this.getData().properties.get('geoObjects', [null]);
+            this.activeObject = state.get('activeObject', this.geoObjects[0]);
+            this.activeObjectIndex = this._findActiveObjectIndex();
+
+            if(!state.get('activeObject')) {
+              state.set('activeObject', this.activeObject);
+            }
+
+            // this._setActiveObject(this.activeObject);
+
+            this.constructor.superclass.build.call(this);
+
+            this.scrollTopTimeoutId = null;
+            this.$element = $('.cluster-popover', this.getParentElement());
+            this.$closeButton = $('.close', this.getParentElement());
+            this.$sidebar = $('.cluster-nav', this.getParentElement());
+            this.$mainContent = $('.cluster-tab-content', this.getParentElement());
+            this._loadMainContent(this.activeObject);
+            this.sidebarTemplate = $('#sidebarTemplate');
+            this.mainContentTemplate = $('#mainContentTemplate');
+            // this.sidebarItemTemplate = $('#sidebarItemTemplate');
+            this._createSidebarItems();
+            this._applyElementOffset();
+            this._setScrollTop(this._getScrollTop());
+            this._attachListeners();
+          },
+          clear: function () {
+            this._detachListeners();
+            this._clearSidebarItems();
+            this._clearScrollTopTimeout();
+            this.constructor.superclass.clear.call(this);
+          },
+          /**
+           * Очищаем таймаут скролла.
+           * @function
+           * @private
+           * @name _clearScrollTopTimeout
+           */
+          _clearScrollTopTimeout: function () {
+            if(this.scrollTopTimeoutId) {
+              window.clearTimeout(this.scrollTopTimeoutId);
+              this.scrollTopTimeoutId = null;
+            }
+          },
+          /**
+           * Навешивает обработчики событий.
+           * @function
+           * @private
+           * @name _attachListeners
+           */
+          _attachListeners: function () {
+            this.$closeButton
+              .on('click', $.proxy(this._onCloseButtonClick, this));
+            this.$sidebar
+              .delegate('li', 'click', $.proxy(this._onSidebarItemClick, this));
+          },
+          /**
+           * Снимает обработчики событий.
+           * @function
+           * @private
+           * @name _detachListeners
+           */
+          _detachListeners: function () {
+            this.$closeButton.off('click');
+            this.$sidebar.undelegate('li', 'click');
+          },
+          /**
+           * Определяет насколько нужно проскроллить сайдбар.
+           * @function
+           * @private
+           * @name _getScrollTop
+           * @returns {Number} Насколько нужно проскроллить сайдбар.
+           */
+          _getScrollTop: function () {
+            // Экспериментально найденная поправка.
+            var FIX_POSITION = 20;
+
+            return this.activeObjectIndex ?
+              this.$sidebar.children().eq(this.activeObjectIndex).offset().top + FIX_POSITION : 0;
+          },
+          /**
+           * Скроллит сайдбар на указанную позицию.
+           * @function
+           * @private
+           * @name _setScrollTop
+           * @param {Number} Позиция.
+           */
+          _setScrollTop: function (scrollTop) {
+            // выставление делается асинхронно, так как
+            // балун сначала строится, а потом передвигается на нужную позицию
+            this.scrollTopTimeoutId = window.setTimeout($.proxy(function () {
+              this.$sidebar.scrollTop(scrollTop);
+              this.scrollTopTimeoutId = null;
+            }, this), 0);
+          },
+          /**
+           * Обработчик клика на кнопке закрытия балуна.
+           * @function
+           * @private
+           * @name _onCloseButtonClick
+           * @param {jQuery.event} Объект-событие jQuery.
+           */
+          _onCloseButtonClick: function (e) {
+            e.preventDefault();
+
+            // Правильный способ закрыть балун.
+            this.events.fire('userclose');
+          },
+          /**
+           * Обработчик клика на элементе сайдбара.
+           * @function
+           * @private
+           * @name _onSidebarItemClick
+           * @param {jQuery.event} Объект-событие jQuery.
+           */
+          _onSidebarItemClick: function (e) {
+            e.preventDefault();
+
+            var index = this.$sidebar.children().index(e.currentTarget);
+
+            // this.scrollTop = this.$sidebar.scrollTop();
+            this.activeObjectIndex = index > -1 ? index : 0;
+            this._setActiveObject(this.geoObjects[this.activeObjectIndex]);
+          },
+          /**
+           * Находит индекс активного геообъекта.
+           * @function
+           * @private
+           * @name _findActiveObjectIndex
+           * @returns {Number} Индекс активного геообъекта.
+           */
+          _findActiveObjectIndex: function () {
+            var index = $.inArray(this.activeObject, this.geoObjects);
+
+            return index > -1 ? index : 0;
+          },
+          /**
+           * Устанавливает активный геообъект.
+           * @function
+           * @private
+           * @name _setActiveObject
+           * @param {ymaps.GeoObject} Активный геообъект.
+           */
+          _setActiveObject: function (activeObject) {
+            if(this.activeObject !== activeObject) {
+              this.activeObject = activeObject;
+              this.getData().state.set('activeObject', activeObject);
+              this._createSidebarItems();
+              this._loadMainContent(activeObject);
+            }
+          },
+          /**
+           * Загрузчик основного содержимого балуна.
+           * @borrows ymaps.geocode
+           * @function
+           * @private
+           * @name _loadMainContent
+           * @param {ymaps.GeoObject} Геообъект для которого загружается контент.
+           */
+          _loadMainContent: function (geoObject) {
+            this.$mainContent.html(geoObject.properties.get("balloonContentBody"));
+          },
+          /**
+           * Сдвигает балун чтобы "хвостик" указывал на точку привязки.
+           * @see http://api.yandex.ru/maps/doc/jsapi/2.x/ref/reference/IBalloonLayout.xml#event-userclose
+           * @function
+           * @private
+           * @name _applyElementOffset
+           */
+          _applyElementOffset: function () {
+            this.$element.css({
+              left: 30,
+              top: -45
+            });
+          },
+          /**
+           * Используется для автопозиционирования (balloonAutoPan).
+           * @see http://api.yandex.ru/maps/doc/jsapi/2.x/ref/reference/ILayout.xml#getClientBoundingRect
+           * @function
+           * @name getClientBoundingRect
+           * @returns {Number[][]} Координаты левого верхнего и правого нижнего углов шаблона относительно точки привязки.
+           */
+          getShape: function () {
+
+            var position = this.$element.position();
+
+            return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
+              [position.left, position.top], [
+                position.left + this.$element[0].offsetWidth,
+                position.top + this.$element[0].offsetHeight
+              ]
+            ]));
+          },
+          /**
+           * Создает список элементов сайдбара.
+           * @function
+           * @private
+           * @name _createSidebarItems
+           */
+          _createSidebarItems: function () {
+            this.$sidebar.html($.tmpl(this.sidebarTemplate, {
+              geoObjects: this.geoObjects,
+              activeIndex: this._findActiveObjectIndex()
+            }));
+          },
+          /**
+           * Очищает сайдбар.
+           * @function
+           * @private
+           * @name _clearSidebarItems
+           */
+          _clearSidebarItems: function () {
+            this.$sidebar.empty();
+          }
+        }),
 
       clusterer = new ymaps.Clusterer({
         /**
@@ -81,7 +329,9 @@ if ($(".stores-map").length) {
         clusterHideIconOnBalloonOpen: false,
         geoObjectHideIconOnBalloonOpen: false,
         zoomMargin: mapMargin,
-        clusterBalloonMaxWidth: balMaxWidth
+        clusterBalloonMaxWidth: balMaxWidth,
+        clusterBalloonLayout: MyClusterBalloonLayout,
+        clusterBalloonPanelMaxMapArea: 0
       }),
 
       getPointData = function (index) {
@@ -90,6 +340,8 @@ if ($(".stores-map").length) {
           clusterCaption: 'метка <strong>' + index + '</strong>'
         };
       },
+
+
 
       MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
         '<div class="parks-balloon">' +
@@ -212,6 +464,8 @@ if ($(".stores-map").length) {
       );
 
 
+
+
     var getPointOptions = function () {
       return {
         iconLayout: 'default#image',
@@ -219,7 +473,8 @@ if ($(".stores-map").length) {
         iconImageSize: [27, 38],
         iconImageOffset: [-14, -38],
         hideIconOnBalloonOpen: false,
-        balloonLayout: MyBalloonLayout
+        balloonLayout: MyBalloonLayout,
+        balloonPanelMaxMapArea: 0
       };
     };
 

@@ -161,6 +161,37 @@ use Bitrix\Main\Page\Asset;?>
           </div>
         </div>
       </div>
+			<div class="modal fade fav-modal" id="favModal" tabindex="-1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+						<div class="modal-header">
+							<div class="h2">Вакансия добавлена в избранное</div>
+						</div>
+						<div class="modal-body">
+							<div class="vac-tmb vac-tmb-alt">
+								<div class="vac-tmb-header">
+									<div class="h3"></div>
+								</div>
+								<div class="vac-tmb-footer">
+									<div class="vac-tmb-place">
+										<p></p>
+									</div>
+									<div class="vac-tmb-logo"></div>
+								</div>
+							</div>
+							<div class="fav-modal-controls">
+								<div class="row">
+									<div class="col"><a class="btn btn-2" href="/favorites_vacancies/"><span>Перейти в избранное</span></a></div>
+									<div class="col">
+										<div class="btn btn-5 btn-modal-remove" data-dismiss="modal" aria-label="Close"><span>Удалить</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
       <div class="modal fade form-modal callback-modal" id="callbackModal" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -234,60 +265,87 @@ use Bitrix\Main\Page\Asset;?>
         </div>
       </div>
         <?
-		Asset::getInstance()->addJs("/layout/js/jquery-3.3.1.min.js");
-		Asset::getInstance()->addJs("/layout/js/bootstrap/js/bootstrap.bundle.min.js");
-		Asset::getInstance()->addJs("/layout/js/bootstrap-select.min.js");
-		Asset::getInstance()->addJs("/layout/js/jquery.validate.min.js");
-		Asset::getInstance()->addJs("/layout/js/additional-methods.min.js");
-		Asset::getInstance()->addJs("/layout/js/jquery.maskedinput.min.js");
-		Asset::getInstance()->addJs("/layout/js/wNumb.min.js");
-		Asset::getInstance()->addJs("/layout/js/slick.min.js");
-		Asset::getInstance()->addJs("/layout/js/fancybox/jquery.fancybox.min.js");
-		Asset::getInstance()->addJs("/layout/js/bootstrap-fileinput/js/fileinput.min.js");
-		Asset::getInstance()->addJs("/layout/js/jquery.mousewheel.js");
-		Asset::getInstance()->addJs("/layout/js/jquery.mCustomScrollbar.concat.min.js");
-		Asset::getInstance()->addJs("/layout/js/moment-with-locales.js");
-		Asset::getInstance()->addJs("/layout/js/tempusdominus/tempusdominus-bootstrap-4.min.js");
-		Asset::getInstance()->addJs("/layout/js/greensock/TweenMax.min.js");
-		Asset::getInstance()->addJs("/layout/js/greensock/plugins/CSSRulePlugin.min.js");
-		Asset::getInstance()->addJs("/layout/js/greensock/plugins/ScrollToPlugin.min.js");
-		Asset::getInstance()->addJs("/layout/js/iscroll-probe.js");
-		Asset::getInstance()->addJs("/layout/js/scrollmagic/ScrollMagic.min.js");
-		Asset::getInstance()->addJs("/layout/js/scrollmagic/plugins/animation.gsap.min.js");
-		Asset::getInstance()->addJs("/layout/js/jquery-svg-to-inline.js");
-		Asset::getInstance()->addJs("//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js");
-		Asset::getInstance()->addJs("//api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=cefbc555-bed0-48f8-b6ad-23f808b12244");
-		Asset::getInstance()->addJs("/layout/js/main.js");
-		Asset::getInstance()->addJs("/layout/js/dev_main.js");
-		Asset::getInstance()->addJs("/layout/js/stores-map.js");
-		Asset::getInstance()->addJs("/layout/js/animations.js");
-//      <script src="js/animations.js"></script>
+//		Asset::getInstance()->addJs("/layout/js/jquery-3.3.1.min.js");
+//		Asset::getInstance()->addJs("/layout/js/bootstrap/js/bootstrap.bundle.min.js");
+//		Asset::getInstance()->addJs("/layout/js/bootstrap-select.min.js");
+//		Asset::getInstance()->addJs("/layout/js/jquery.validate.min.js");
+//		Asset::getInstance()->addJs("/layout/js/additional-methods.min.js");
+//		Asset::getInstance()->addJs("/layout/js/jquery.maskedinput.min.js");
+//		Asset::getInstance()->addJs("/layout/js/wNumb.min.js");
+//		Asset::getInstance()->addJs("/layout/js/slick.min.js");
+//		Asset::getInstance()->addJs("/layout/js/fancybox/jquery.fancybox.min.js");
+//		Asset::getInstance()->addJs("/layout/js/bootstrap-fileinput/js/fileinput.min.js");
+//		Asset::getInstance()->addJs("/layout/js/jquery.mousewheel.js");
+//		Asset::getInstance()->addJs("/layout/js/jquery.mCustomScrollbar.concat.min.js");
+//		Asset::getInstance()->addJs("/layout/js/moment-with-locales.js");
+//		Asset::getInstance()->addJs("/layout/js/tempusdominus/tempusdominus-bootstrap-4.min.js");
+//		Asset::getInstance()->addJs("/layout/js/greensock/TweenMax.min.js");
+//		Asset::getInstance()->addJs("/layout/js/greensock/plugins/CSSRulePlugin.min.js");
+//		Asset::getInstance()->addJs("/layout/js/greensock/plugins/ScrollToPlugin.min.js");
+//		Asset::getInstance()->addJs("/layout/js/iscroll-probe.js");
+//		Asset::getInstance()->addJs("/layout/js/scrollmagic/ScrollMagic.min.js");
+//		Asset::getInstance()->addJs("/layout/js/scrollmagic/plugins/animation.gsap.min.js");
+//		Asset::getInstance()->addJs("/layout/js/jquery-svg-to-inline.js");
+//		Asset::getInstance()->addJs("//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js");
+//		Asset::getInstance()->addJs("//api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=cefbc555-bed0-48f8-b6ad-23f808b12244");
+//		Asset::getInstance()->addJs("/layout/js/main.js");
+//		Asset::getInstance()->addJs("/layout/js/dev_main.js");
+//		Asset::getInstance()->addJs("/layout/js/stores-map.js");
+//		Asset::getInstance()->addJs("/layout/js/animations.js");
         ?>
-<!--        <script src="js/jquery-3.3.1.min.js"></script>-->
-<!--        <script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>-->
-<!--        <script src="js/bootstrap-select.min.js"></script>-->
-<!--        <script src="js/jquery.validate.min.js"></script>-->
-<!--        <script src="js/additional-methods.min.js"></script>-->
-<!--        <script src="js/jquery.maskedinput.min.js"></script>-->
-<!--        <script src="js/wNumb.min.js"></script>-->
-<!--        <script src="js/slick.min.js"></script>-->
-<!--        <script src="js/fancybox/jquery.fancybox.min.js"></script>-->
-<!--        <script src="js/bootstrap-fileinput/js/fileinput.min.js"></script>-->
-<!--        <script src="js/jquery.mousewheel.js"></script>-->
-<!--        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>-->
-<!--        <script src="js/moment-with-locales.js"></script>-->
-<!--        <script src="js/tempusdominus/tempusdominus-bootstrap-4.min.js"></script>-->
-<!--        <script src="js/greensock/TweenMax.min.js"></script>-->
-<!--        <script src="js/greensock/plugins/CSSRulePlugin.min.js"></script>-->
-<!--        <script src="js/greensock/plugins/ScrollToPlugin.min.js"></script>-->
-<!--        <script src="js/iscroll-probe.js"></script>-->
-<!--        <script src="js/scrollmagic/ScrollMagic.min.js"></script>-->
-<!--        <script src="js/scrollmagic/plugins/animation.gsap.min.js"></script>-->
-<!--        <script src="js/jquery-svg-to-inline.js"></script>-->
-<!--        <script src="//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>-->
-<!--        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=cefbc555-bed0-48f8-b6ad-23f808b12244"></script>-->
-<!--        <script src="js/main.js"></script>-->
-<!--        <script src="js/stores-map.js"></script>-->
+
+        <script src="/layout/js/jquery-3.3.1.min.js"></script>
+        <script src="/layout/js/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/layout/js/bootstrap-select.min.js"></script>
+        <script src="/layout/js/jquery.validate.min.js"></script>
+        <script src="/layout/js/additional-methods.min.js"></script>
+        <script src="/layout/js/jquery.maskedinput.min.js"></script>
+        <script src="/layout/js/wNumb.min.js"></script>
+        <script src="/layout/js/slick.min.js"></script>
+        <script src="/layout/js/fancybox/jquery.fancybox.min.js"></script>
+        <script src="/layout/js/bootstrap-fileinput/js/fileinput.min.js"></script>
+        <script src="/layout/js/jquery.mousewheel.js"></script>
+        <script src="/layout/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="/layout/js/moment-with-locales.js"></script>
+        <script src="/layout/js/tempusdominus/tempusdominus-bootstrap-4.min.js"></script>
+        <script src="/layout/js/greensock/TweenMax.min.js"></script>
+        <script src="/layout/js/greensock/plugins/CSSRulePlugin.min.js"></script>
+        <script src="/layout/js/greensock/plugins/ScrollToPlugin.min.js"></script>
+        <script src="/layout/js/iscroll-probe.js"></script>
+        <script src="/layout/js/scrollmagic/ScrollMagic.min.js"></script>
+        <script src="/layout/js/scrollmagic/plugins/animation.gsap.min.js"></script>
+        <script src="/layout/js/jquery-svg-to-inline.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
+        <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=cefbc555-bed0-48f8-b6ad-23f808b12244"></script>
+        <script src="/layout/js/main.js"></script>
+        <script src="/layout/js/dev_main.js"></script>
+        <script src="/layout/js/stores-map.js"></script>
+        <script src="/layout/js/animations.js"></script>
+
+
+        <script id="sidebarTemplate" type="text/x-jquery-tmpl">
+                {{each(i, geoObject) geoObjects}}
+                    {{tmpl({
+                        i: i,
+                        geoObject: geoObject,
+                        activeIndex: activeIndex
+                    }) "#sidebarItemTemplate"}}
+                {{/each}}
+        
+        </script>
+        <!-- Шаблон элемента сайдбара. -->
+        <script id="sidebarItemTemplate" type="text/x-jquery-tmpl">
+                <li{{if i == activeIndex}} class="active"{{/if}}>
+                    <a href="#">${geoObject.properties.get("clusterCaption")}</a>
+                </li>
+        
+        </script>
+        <!-- Шаблон основного содержимого. -->
+        <script id="mainContentTemplate" type="text/x-jquery-tmpl">
+        
+                ${data.balloonContentBody}
+        
+        </script>
     </div>
   </body>
 </html>

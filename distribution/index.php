@@ -1,7 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetPageProperty("TITLE", "Работай в&nbsp;фирменных магазинах adida");
-$APPLICATION->SetTitle("Центр дистрибуции");
+$APPLICATION->SetPageProperty("TITLE", "Центр дистрибуции");
+$APPLICATION->SetTitle("Работай в центре дистрибуции adidas");
 ?>
 <main>
 	<div class="page-header">
@@ -137,7 +137,7 @@ $APPLICATION->SetTitle("Центр дистрибуции");
 							false
 						);?>
 						<div class="page-title">
-							<div class="h1"><?$APPLICATION->ShowTitle()?>s</div>
+							<div class="h1"><?$APPLICATION->ShowTitle(false)?></div>
 						</div>
 						<div class="page-content">
 							<?$APPLICATION->IncludeComponent(

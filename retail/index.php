@@ -315,8 +315,8 @@ $APPLICATION->SetTitle("Работай в фирменных магазинах 
 												"SET_STATUS_404" => "N",
 												"SET_TITLE" => "N",
 												"SHOW_404" => "N",
-												"SORT_BY1" => "ID",
-												"SORT_BY2" => "SORT",
+												"SORT_BY1" => "SORT",
+												"SORT_BY2" => "ID",
 												"SORT_ORDER1" => "ASC",
 												"SORT_ORDER2" => "ASC",
 												"STRICT_SECTION_CHECK" => "N"
@@ -636,15 +636,34 @@ $APPLICATION->SetTitle("Работай в фирменных магазинах 
          
 								</div>
 							</div>
+							
 							<div class="block-wide">
 								<div class="stores-map-wrapper">
 									<div class="stores-map-controls">
 										<div class="stores-map-select form-alt">
-											<select class="city-select" name="stores_city" id="stores_city">
-												<option value="1" data-stores="load/stores-moscow.json" selected>Москва</option>
-												<option value="2" data-stores="load/stores-spb.json">Санкт-Петербург</option>
-												<option value="3" data-stores="load/stores-nn.json">Нижний Новгород</option>
-											</select>
+											<?$APPLICATION->IncludeComponent(
+												"bitrix:catalog.section.list",
+												"retailSectionMaps",
+												Array(
+													"ADD_SECTIONS_CHAIN" => "N",
+													"CACHE_FILTER" => "N",
+													"CACHE_GROUPS" => "Y",
+													"CACHE_TIME" => "36000000",
+													"CACHE_TYPE" => "A",
+													"COUNT_ELEMENTS" => "Y",
+													"FILTER_NAME" => "sectionsFilter",
+													"IBLOCK_ID" => "38",
+													"IBLOCK_TYPE" => "retail",
+													"SECTION_CODE" => "",
+													"SECTION_FIELDS" => array(0=>"CODE",1=>"NAME",2=>"",),
+													"SECTION_ID" => "",
+													"SECTION_URL" => "",
+													"SECTION_USER_FIELDS" => array(0=>"",1=>"",),
+													"SHOW_PARENT_NAME" => "Y",
+													"TOP_DEPTH" => "2",
+													"VIEW_MODE" => "LINE"
+												)
+											);?>
 										</div>
 										<div class="stores-map-menu">
 											<ul>

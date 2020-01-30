@@ -309,7 +309,7 @@
                                       <div class="col-12 col-lg-6">
                                         <div class="ladder-item-descr">
                                           <div class="h3">что я делаю?</div>
-                                          <p>Я управляю магазином — частью бизнеса мировой компании adidas. В мои обязанности входит: анализ показателей торговой точки, управление командой, обучение и развитие сотрудников, подбор новых талантов в компанию и многое другое. Большой объем задача помогает мне понять мой дальнейший карьерный шаг.</p>
+                                          <p>Я управляю магазином.</p>
                                           <div class="h3">куда могу перейти?</div>
                                           <p>Я могу развиваться внутри розничной сети, а также в любой момент могу «горизонтально» перейти в Офис или Центр Дистрибуции</p>
                                           <div class="ladder-links">
@@ -1488,7 +1488,32 @@
       <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=cefbc555-bed0-48f8-b6ad-23f808b12244"></script>
       <script src="js/main.js"></script>
       <script src="js/stores-map.js"></script>
-      <script src="js/animations.js"></script>
+      <script src="js/animations.js"></script><script id="sidebarTemplate" type="text/x-jquery-tmpl">
+        {{each(i, geoObject) geoObjects}}
+            {{tmpl({
+                i: i,
+                geoObject: geoObject,
+                activeIndex: activeIndex
+            }) "#sidebarItemTemplate"}}
+        {{/each}}
+
+</script>
+<!-- Шаблон элемента сайдбара. -->
+<script id="sidebarItemTemplate" type="text/x-jquery-tmpl">
+        <li{{if i == activeIndex}} class="active"{{/if}}>
+            <a href="#">${geoObject.properties.get("clusterCaption")}</a>
+        </li>
+
+</script>
+<!-- Шаблон основного содержимого. -->
+<script id="mainContentTemplate" type="text/x-jquery-tmpl">
+
+		${data.balloonContentBody}
+
+</script>
+
+
+
     </div>
   </body>
 </html>

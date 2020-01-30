@@ -8,7 +8,7 @@ use Bitrix\Main\Page\Asset;
     <meta name="viewport" content="width=device-width,initial-scale=1">
 	<?$APPLICATION->ShowHead();?>
 	<title><?$APPLICATION->ShowTitle();?></title>
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="/favicon.ico">
       <?
 
       Asset::getInstance()->addCss("/layout/js/bootstrap/css/bootstrap.css");

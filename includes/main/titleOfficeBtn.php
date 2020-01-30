@@ -1,1 +1,1 @@
-<a class="btn btn-2" href="/vacancies/?PAGEN_1=1&sort_num=1&per_page=12&set_filter=Y&arrFilter_pf[DIRECTION]=2&arrFilter_pf[TYPE_EMPLOYMENT]=&arrFilter_pf[BRAND]=&DIRECTION=Офис&TYPE_EMPLOYMENT=Все+типы+занятости&BRAND=Все+бренды&sort_city=Все+города&search=">Все вакансии в магазинах</a>
+<a class="btn btn-2" href="/vacancies/?PAGEN_1=1&sort_num=1&per_page=12&set_filter=Y&arrFilter_pf[DIRECTION]=2&arrFilter_pf[TYPE_EMPLOYMENT]=&arrFilter_pf[BRAND]=&DIRECTION=Офис&TYPE_EMPLOYMENT=Все+типы+занятости&BRAND=Все+бренды&sort_city=Все+города&search=">Все вакансии в офисах</a>

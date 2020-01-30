@@ -425,7 +425,32 @@
       <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=cefbc555-bed0-48f8-b6ad-23f808b12244"></script>
       <script src="js/main.js"></script>
       <script src="js/stores-map.js"></script>
-      <script src="js/animations.js"></script>
+      <script src="js/animations.js"></script><script id="sidebarTemplate" type="text/x-jquery-tmpl">
+        {{each(i, geoObject) geoObjects}}
+            {{tmpl({
+                i: i,
+                geoObject: geoObject,
+                activeIndex: activeIndex
+            }) "#sidebarItemTemplate"}}
+        {{/each}}
+
+</script>
+<!-- Шаблон элемента сайдбара. -->
+<script id="sidebarItemTemplate" type="text/x-jquery-tmpl">
+        <li{{if i == activeIndex}} class="active"{{/if}}>
+            <a href="#">${geoObject.properties.get("clusterCaption")}</a>
+        </li>
+
+</script>
+<!-- Шаблон основного содержимого. -->
+<script id="mainContentTemplate" type="text/x-jquery-tmpl">
+
+		${data.balloonContentBody}
+
+</script>
+
+
+
     </div>
   </body>
 </html>

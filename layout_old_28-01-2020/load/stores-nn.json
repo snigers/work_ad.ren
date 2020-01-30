@@ -1,0 +1,101 @@
+{
+	"type": "ObjectsCollection",
+	"objects": [
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"56.243082",
+					"43.864462"
+				]
+			},
+			"properties": {
+				"id": 1,
+				"url": "#",
+				"name": "Тестовый магазин",
+				"brands": ["Adidas","Reebok"],
+				"metro": [
+					{
+						"color": "#f11013",
+						"name": "Парк культуры"
+					}
+				],
+				"address": "ул. Земляной Вал, 33, ТЦ Атриум",
+				"phones": [
+					{
+						"number": "+7 (495) 362-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 787-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		},
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"56.265641",
+					"43.913163"
+				]
+			},
+			"properties": {
+				"id": 2,
+				"url": "#",
+				"name": "Тестовый магазин",
+				"brands": ["Adidas"],
+				"metro": [
+					{
+						"color": "#f11013",
+						"name": "Пролетарская"
+					}
+				],
+				"address": "ул. Земляной Вал, 33, ТЦ Атриум",
+				"phones": [
+					{
+						"number": "+7 (495) 362-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 787-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		},
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"56.309169",
+					"43.987132"
+				]
+			},
+			"properties": {
+				"id": 3,
+				"url": "#",
+				"name": "Горьковская",
+				"brands": ["Adidas"],
+				"metro": [
+					{
+						"color": "#f11013",
+						"name": "Кировский завод"
+					}
+				],
+				"address": "Улица 1905 года",
+				"phones": [
+					{
+						"number": "+7 (495) 222-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 333-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		}
+	]
+}

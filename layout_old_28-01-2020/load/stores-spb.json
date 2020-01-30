@@ -1,0 +1,255 @@
+{
+	"type": "ObjectsCollection",
+	"objects": [
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"60.068907",
+					"30.339427"
+				]
+			},
+			"properties": {
+				"id": 1,
+				"url": "#",
+				"name": "Тестовый магазин",
+				"brands": ["Adidas","Reebok"],
+				"metro": [
+					{
+						"color": "#0078c9",
+						"name": "Парнас"
+					}
+				],
+				"address": "ул. Земляной Вал, 33, ТЦ Атриум",
+				"phones": [
+					{
+						"number": "+7 (495) 362-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 787-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		},
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"59.828968",
+					"30.376680"
+				]
+			},
+			"properties": {
+				"id": 2,
+				"url": "#",
+				"name": "Тестовый магазин",
+				"brands": ["Adidas"],
+				"metro": [
+					{
+						"color": "#0078c9",
+						"name": "Купчино"
+					}
+				],
+				"address": "ул. Земляной Вал, 33, ТЦ Атриум",
+				"phones": [
+					{
+						"number": "+7 (495) 362-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 787-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		},
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"59.880190",
+					"30.264159"
+				]
+			},
+			"properties": {
+				"id": 3,
+				"url": "#",
+				"name": "Кировский завод",
+				"brands": ["Adidas"],
+				"metro": [
+					{
+						"color": "#d6083b",
+						"name": "Кировский завод"
+					}
+				],
+				"address": "Улица 1905 года",
+				"phones": [
+					{
+						"number": "+7 (495) 222-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 333-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		},
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"59.892417",
+					"30.514283"
+				]
+			},
+			"properties": {
+				"id": 4,
+				"url": "#",
+				"name": "Adidas & Reebok Мега",
+				"brands": ["Adidas", "Reebok"],
+				"metro": [
+
+				],
+				"address": "Комсомольская площадь",
+				"phones": [
+					{
+						"number": "+7 (495) 362-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 787-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		},
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"59.920372",
+					"30.467973"
+				]
+			},
+			"properties": {
+				"id": 5,
+				"url": "#",
+				"name": "Аутлет",
+				"brands": ["Adidas","Reebok"],
+				"metro": [
+					{
+						"color": "#ea7125",
+						"name": "Проспект большевиков"
+					}
+				],
+				"address": "ул. Земляной Вал, 33, ТЦ Атриум",
+				"phones": [
+					{
+						"number": "+7 (495) 362-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 787-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		},
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"59.895955",
+					"30.355811"
+				]
+			},
+			"properties": {
+				"id": 6,
+				"url": "#",
+				"name": "Тестовый магазин 2",
+				"brands": ["Adidas"],
+				"metro": [
+					{
+						"color": "metro-spp-line-5",
+						"name": "Волковская"
+					}
+				],
+				"address": "ул. Земляной Вал, 33, ТЦ Атриум",
+				"phones": [
+					{
+						"number": "+7 (495) 362-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 787-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		},
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"59.865563",
+					"30.318582"
+				]
+			},
+			"properties": {
+				"id": 7,
+				"url": "#",
+				"name": "Тестовый магазин 3",
+				"brands": ["Adidas"],
+				"metro": [
+					{
+						"color": "#0078c9",
+						"name": "Парк Победы"
+					}
+				],
+				"address": "Улица 1905 года",
+				"phones": [
+					{
+						"number": "+7 (495) 222-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 333-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		},
+		{
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					"59.790652",
+					"30.332496"
+				]
+			},
+			"properties": {
+				"id": 8,
+				"url": "#",
+				"name": "Тестовый магазин 4",
+				"brands": ["Adidas", "Reebok"],
+				"metro": [
+
+				],
+				"address": "ул. Сухаревская",
+				"phones": [
+					{
+						"number": "+7 (495) 362-48-80",
+						"name": "касса"
+					},
+					{
+						"number": "+7 (495) 787-7-05",
+						"name": "офис"
+					}
+				]
+			}
+		}
+	]
+}
