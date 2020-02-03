@@ -41,12 +41,11 @@ $this->AddDeleteAction($arResult['ID'], $arSectionButtons['edit']['delete_elemen
 				</blockquote>
 			<?endif;?>
 			
-			<?if ($arResult["PROPERTIES"]["DESCRIPTION_QUOTE"]["VALUE"]):?>
-				<div class="col-12 col-md-8 offset-md-4">
-					<p><?=$arResult["PROPERTIES"]["DESCRIPTION_QUOTE"]["~VALUE"]["TEXT"]?></p>
-				</div>
-			<?endif;?>
 		</div>
 	</div>
+	
+	<?if ($arResult["PROPERTIES"]["DESCRIPTION_QUOTE"]["VALUE"]):?>
+        <p><?=$arResult["PROPERTIES"]["DESCRIPTION_QUOTE"]["~VALUE"]["TEXT"]?></p>
+	<?endif;?>
 	
 <?endif;?>

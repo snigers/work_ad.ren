@@ -15,15 +15,14 @@ $this->AddDeleteAction($arResult['ID'], $arSectionButtons['edit']['delete_elemen
 	$arResult["PROPERTIES"]["DESCRIPTION_DISTANCE"]["VALUE"] ||
 	$arResult["PROPERTIES"]["LIST_PROGRAM"]["VALUE"]
 ):?>
-	<div id="<?= $this->GetEditAreaId($arResult['ID']); ?>">
 		<?if ($arResult["PROPERTIES"]["TITLE_TRAINING"]["VALUE"]):?>
-			<h2><?=$arResult["PROPERTIES"]["TITLE_TRAINING"]["VALUE"]?></h2>
+			<h2 id="<?= $this->GetEditAreaId($arResult['ID']); ?>"><?=$arResult["PROPERTIES"]["TITLE_TRAINING"]["VALUE"]?></h2>
 		<?endif;?>
 		<?if ($arResult["PROPERTIES"]["SUBTITLE_FULL_TIME"]["VALUE"]):?>
 			<h3><?=$arResult["PROPERTIES"]["SUBTITLE_FULL_TIME"]["VALUE"]?></h3>
 		<?endif;?>
 	
-		<div>
+		<div class="content-row">
 			<?if ($arResult["PROPERTIES"]["IMG_FULL_TIME"]["VALUE"]):?>
 				<div class="article-pic article-pic-l">
 					<?$img = CFile::ResizeImageGet($arResult["PROPERTIES"]["IMG_FULL_TIME"]["VALUE"], Array("width" => 358, "height" => 358), BX_RESIZE_IMAGE_EXACT);?>
@@ -36,25 +35,23 @@ $this->AddDeleteAction($arResult['ID'], $arSectionButtons['edit']['delete_elemen
 			<?endif;?>
 		</div>
 	
-		<div>
-			<?if ($arResult["PROPERTIES"]["SUBTITLE_PROGRAM"]["VALUE"]):?>
-				<h4><?=$arResult["PROPERTIES"]["SUBTITLE_PROGRAM"]["VALUE"]?></h4>
-			<?endif;?>
-			<?if ($arResult["PROPERTIES"]["LIST_PROGRAM"]["VALUE"]):?>
-				<ol>
-                    <?foreach($arResult["PROPERTIES"]["LIST_PROGRAM"]["~VALUE"] as $arItem):?>
-                        <li><?=$arItem?></li>
-                    <?endforeach;?>
-				</ol>
-			<?endif;?>
-		</div>
+        <?if ($arResult["PROPERTIES"]["SUBTITLE_PROGRAM"]["VALUE"]):?>
+            <h4><?=$arResult["PROPERTIES"]["SUBTITLE_PROGRAM"]["VALUE"]?></h4>
+        <?endif;?>
+        <?if ($arResult["PROPERTIES"]["LIST_PROGRAM"]["VALUE"]):?>
+            <ol class="ol-alt">
+                <?foreach($arResult["PROPERTIES"]["LIST_PROGRAM"]["~VALUE"] as $arItem):?>
+                    <li><?=$arItem?></li>
+                <?endforeach;?>
+            </ol>
+        <?endif;?>
 		
 		
 		<?if ($arResult["PROPERTIES"]["SUBTITLE_DISTANCE"]["VALUE"]):?>
 			<h3><?=$arResult["PROPERTIES"]["SUBTITLE_DISTANCE"]["VALUE"]?></h3>
 		<?endif;?>
 		
-		<div>
+		<div class="content-row">
 			<?if ($arResult["PROPERTIES"]["IMG_DISTANCE"]["VALUE"]):?>
 				<div class="article-pic article-pic-l">
 					<?$img = CFile::ResizeImageGet($arResult["PROPERTIES"]["IMG_DISTANCE"]["VALUE"], Array("width" => 358, "height" => 358), BX_RESIZE_IMAGE_EXACT);?>
@@ -66,6 +63,4 @@ $this->AddDeleteAction($arResult['ID'], $arSectionButtons['edit']['delete_elemen
 				<p><?=$arResult["PROPERTIES"]["DESCRIPTION_DISTANCE"]["~VALUE"]["TEXT"]?></p>
 			<?endif;?>
 		</div>
-		
-	</div>
 <?endif;?>

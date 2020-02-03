@@ -1,37 +1,39 @@
 <?if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)die();
 use Bitrix\Main\Page\Asset;?>
-   <footer>
-        <div class="container">
-          <div class="footer-content">
-            <div class="footer-top">
-              <div class="footer-ttl">
-				  <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/titleFooter.php"));?>
-              </div>
-              <div class="footer-button">
-				  <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/btnAllJobOpen.php"));?>
+    <?if ($APPLICATION->GetCurDir() != "/about/"):?>
+        <footer>
+            <div class="container">
+              <div class="footer-content">
+                <div class="footer-top">
+                  <div class="footer-ttl">
+                      <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/titleFooter.php"));?>
+                  </div>
+                  <div class="footer-button">
+                      <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/btnAllJobOpen.php"));?>
+                  </div>
+                </div>
+                <div class="footer-bottom">
+                  <div class="h3">
+                      <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/titleH3.php"));?>
+                  </div>
+                  <div class="footer-soclinks">
+                      <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/btnVK.php"));?>
+                      <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/btnFB.php"));?>
+                      <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/btnInstagram.php"));?>
+                  </div>
+                  <div class="footer-copy">
+                    <div class="footer-copy-item">
+                        <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/allRightsReserved.php"));?>
+                    </div>
+                    <div class="footer-copy-item">
+                        <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/politics.php"));?>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="footer-bottom">
-              <div class="h3">
-				  <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/titleH3.php"));?>
-              </div>
-              <div class="footer-soclinks">
-				  <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/btnVK.php"));?>
-				  <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/btnFB.php"));?>
-				  <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/btnInstagram.php"));?>
-              </div>
-              <div class="footer-copy">
-                <div class="footer-copy-item">
-					<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/allRightsReserved.php"));?>
-                </div>
-                <div class="footer-copy-item">
-					<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array("AREA_FILE_SHOW" => "file", "PATH" => "/includes/footer/politics.php"));?>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+        </footer>
+    <?endif;?>
         <div class="popup story-popup" id="storyPopup">
             <div class="popup-backdrop"></div>
             <div class="close"></div>
@@ -161,37 +163,37 @@ use Bitrix\Main\Page\Asset;?>
           </div>
         </div>
       </div>
-			<div class="modal fade fav-modal" id="favModal" tabindex="-1">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
-						<div class="modal-header">
-							<div class="h2">Вакансия добавлена в избранное</div>
-						</div>
-						<div class="modal-body">
-							<div class="vac-tmb vac-tmb-alt">
-								<div class="vac-tmb-header">
-									<div class="h3"></div>
-								</div>
-								<div class="vac-tmb-footer">
-									<div class="vac-tmb-place">
-										<p></p>
-									</div>
-									<div class="vac-tmb-logo"></div>
-								</div>
-							</div>
-							<div class="fav-modal-controls">
-								<div class="row">
-									<div class="col"><a class="btn btn-2" href="/favorites_vacancies/"><span>Перейти в избранное</span></a></div>
-									<div class="col">
-										<div class="btn btn-5 btn-modal-remove" data-dismiss="modal" aria-label="Close"><span>Удалить</span></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+        <div class="modal fade fav-modal" id="favModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-header">
+                        <div class="h2">Вакансия добавлена в избранное</div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="vac-tmb vac-tmb-alt">
+                            <div class="vac-tmb-header">
+                                <div class="h3">специалист по фитнесу (продавец-консультант)</div>
+                            </div>
+                            <div class="vac-tmb-footer">
+                                <div class="vac-tmb-place">
+                                    <p>Фирменный магазин, Москва</p>
+                                </div>
+                                <div class="vac-tmb-logo"><img src="images/logo-adidas.svg"></div>
+                            </div>
+                        </div>
+                        <div class="fav-modal-controls">
+                            <div class="row">
+                                <div class="col"><a class="btn btn-2" href="#"><span>Перейти в избранное</span></a></div>
+                                <div class="col">
+                                    <div class="btn btn-5 btn-modal-remove" data-dismiss="modal" aria-label="Close"><span>Удалить</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       <div class="modal fade form-modal callback-modal" id="callbackModal" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -315,6 +317,7 @@ use Bitrix\Main\Page\Asset;?>
         <script src="/layout/js/scrollmagic/ScrollMagic.min.js"></script>
         <script src="/layout/js/scrollmagic/plugins/animation.gsap.min.js"></script>
         <script src="/layout/js/jquery-svg-to-inline.js"></script>
+        <script src="/layout/js/jquery.nicescroll.min.js"></script>
         <script src="//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
         <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=cefbc555-bed0-48f8-b6ad-23f808b12244"></script>
         <script src="/layout/js/main.js"></script>

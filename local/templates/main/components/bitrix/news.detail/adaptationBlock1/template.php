@@ -6,8 +6,6 @@ $this->AddDeleteAction($arResult['ID'], $arSectionButtons['edit']['delete_elemen
 ?>
 
 
-<div id="<?= $this->GetEditAreaId($arResult['ID']); ?>"><?=$arResult["PROPERTIES"]["SUBTITLE"]["VALUE"]?></div>
-<div class="article-button-wrapper">
-    <p><a class="btn btn-1" href="<?=($arResult["PROPERTIES"]["LINK_BTN"]["VALUE"]) ? $arResult["PROPERTIES"]["LINK_BTN"]["VALUE"] : "/profile_retail/"?>">
+<p id="<?= $this->GetEditAreaId($arResult['ID']); ?>"><?=$arResult["PROPERTIES"]["SUBTITLE"]["VALUE"]?></p>
+<p><a class="btn btn-1" href="<?=($arResult["PROPERTIES"]["LINK_BTN"]["VALUE"]) ? $arResult["PROPERTIES"]["LINK_BTN"]["VALUE"] : "/profile_retail/"?>">
             <span><?=($arResult["PROPERTIES"]["TITLE_BTN"]["VALUE"]) ? $arResult["PROPERTIES"]["TITLE_BTN"]["VALUE"] : "Заполнить анкету"?></span></a></p>
-</div>

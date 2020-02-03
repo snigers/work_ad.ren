@@ -8,15 +8,12 @@ $this->AddDeleteAction($arResult['ID'], $arSectionButtons['edit']['delete_elemen
 
 <ul class="page-menu" id="<?= $this->GetEditAreaId($arResult['ID']); ?>">
 	<?if ($arResult["PROPERTIES"]["FIRST_MENU_ITEM"]["VALUE"]):?>
-		<li><a href="#first_item"><?=$arResult["PROPERTIES"]["FIRST_MENU_ITEM"]["VALUE"]?></a></li>
+		<li><a href="#adaptation"><?=$arResult["PROPERTIES"]["FIRST_MENU_ITEM"]["VALUE"]?></a></li>
 	<?endif?>
 	<?if ($arResult["PROPERTIES"]["TWO_MENU_ITEM"]["VALUE"]):?>
-		<li><a href="#two_item"><?=$arResult["PROPERTIES"]["TWO_MENU_ITEM"]["VALUE"]?></a></li>
+		<li><a href="#learning"><?=$arResult["PROPERTIES"]["TWO_MENU_ITEM"]["VALUE"]?></a></li>
 	<?endif?>
 	<?if ($arResult["PROPERTIES"]["THREE_MENU_ITEM"]["VALUE"]):?>
-		<li><a href="#three_item"><?=$arResult["PROPERTIES"]["THREE_MENU_ITEM"]["VALUE"]?></a></li>
-	<?endif?>
-	<?if ($arResult["PROPERTIES"]["FOUR_MENU_ITEM"]["VALUE"]):?>
-		<li><a href="#four_item"><?=$arResult["PROPERTIES"]["FOUR_MENU_ITEM"]["VALUE"]?></a></li>
+		<li><a href="#maintenance"><?=$arResult["PROPERTIES"]["THREE_MENU_ITEM"]["VALUE"]?></a></li>
 	<?endif?>
 </ul>

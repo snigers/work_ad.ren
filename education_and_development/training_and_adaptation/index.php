@@ -1,10 +1,9 @@
 <?require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle("Обучение и&nbsp;адаптация");?>
-	
-	
-	
-	<main>
-		<div class="page-header">
+
+
+    <main>
+        <div class="page-header">
 			<?$APPLICATION->IncludeComponent(
 				"bitrix:news.detail",
 				"jobBackground",
@@ -60,12 +59,12 @@ $APPLICATION->SetTitle("Обучение и&nbsp;адаптация");?>
 				false,
 				array('HIDE_ICONS' => "Y")
 			);?>
-		</div>
-		<div class="page-body">
-			<div class="container">
-				<div class="row">
-					<div class="col-12 col-md-3">
-						<div class="page-sidebar">
+        </div>
+        <div class="page-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-3">
+                        <div class="page-sidebar">
 							<?$APPLICATION->IncludeComponent(
 								"bitrix:news.detail",
 								"adaptationMenu",
@@ -118,10 +117,10 @@ $APPLICATION->SetTitle("Обучение и&nbsp;адаптация");?>
 									"USE_SHARE" => "N"
 								)
 							);?>
-						</div>
-					</div>
-					<div class="col-12 col-md-8 offset-md-1">
-						<div class="page-content-wrapper">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 offset-md-1">
+                        <div class="page-content-wrapper">
 							<?$APPLICATION->IncludeComponent(
 								"bitrix:breadcrumb",
 								"jobBreadcrumb",
@@ -132,10 +131,10 @@ $APPLICATION->SetTitle("Обучение и&nbsp;адаптация");?>
 								),
 								false
 							);?>
-							<div class="page-title">
-								<h1><?$APPLICATION->ShowTitle(false)?></h1>
-							</div>
-							<div class="page-content">
+                            <div class="page-title">
+                                <h1><?$APPLICATION->ShowTitle(false)?></h1>
+                            </div>
+                            <div class="page-content">
 								<?$APPLICATION->IncludeComponent(
 									"bitrix:news.detail",
 									"adaptationBlock1",
@@ -188,9 +187,9 @@ $APPLICATION->SetTitle("Обучение и&nbsp;адаптация");?>
 										"USE_SHARE" => "N"
 									)
 								);?>
-								
-								
-								<a name="first_item"></a>
+                                
+                                <a name="adaptation"></a>
+                                
 								<?$APPLICATION->IncludeComponent(
 									"bitrix:news.detail",
 									"adaptationBlock2",
@@ -243,7 +242,10 @@ $APPLICATION->SetTitle("Обучение и&nbsp;адаптация");?>
 										"USE_SHARE" => "N"
 									)
 								);?>
-								
+                                
+                                <a name="learning"></a>
+	
+	
 								<?$APPLICATION->IncludeComponent(
 									"bitrix:news.detail",
 									"adaptationBlock3",
@@ -296,8 +298,8 @@ $APPLICATION->SetTitle("Обучение и&nbsp;адаптация");?>
 										"USE_SHARE" => "N"
 									)
 								);?>
-								
-								
+	
+	
 								<?$APPLICATION->IncludeComponent(
 									"bitrix:news.detail",
 									"adaptationBlock4",
@@ -350,7 +352,8 @@ $APPLICATION->SetTitle("Обучение и&nbsp;адаптация");?>
 										"USE_SHARE" => "N"
 									)
 								);?>
-								
+	
+	
 								<?$APPLICATION->IncludeComponent(
 									"bitrix:news.list",
 									"adaptationBlock5",
@@ -408,7 +411,10 @@ $APPLICATION->SetTitle("Обучение и&nbsp;адаптация");?>
 										"STRICT_SECTION_CHECK" => "N"
 									)
 								);?>
-								
+                                
+                                <a name="maintenance"></a>
+	
+	
 								<?$APPLICATION->IncludeComponent(
 									"bitrix:news.detail",
 									"adaptationBlock6",
@@ -462,13 +468,13 @@ $APPLICATION->SetTitle("Обучение и&nbsp;адаптация");?>
 										"USE_SHARE" => "N"
 									)
 								);?>
-                                
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
 
 <?require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');?>

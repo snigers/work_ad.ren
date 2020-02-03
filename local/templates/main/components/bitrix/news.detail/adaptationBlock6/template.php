@@ -11,30 +11,28 @@ $this->AddDeleteAction($arResult['ID'], $arSectionButtons['edit']['delete_elemen
 	$arResult["PROPERTIES"]["QUOTE"]["VALUE"] ||
 	$arResult["PROPERTIES"]["LIST"]["VALUE"]
 ):?>
-	<div class="col-12" id="<?= $this->GetEditAreaId($arResult['ID']); ?>">
-	
 		<?if ($arResult["PROPERTIES"]["TITLE"]["VALUE"]):?>
-			<h2><?=$arResult["PROPERTIES"]["TITLE"]["~VALUE"]?></h2>
+			<h2 id="<?= $this->GetEditAreaId($arResult['ID']); ?>"><?=$arResult["PROPERTIES"]["TITLE"]["~VALUE"]?></h2>
 		<?endif;?>
 		
-		
-		<?if ($arResult["PROPERTIES"]["DESCRIPTION"]["VALUE"]):?>
-			<p><?=$arResult["PROPERTIES"]["DESCRIPTION"]["~VALUE"]["TEXT"]?></p>
-		<?endif;?>
-		
+<!--		-->
+<!--		--><?//if ($arResult["PROPERTIES"]["DESCRIPTION"]["VALUE"]):?>
+<!--			<p>--><?//=$arResult["PROPERTIES"]["DESCRIPTION"]["~VALUE"]["TEXT"]?><!--</p>-->
+<!--		--><?//endif;?>
+<!--		-->
 		<?if ($arResult["PREVIEW_PICTURE"]["SRC"]):?>
 			<?$img = CFile::ResizeImageGet($arResult["PREVIEW_PICTURE"]["ID"], Array("width" => 746, "height" => 724), BX_RESIZE_IMAGE_EXACT);?>
-			<div class="col-6"><img src="<?=$img["src"]?>"></div>
+			<div class="article-pic article-pic-big"><img src="<?=$img["src"]?>"></div>
 		<?endif;?>
 		
 		
 		<?if ($arResult["PROPERTIES"]["TITLE_LIST"]["VALUE"]):?>
-			<h3><?=$arResult["PROPERTIES"]["TITLE_LIST"]["VALUE"]?></h3>
+			<h4><?=$arResult["PROPERTIES"]["TITLE_LIST"]["VALUE"]?></h4>
 		<?endif;?>
 		
 		
 		<?if ($arResult["PROPERTIES"]["LIST"]["VALUE"]):?>
-			<ol>
+			<ol class="ol-alt">
 				<?foreach ($arResult["PROPERTIES"]["LIST"]["~VALUE"] as $arItem):?>
 					<li><?=$arItem["TEXT"]?></li>
 				<?endforeach;?>
@@ -50,6 +48,5 @@ $this->AddDeleteAction($arResult['ID'], $arSectionButtons['edit']['delete_elemen
 			</blockquote>
 		<?endif;?>
 		
-	</div>
 
 <?endif;?>
