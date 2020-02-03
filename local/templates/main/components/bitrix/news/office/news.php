@@ -54,7 +54,7 @@ $this->setFrameMode(true);
                 "PAGER_SHOW_ALL" => "N",
                 "PAGER_TEMPLATE" => ".default",
                 "PAGER_TITLE" => "Страница",
-                "PROPERTY_CODE" => array(0=>"",1=>"LEFT_IMG",2=>"RIGHT_IMG",),
+				"PROPERTY_CODE" => array(0=>"LEFT_IMG_HEADER",1=>"RIGHT_IMG_HEADER",),
                 "SET_BROWSER_TITLE" => "N",
                 "SET_CANONICAL_URL" => "N",
                 "SET_LAST_MODIFIED" => "N",
@@ -500,7 +500,7 @@ $this->setFrameMode(true);
 							);?>
                             
                             <div class="dept-list">
-                            
+                                <?$GLOBALS['arrFilter']["ID"] = $arResult["ELEMENTS_ID"]?>
 								<?$APPLICATION->IncludeComponent(
 									"bitrix:news.list",
 									"",
@@ -548,7 +548,7 @@ $this->setFrameMode(true);
 										"ACTIVE_DATE_FORMAT" => $arParams["LIST_ACTIVE_DATE_FORMAT"],
 										"USE_PERMISSIONS" => $arParams["USE_PERMISSIONS"],
 										"GROUP_PERMISSIONS" => $arParams["GROUP_PERMISSIONS"],
-										"FILTER_NAME" => $arParams["FILTER_NAME"],
+										"FILTER_NAME" => "arrFilter",
 										"HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
 										"CHECK_DATES" => $arParams["CHECK_DATES"],
 									),

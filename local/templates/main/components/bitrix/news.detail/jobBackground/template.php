@@ -6,11 +6,11 @@ $this->AddDeleteAction($arResult['ID'], $arSectionButtons['edit']['delete_elemen
 ?>
 
 <div class="row" id="<?= $this->GetEditAreaId($arResult['ID']); ?>">
-	<?$img = CFile::ResizeImageGet($arResult["PROPERTIES"]["LEFT_IMG"]["VALUE"], Array("width" => 800, "height" => 420), BX_RESIZE_IMAGE_EXACT);?>
+	<?$img = CFile::ResizeImageGet($arResult["PROPERTIES"]["LEFT_IMG_HEADER"]["VALUE"], Array("width" => 800, "height" => 420), BX_RESIZE_IMAGE_EXACT);?>
 	<div class="col-6">
 		<div class="page-header-bg" style="background-image: url(<?=$img["src"]?>)"></div>
 	</div>
-	<?$img = CFile::ResizeImageGet($arResult["PROPERTIES"]["RIGHT_IMG"]["VALUE"], Array("width" => 800, "height" => 420), BX_RESIZE_IMAGE_EXACT);?>
+	<?$img = CFile::ResizeImageGet($arResult["PROPERTIES"]["RIGHT_IMG_HEADER"]["VALUE"], Array("width" => 800, "height" => 420), BX_RESIZE_IMAGE_EXACT);?>
 	<div class="col-6">
 		<div class="page-header-bg" style="background-image: url(<?=$img["src"]?>)"></div>
 	</div>

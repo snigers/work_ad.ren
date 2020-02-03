@@ -219,8 +219,8 @@ $(document).ready(function () {
 		setFilterAjax(page);
 	});
 
-	$(".form-group .dropdown-menu").on("click", "li", function(){
-		// console.log("test2");
+	$(".form-group .dropdown-menu, .sort-wrapper-group").on("click", "li", function(){
+		console.log("test2");
 		setFilterAjax(page, $(this));
 	});
 

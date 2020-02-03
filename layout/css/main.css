@@ -281,6 +281,25 @@ main ol > li > ol > li:before {
   padding: 0 10px 0 0;
   min-width: 38px; }
 
+main ol.ol-alt {
+  margin-left: 10px;
+  margin-bottom: 20px; }
+
+main ol.ol-alt > li {
+  position: relative;
+  padding: 0 0 0 40px; }
+
+main ol.ol-alt > li:before {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: #FC4237;
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 0;
+  letter-spacing: 0; }
+
 .block-hl {
   font-size: 24px;
   line-height: 32px;
@@ -736,11 +755,11 @@ blockquote:before {
 
 /* Buttons END */
 /* Forms */
-.form-group {
+.over-wrapper .form-group {
   position: relative;
   margin: 0 0 25px 0; }
 
-label {
+.over-wrapper label {
   display: block;
   font-size: 13px;
   line-height: 18px;
@@ -752,10 +771,10 @@ label {
   padding: 0;
   text-align: left; }
 
-.filter label {
+.over-wrapper .filter label {
   color: #ACACAC; }
 
-label.error {
+.over-wrapper label.error {
   font-size: 14px;
   line-height: 20px;
   font-weight: normal;
@@ -764,28 +783,28 @@ label.error {
   color: #FC4237;
   margin: 2px 0 0 0; }
 
-::-webkit-input-placeholder {
+.over-wrapper ::-webkit-input-placeholder {
   color: #979797; }
 
-:-ms-input-placeholder {
+.over-wrapper :-ms-input-placeholder {
   color: #979797; }
 
-::-ms-input-placeholder {
+.over-wrapper ::-ms-input-placeholder {
   color: #979797; }
 
-::placeholder {
+.over-wrapper ::placeholder {
   color: #979797; }
 
-::-moz-placeholder {
+.over-wrapper ::-moz-placeholder {
   color: #979797; }
 
-::-ms-input-placeholder {
+.over-wrapper ::-ms-input-placeholder {
   color: #979797; }
 
-input[type=text],
-input[type=email],
-input[type=password],
-textarea {
+.over-wrapper input[type=text],
+.over-wrapper input[type=email],
+.over-wrapper input[type=password],
+.over-wrapper textarea {
   display: block;
   width: 100%;
   -webkit-appearance: none;
@@ -801,58 +820,58 @@ textarea {
   transition: all .15s ease;
   text-align: left; }
 
-input[type=text]:placeholder-shown,
-input[type=email]:placeholder-shown,
-input[type=password]:placeholder-shown,
-textarea:placeholder-shown {
+.over-wrapper input[type=text]:placeholder-shown,
+.over-wrapper input[type=email]:placeholder-shown,
+.over-wrapper input[type=password]:placeholder-shown,
+.over-wrapper textarea:placeholder-shown {
   border-color: #EDEDED;
   background-color: #EDEDED; }
 
-.form-alt input[type=text]:placeholder-shown,
-.form-alt input[type=email]:placeholder-shown,
-.form-alt input[type=password]:placeholder-shown,
-.form-alt textarea:placeholder-shown {
+.over-wrapper .form-alt input[type=text]:placeholder-shown,
+.over-wrapper .form-alt input[type=email]:placeholder-shown,
+.over-wrapper .form-alt input[type=password]:placeholder-shown,
+.over-wrapper .form-alt textarea:placeholder-shown {
   border-color: #fff;
   background-color: #fff; }
 
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
-textarea:focus,
-input[type=text]:hover,
-input[type=email]:hover,
-input[type=password]:hover,
-textarea:hover {
+.over-wrapper input[type=text]:focus,
+.over-wrapper input[type=email]:focus,
+.over-wrapper input[type=password]:focus,
+.over-wrapper textarea:focus,
+.over-wrapper input[type=text]:hover,
+.over-wrapper input[type=email]:hover,
+.over-wrapper input[type=password]:hover,
+.over-wrapper textarea:hover {
   background-color: #fff;
   border-color: #000; }
 
-.form-alt input[type=text]:focus,
-.form-alt input[type=email]:focus,
-.form-alt input[type=password]:focus,
-.form-alt textarea:focus,
-.form-alt input[type=text]:hover,
-.form-alt input[type=email]:hover,
-.form-alt input[type=password]:hover,
-.form-alt textarea:hover {
+.over-wrapper .form-alt input[type=text]:focus,
+.over-wrapper .form-alt input[type=email]:focus,
+.over-wrapper .form-alt input[type=password]:focus,
+.over-wrapper .form-alt textarea:focus,
+.over-wrapper .form-alt input[type=text]:hover,
+.over-wrapper .form-alt input[type=email]:hover,
+.over-wrapper .form-alt input[type=password]:hover,
+.over-wrapper .form-alt textarea:hover {
   background-color: #fff;
   border-color: #000; }
 
-input[type=text].error,
-input[type=email].error,
-input[type=password].error,
-textarea.error {
+.over-wrapper input[type=text].error,
+.over-wrapper input[type=email].error,
+.over-wrapper input[type=password].error,
+.over-wrapper textarea.error {
   border-color: #FC4237 !important;
   color: #FC4237 !important; }
 
-input[type=text]:disabled,
-input[type=email]:disabled,
-input[type=password]:disabled,
-textarea:disabled {
+.over-wrapper input[type=text]:disabled,
+.over-wrapper input[type=email]:disabled,
+.over-wrapper input[type=password]:disabled,
+.over-wrapper textarea:disabled {
   background-color: #fff;
   border-color: #C0C0C0;
   opacity: 1; }
 
-textarea {
+.over-wrapper textarea {
   display: block;
   margin: 0;
   resize: none; }
@@ -1047,22 +1066,22 @@ select.error + .dropdown-toggle {
   background: #fff !important;
   border: 1px solid #000 !important; }
 
-.form-checkboxes,
-.form-radios {
+.over-wrapper .form-checkboxes,
+.over-wrapper .form-radios {
   margin: 10px 0 0 0; }
 
-.form-checkbox,
-.form-radio {
+.over-wrapper .form-checkbox,
+.over-wrapper .form-radio {
   margin: 0 0 12px 0;
   line-height: 20px; }
 
-input[type=radio],
-input[type=checkbox] {
+.over-wrapper input[type=radio],
+.over-wrapper input[type=checkbox] {
   position: absolute;
   visibility: hidden; }
 
-input[type=radio] + label,
-input[type=checkbox] + label {
+.over-wrapper input[type=radio] + label,
+.over-wrapper input[type=checkbox] + label {
   font-size: 17px;
   line-height: 20px;
   color: #000;
@@ -1076,15 +1095,15 @@ input[type=checkbox] + label {
   display: inline-block;
   transition: color .1s ease; }
 
-input[type=radio]:hover + label,
-input[type=checkbox]:hover + label {
+.over-wrapper input[type=radio]:hover + label,
+.over-wrapper input[type=checkbox]:hover + label {
   color: #FC4237; }
 
-input[type=radio]:checked + label,
-input[type=checkbox]:checked + label {
+.over-wrapper input[type=radio]:checked + label,
+.over-wrapper input[type=checkbox]:checked + label {
   font-weight: bold; }
 
-input[type=radio] + label:before {
+.over-wrapper input[type=radio] + label:before {
   content: "";
   width: 22px;
   height: 22px;
@@ -1096,7 +1115,7 @@ input[type=radio] + label:before {
   background: url(../images/radio-check.png) center center no-repeat;
   background-size: 0 0; }
 
-input[type=checkbox] + label:before {
+.over-wrapper input[type=checkbox] + label:before {
   content: "";
   width: 22px;
   height: 22px;
@@ -1108,33 +1127,33 @@ input[type=checkbox] + label:before {
   background: url(../images/checkbox-check.png) center center no-repeat;
   background-size: 0 0; }
 
-input[type=radio]:checked + label:before {
+.over-wrapper input[type=radio]:checked + label:before {
   background-size: 10px 10px; }
 
-input[type=checkbox]:checked + label:before {
+.over-wrapper input[type=checkbox]:checked + label:before {
   background-size: 13px 10px; }
 
-input[type=radio]:hover + label:before,
-input[type=checkbox]:hover + label:before {
+.over-wrapper input[type=radio]:hover + label:before,
+.over-wrapper input[type=checkbox]:hover + label:before {
   border-color: #FC4237; }
 
-input[type=radio]:disabled + label,
-input[type=radio].disabled + label,
-input[type=checkbox]:disabled + label,
-input[type=checkbox].disabled + label {
+.over-wrapper input[type=radio]:disabled + label,
+.over-wrapper input[type=radio].disabled + label,
+.over-wrapper input[type=checkbox]:disabled + label,
+.over-wrapper input[type=checkbox].disabled + label {
   color: #ACACAC !important;
   cursor: not-allowed; }
 
-input[type=radio]:disabled + label:before,
-input[type=radio].disabled + label:before,
-input[type=checkbox]:disabled + label:before,
-input[type=checkbox].disabled + label:before {
+.over-wrapper input[type=radio]:disabled + label:before,
+.over-wrapper input[type=radio].disabled + label:before,
+.over-wrapper input[type=checkbox]:disabled + label:before,
+.over-wrapper input[type=checkbox].disabled + label:before {
   border-color: #c0c0c0 !important; }
 
-.checkbox-label-error {
+.over-wrapper .checkbox-label-error {
   color: #FC4237 !important; }
 
-.checkbox-label-error:before {
+.over-wrapper .checkbox-label-error:before {
   border-color: #FC4237 !important; }
 
 .form-footer {
@@ -1992,7 +2011,7 @@ ul.submenu-list a.active {
 .blockquote-alt-wrapper {
   margin: 50px 0 50px 0; }
 
-.blockquote-alt-wrapper:last-child {
+.block-wide:last-child .blockquote-alt-wrapper:last-child {
   margin-bottom: 0; }
 
 .blockquote-alt-pics {
@@ -5335,3 +5354,263 @@ ul.cluster-nav li.active a {
 
 .fav-modal-controls .btn-5:after {
   display: none; }
+
+.page-body-about {
+  margin-top: -80px;
+  padding: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+
+.about-wrapper {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  height: 100vh; }
+
+.about-wrapper .mCSB_container_wrapper {
+  margin: 0; }
+
+.about-wrapper .mCSB_horizontal.mCSB_inside > .mCSB_container {
+  margin: 0;
+  padding: 0; }
+
+.about-wrapper .mCSB_container_wrapper > .mCSB_container {
+  padding: 0; }
+
+.about-wrapper-inner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 533.3333vw; }
+
+.about-section {
+  -ms-flex-positive: 0;
+      flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 80px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.42857;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.about-section > .row {
+  -ms-flex-positive: 1;
+      flex-grow: 1; }
+
+.full-width-block {
+  width: 100vw; }
+
+.one-third-width-block {
+  width: 33.3333vw; }
+
+.bgc-white {
+  background-color: #e8e8e8; }
+
+.bgc-grey {
+  background-color: #292929; }
+
+.bgc-career-track {
+  background-color: #828282; }
+
+.bgc-blue {
+  background-color: #3c5b9b; }
+
+.bgc-red {
+  background-color: #ed6a53; }
+
+.bgc-green {
+  background-color: #55b788; }
+
+.bgc-light-grey {
+  background-color: #e8e8e8; }
+
+.about-wrapper .row-zero {
+  margin: 0 !important; }
+
+.about-wrapper .row-zero > * {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
+.about-wrapper .text-left {
+  text-align: left; }
+
+.about-wrapper .text-left {
+  text-align: right; }
+
+.about-column {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  min-height: 100%; }
+
+.about-column-item-grow {
+  -ms-flex-positive: 1;
+      flex-grow: 1; }
+
+.about-column-item-v-centered {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.dasslers-wrapper {
+  position: relative;
+  height: 330px; }
+
+.dasslers-img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  padding: 0 0 0 60px; }
+
+.dasslers-img img {
+  max-height: 100%; }
+
+.futbolka-img {
+  height: 200px; }
+
+.about-hr {
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  left: 50%;
+  bottom: 0;
+  margin: 32px auto 27px auto; }
+
+.about-section h2,
+.about-section .h2 {
+  font-size: 45px;
+  line-height: 50px;
+  margin: 0 0 20px 0; }
+
+.about-section h2.h2-year,
+.about-section .h2.h2-year {
+  font-size: 80px;
+  line-height: 80px; }
+
+.dasslers-names {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600; }
+
+.dasslers-names span {
+  font-weight: normal; }
+
+.dasslers-names .letter {
+  font-size: 56px;
+  line-height: 56px;
+  font-weight: bold;
+  display: inline; }
+
+.about-wrapper .first-boots {
+  position: relative;
+  margin-top: -40px; }
+
+.about-wrapper .first-boots img {
+  max-width: 100%; }
+
+.bgp-dassler-v-halate {
+  background-image: url(../images/about/dassler-v-halate.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
+.about-section-content {
+  padding: 30px 30px 30px 30px; }
+
+.second-boots {
+  margin: -50px 0 0 0; }
+
+.second-boots img {
+  max-width: 100%; }
+
+.row-full-width {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -ms-flex-positive: 0;
+      flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.bgp-dassler-s-butsami {
+  background-image: url(../images/about/dassler-s-butsami.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
+.bgp-rasstavanie {
+  background-image: url(../images/about/rasstavanie.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
+.bgp-emblema {
+  background-image: url(../images/about/emblema.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
+.bgp-kurtka {
+  background-image: url(../images/about/kurtka.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
+.bgp-kachok {
+  background-image: url(../images/about/kachok.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
+.bgp-kubok {
+  background-image: url(../images/about/kubok.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
+.bgp-jumper {
+  background-image: url(../images/about/jumper.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
+.ball-img {
+  margin-top: -30px; }
+
+.ball-img img {
+  width: 210px; }
+
+.futbolka-img {
+  margin-top: -42px; }
+
+.futbolka-img img {
+  width: 210px; }
+
+.content-row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.article-pic-big {
+  text-align: center;
+  margin: 50px 0 50px 0; }
+
+.article-pic-big img {
+  -webkit-animation: 100%;
+          animation: 100%; }

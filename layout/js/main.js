@@ -81,6 +81,8 @@ $(window).resize(function () {
 
   slickResponsive();
 
+  $(".about-wrapper").getNiceScroll().resize();
+
   $(".slick-slider").slick("setPosition");
 
 });
@@ -94,6 +96,26 @@ $(window).on("load", function () {
 var baseUrl = "";
 
 $(document).ready(function () {
+
+  if ($(".about-wrapper").length) {
+
+    $(".about-wrapper").niceScroll(".about-wrapper-inner", {
+      cursorcolor:"#FC4237",
+      cursorborder:"0",
+      cursorborderradius:"0",
+      scrollspeed:50,
+      mousescrollstep:80,
+      hwacceleration: true,
+      touchbehavior: true,
+      preservenativescrolling: false,
+      oneaxismousemode: true
+    });
+
+    // $(".about-wrapper").mCustomScrollbar({
+    //   axis: "yx"
+    // });
+
+  }
   
   // Parallax
   

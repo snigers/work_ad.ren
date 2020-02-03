@@ -22,7 +22,9 @@
     width: 130px; }
   ul.navbar-nav a,
   ul.navbar-nav a:focus {
-    padding: 28px 17px 32px 5px; } }
+    padding: 28px 17px 32px 5px; }
+  .dasslers-wrapper {
+    height: 240px; } }
 
 @media (max-width: 1219px) {
   #md-indicator {
@@ -270,7 +272,18 @@
   ul.submenu-list > li {
     margin: 0 0 15px 0; }
   main {
-    padding: 60px 0 0 0; } }
+    padding: 60px 0 0 0; }
+  .page-body-about {
+    margin-top: -60px; }
+  .about-section {
+    font-size: 15px;
+    padding-top: 60px; }
+  .about-section h2, .about-section .h2 {
+    font-size: 40px;
+    line-height: 45px; }
+  .about-section h2.h2-year, .about-section .h2.h2-year {
+    font-size: 70px;
+    line-height: 70px; } }
 
 @media (max-width: 991px) {
   #sm-indicator {
@@ -595,29 +608,48 @@
     padding: 35px 90px 40px 40px; }
   .fav-modal .modal-header h2, .fav-modal .modal-header .h2 {
     font-size: 35px;
-    line-height: 40px; } }
+    line-height: 40px; }
+  .about-wrapper-inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: auto;
+    padding-top: 60px; }
+  .about-section {
+    padding: 0;
+    min-height: 0; }
+  .about-section h2, .about-section .h2 {
+    font-size: 30px;
+    line-height: 35px; }
+  .dasslers-wrapper {
+    height: 160px; }
+  .dasslers-img {
+    padding: 0; }
+  .about-section:last-child {
+    width: 100%; }
+  .about-section:last-child > .row {
+    width: 50%; } }
 
 @media (max-width: 767px) {
-  label {
+  .over-wrapper label {
     font-size: 12px;
     line-height: 12px;
     margin: 0 0 6px 0; }
-  input[type=text],
-  input[type=email],
-  input[type=password],
-  textarea {
+  .over-wrapper input[type=text],
+  .over-wrapper input[type=email],
+  .over-wrapper input[type=password],
+  .over-wrapper textarea {
     font-size: 16px; }
-  .form-checkboxes, .form-radios {
+  .over-wrapper .form-checkboxes, .form-radios {
     margin: 13px 0 0 0; }
-  input[type=radio] + label,
-  input[type=checkbox] + label {
+  .over-wrapper input[type=radio] + label,
+  .over-wrapper input[type=checkbox] + label {
     font-size: 15px;
     line-height: 20px; }
-  input[type=radio] + label:before {
+  .over-wrapper input[type=radio] + label:before {
     top: 0; }
-  .filter .form-radio {
+  .over-wrapper .filter .form-radio {
     margin: 0 0 12px 0; }
-  .vacancy-form .form-agree input[type=checkbox] + label {
+  .over-wrapper .vacancy-form .form-agree input[type=checkbox] + label {
     font-size: 16px;
     line-height: 18px; }
   .bootstrap-select .dropdown-toggle {
@@ -1625,4 +1657,15 @@
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%; }
   .fav-modal-controls .btn {
-    width: 100%; } }
+    width: 100%; }
+  .about-section-content {
+    padding: 30px 15px; }
+  .about-section h2, .about-section .h2 {
+    font-size: 26px;
+    line-height: 32px; }
+  .dasslers-names {
+    display: none; }
+  .about-section:last-child > .row {
+    width: 100%; }
+  .about-section h2.h2-year, .about-section .h2.h2-year {
+    font-size: 60px; } }
