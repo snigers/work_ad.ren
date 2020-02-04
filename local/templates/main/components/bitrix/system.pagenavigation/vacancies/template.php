@@ -18,12 +18,14 @@ foreach($_REQUEST as $key => $arItem)
 			$arStrFilter .= "&" . $key . "[" . $keys . "]=" . $arElem;
 		}
 	} else {
-	    if ($key != "PAGEN_1")
+	    $pagen = strpos($key, "PAGEN");
+	    if ($pagen === false)
 	    {
 			$arStrFilter .= "&" . $key . "=" . $arItem;
 		}
 	}
 }
+
 
 ?>
 <?if ($arResult["NavPageNomer"] > 1):?>
@@ -53,7 +55,11 @@ foreach($_REQUEST as $key => $arItem)
 	<?elseif($arResult["nStartPage"] == 1 && $arResult["bSavePage"] == false):?>
 		<a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryStringFull?>PAGEN_<?=$arResult["NavNum"]?>=<?=$arResult["nStartPage"]?><?=$arStrFilter?>"><?=$arResult["nStartPage"]?></a>
 	<?else:?>
-		<a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$arResult["nStartPage"]?><?=$arStrFilter?>"><?=$arResult["nStartPage"]?></a>
+        <?if ($_REQUEST):?>
+			<a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_2=<?=$arResult["nStartPage"]?><?=$arStrFilter?>"><?=$arResult["nStartPage"]?></a>
+		<?else:?>
+		    <a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$arResult["nStartPage"]?><?=$arStrFilter?>"><?=$arResult["nStartPage"]?></a>
+		<?endif;?>
 	<?endif?>
 	<?$arResult["nStartPage"]++?>
 <?endwhile?>

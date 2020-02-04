@@ -133,7 +133,7 @@ $(document).ready(function () {
 	});
 
 	// Удаляем вакансию на странице избранных вакансий
-	$("body").on("click", "[data-favorites-remove]", function(e) {
+	$("body").on("click", "[data-favorites-remove], #favModal.btn-modal-remove", function(e) {
 
 		e.preventDefault();
 		var url = "/ajax/ajax_favorites_list.php";
@@ -176,39 +176,27 @@ $(document).ready(function () {
 		setTag();
 	}
 
-	// $("body").on("click", ".next-story-link", function(e){
-	// 	var id = $(this).data("next-id");
-	// 	var url_ajax = "/ajax/ajax_success_detail.php";
-	// 	var url = document.location.href;
-	//
-	// 	var base_url = url.slice(0, url.indexOf("#"));
-	// 	var hash = url.slice(url.indexOf("#story=story"));
-	// 	var elem = hash.slice(hash.indexOf("=") + 6);
-	// 	elem++;
-	// 	document.location.href = base_url + "#story=story" + elem;
-	//
-	// 	// $("#storyPopup").scrollTop(0);
-	// 	e.preventDefault();
-	// 	// $("#storyPopup").scrollTop(0);
-	//
-	// 	$.ajax({
-	// 		url: url_ajax,
-	// 		dataType: 'html',
-	// 		type: 'POST',
-	// 		data: "id=" + id,
-	// 		success: function (html) {
-	//
-	//
-	// 			$(".popup-header").remove();
-	// 			$(".popup-body").remove();
-	// 			$(".popup-footer").remove();
-	// 			$(".popup-inner").append($(html));
-	// 		}
-	// 	});
-	//
-	// });
 
+	$("body").on("submit", "form", function(e){
+		e.preventDefault();
+		var url = "/ajax/ajax_form.php";
+		var form = $(this);
+		var data = form.serialize();
+		data = data + "&web_form_submit=Сохранить";
 
+		$.ajax({
+			url: url,
+			type: "POST",
+			dataType: "html",
+			data: data,
+		}).done(function() {
+
+			$(form).trigger('reset');
+			// Очищаю select от заполненых значений
+			form.find("select").val('default').selectpicker("refresh");
+
+		});
+	});
 
 	$("body").on('click', '.show-num-buttons-item button', function (e) {
 		e.preventDefault();
@@ -219,10 +207,20 @@ $(document).ready(function () {
 		setFilterAjax(page);
 	});
 
+
+	//Вакансии
 	$(".form-group .dropdown-menu, .sort-wrapper-group").on("click", "li", function(){
-		console.log("test2");
+		// console.log("test2");
 		setFilterAjax(page, $(this));
 	});
+
+	// Новости
+	$(".news-categories .dropdown-menu").on("click", "li", function(){
+		// console.log("test22");
+		setFilterAjax(page, $(this));
+	});
+
+
 
 	$("#vac_search_form, #news_search_form").on("click", "button", function(e){
 		// console.log("test3");
@@ -420,10 +418,6 @@ function setFilterAjax(page, element = "") {
 
 		result = "per_page=" + per_page + "&tag=" + tag + "&search=" + search;
 	}
-	// console.log(page);
-	// console.log(sort_city);
-	// console.log(per_page);
-	// console.log(set_filter);
 
 	$.ajax({
 		url: url,
@@ -437,8 +431,9 @@ function setFilterAjax(page, element = "") {
 			{
 				$(".vac-list").remove();
 				$(".list-controls-bottom").remove();
-				$(".vac-l").append($(html).filter(".vac-list"));
-				$(".vac-l").append($(html).filter(".list-controls-bottom"));
+				$("body").find(".vac-l").append($(html).filter(".vac-list"));
+				$("body").find(".vac-l").append($(html).filter(".list-controls-bottom"));
+				dynamicElements()
 			}
 
 			if (page == "news")

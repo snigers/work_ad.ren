@@ -60,6 +60,6 @@ $this->setFrameMode(true);
 	</div>
 </div>
 <?
-
+//pr($arResult);
 
 ?>

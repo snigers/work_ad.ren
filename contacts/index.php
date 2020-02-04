@@ -133,7 +133,9 @@ $APPLICATION->SetTitle("Контакты");
 										"SORT_ORDER1" => "ASC",
 										"SORT_ORDER2" => "ASC",
 										"STRICT_SECTION_CHECK" => "N"
-									)
+									),
+									false,
+									array('HIDE_ICONS' => "Y")
 								);?>
 							</div>
 						</div>

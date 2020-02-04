@@ -184,7 +184,7 @@ use Bitrix\Main\Page\Asset;?>
                         </div>
                         <div class="fav-modal-controls">
                             <div class="row">
-                                <div class="col"><a class="btn btn-2" href="#"><span>Перейти в избранное</span></a></div>
+                                <div class="col"><a class="btn btn-2" href="/favorites_vacancies/"><span>Перейти в избранное</span></a></div>
                                 <div class="col">
                                     <div class="btn btn-5 btn-modal-remove" data-dismiss="modal" aria-label="Close"><span>Удалить</span></div>
                                 </div>
@@ -231,6 +231,39 @@ use Bitrix\Main\Page\Asset;?>
           </div>
         </div>
       </div>
+        <div class="modal fade fav-modal" id="feedbackModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-header">
+                        <div class="h2">Написать</div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="feedback-form">
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:form.result.new",
+                                "formCallback",
+                                Array(
+                                    "CACHE_TIME" => "3600",
+                                    "CACHE_TYPE" => "A",
+                                    "CHAIN_ITEM_LINK" => "",
+                                    "CHAIN_ITEM_TEXT" => "",
+                                    "COMPONENT_TEMPLATE" => "formCallback",
+                                    "EDIT_URL" => "",
+                                    "IGNORE_CUSTOM_TEMPLATE" => "N",
+                                    "LIST_URL" => "",
+                                    "SEF_MODE" => "N",
+                                    "SUCCESS_URL" => "",
+                                    "USE_EXTENDED_ERRORS" => "N",
+                                    "VARIABLE_ALIASES" => array("WEB_FORM_ID"=>"WEB_FORM_ID","RESULT_ID"=>"RESULT_ID",),
+                                    "WEB_FORM_ID" => "2"
+                                )
+                            );?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       <div class="modal fade client-modal" id="clientModal" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">
